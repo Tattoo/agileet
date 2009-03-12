@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="pokkare.model.Points" table="points">
+       	<id name="rank" column="rank" type="int">
+       	</id>
+
+        <property name="points" column="points" type="int" />
+	</class>
+	
+</hibernate-mapping>
