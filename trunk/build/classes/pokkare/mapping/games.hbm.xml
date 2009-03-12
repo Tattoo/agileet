@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="pokkare.model.Games" table="games">
+       	<id name="id" column="id" type="int">
+       		<generator class="native" />
+       	</id>
+       	 	
+       	<property name="description" column="description" type="string" />       	
+       	<property name="host" column="host" type="int" />
+       	<property name="gameDate" column="game_date" type="date" />
+       	<property name="gameNumber" column="game_number" type="int" />
+       	<property name="gameScoreId" column="game_score_id" type="int" />
+
+	</class>
+	
+</hibernate-mapping>

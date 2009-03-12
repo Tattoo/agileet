@@ -1,0 +1,25 @@
+/* headers */
+div.index, div.addevent, div.addranking, div.viewranking {
+text-align: center;
+background-color: #00CCFF
+}
+
+div.text {
+text-color: #660000	
+}
+
+div.errors {
+text-color: #660000	
+}
+
+a:link { 
+	color: #660000;
+}
+	
+a:visited { 
+	color: #660000;
+}
+
+body {
+background-color: #FFFFCC
+}

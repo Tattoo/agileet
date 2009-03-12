@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+		"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="pokkare" namespace="/pokkare" extends="struts-default">
+
+		<action name="index" class="pokkare.action.IndexAction">
+			<result name="success">/pokkare/index.jsp</result>
+			<result name="error" type="redirect">/pokkare/login.jsp</result>
+		</action>
+		<action name="addevent" class="pokkare.action.AddEventAction">
+			<result name="success">/pokkare/addevent.jsp</result>
+			<result name="index" type="redirect">/pokkare/index.action</result>
+			<result name="error" type="redirect">/pokkare/login.jsp</result>
+		</action>
+		<action name="addranking" class="pokkare.action.AddRankingAction">
+			<result name="success">/pokkare/addranking.jsp</result>
+			<result name="index" type="redirect">/pokkare/index.action</result>
+			<result name="score" type="redirect">/pokkare/addranking.action</result>
+			<result name="error" type="redirect">/pokkare/login.jsp</result>
+		</action>
+		<action name="viewranking" class="pokkare.action.ViewRankingAction">
+			<result name="success">/pokkare/viewranking.jsp</result>
+			<result name="index" type="redirect">/pokkare/index.action</result>
+			<result name="error" type="redirect">/pokkare/login.jsp</result>
+		</action>
+	</package>
+</struts>
