@@ -1,4 +1,4 @@
-#summary Development plan, task lists by sprint & sprint backlogs
+#summary Development plan, task lists and meeting logs by sprint & sprint backlogs
 
 = Introduction =
 
