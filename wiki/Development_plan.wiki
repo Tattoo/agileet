@@ -11,6 +11,11 @@ Ryhmän tehtävänä on tehdä yhteenveto siitä, miten laatu nähdään ketteri
 
 Ensimmäinen versio ohjelmistosta on jo toimiva versio. Siinä ei tosin tarvitse olla kovin paljon toiminnallisuutta.
 
+== Tasks ==
+General: Create project & set up development environments
+Joonas: ????
+Tatu: ????
+
 == Sprint 2 ==
 
 Theme 1: Quality assurance plan
