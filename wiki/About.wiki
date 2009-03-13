@@ -2,12 +2,12 @@
 
 = Introduction =
 
-Add your content here.
+Pokkare is originally an unfinished personal project, now chosen to be the subject of the practise work of course 581359, Software Processes and Quality, at Helsinki University.
 
+During the course the program will be refactored and developed further as well as tested and documented properly.
+
+The development team, Agileet, consist of Joonas Murtola and Tatu Kairi. A modified Scrum process will be used in development and project management. A total of five sprints, about one week each, will be completed between 10.3.2009 and xx.4.2009.
+
+All documentation as well as source code shall be placed on this code.google.com site.
 
 = Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
