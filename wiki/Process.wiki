@@ -2,12 +2,130 @@
 
 = Introduction =
 
-Add your content here.
+A modified Scrum process will be used in development and project management. This document defines the process.
+
+= Roles =
+
+Defines the roles and responsibilities in the process.
+
+== Product Owner ==
+The Product Owner represents the voice of the customer. They ensure that the Scrum Team works with the right things from a business perspective. The Product Owner writes user stories, prioritizes them, then places them in the product backlog.
+
+Joonas
+
+== ScrumMaster ==
+Scrum is facilitated by a ScrumMaster, whose primary job is to remove impediments to the ability of the team to deliver the sprint goal. The ScrumMaster is not the leader of the team (as they are self-organizing) but acts as a buffer between the team and any distracting influences. The ScrumMaster ensures that the Scrum process is used as intended. The ScrumMaster is the enforcer of rules.
+
+??
+
+== Team ==
+The team has the responsibility to deliver the product. A team is typically made up of 5–9 people with cross-functional skills to do the actual work (designer, developer, tester, etc.).
+
+Joonas & Tatu
+
+== Chicken roles ==
+Chicken roles are not part of the actual Scrum process, but must be taken into account. An important aspect of an Agile approach is the practice of involving users, business and stakeholders into part of the process. It is important for these people to be engaged and provide feedback into the outputs for review and planning of each sprint.
+
+=== Users ===
+The software is being built for someone. "If software is not used"—much like "the tree falling in a forest" riddle—"was it ever written?"[citation needed]
+Stakeholders (customers, vendors)
+The people that will enable the project, and for whom the project will produce the agreed-upon benefit(s) which justify it. They are only directly involved in the process at sprint reviews.
+
+=== Managers ===
+People that will set up the environment for the product development organizations.
+
+= Meetings =
+
+== Daily Scrum ==
+Each day during the sprint, a project status meeting occurs. This is called a "scrum", or "the daily standup". The scrum has specific guidelines: 
+The meeting starts precisely on time. Often there are team-decided punishments for tardiness (e.g. money, push-ups, hanging a rubber chicken around your neck)
+All are welcome, but only "pigs" may speak
+The meeting is timeboxed at 15-20 minutes depending on the team's size
+All attendees should stand (it helps to keep meeting short)
+The meeting should happen at the same location and same time every day
+During the meeting, each team member answers three questions:[6] 
+What have you done since yesterday?
+What are you planning to do by today?
+Do you have any problems preventing you from accomplishing your goal? (It is the role of the ScrumMaster to remember these impediments.)
+
+== Sprint Planning Meeting ==
+At the beginning of the sprint cycle (every 15–30 days), a "Sprint Planning Meeting" is held. 
+Select what work is to be done
+Prepare the Sprint Backlog that details the time it will take to do that work
+8 hour limit
+
+== Sprint Review Meeting ==
+At the end of a sprint cycle, two meetings are held: the "Sprint Review Meeting" and the "Sprint Retrospective" 
+Review the work that was completed and not completed
+Present the completed work to the stakeholders (a.k.a. "the demo")
+Incomplete work cannot be demonstrated
+4 hour time limit
+Sprint Retrospective[9]
+All team members reflect on the past sprint.
+Make continuous process improvement.
+Two main questions are asked in the sprint retrospective: What went well during the sprint? What could be improved in the next sprint?
+3 hour time limit
+
+= Artifacts =
+
+== Product backlog ==
+
+The product backlog is a high-level document for the entire project. It contains backlog items: broad descriptions of all required features, wish-list items, etc. prioritised by business value. It is the "What" that will be built. It is open and editable by anyone and contains rough estimates of both business value and development effort. Those estimates help the Product Owner to gauge the timeline and, to a limited extent, priority. For example, if the "add spellcheck" and "add table support" features have the same business value, the one with the smallest development effort will probably have higher priority, because the ROI is higher.
+
+The product backlog is property of the Product Owner. Business value is set by the Product Owner. Development effort is set by the Team.
+
+== Sprint backlog ==
+
+The sprint backlog is a greatly detailed document containing information about how the team is going to implement the features for the upcoming sprint. Features are broken down into tasks; as a best practice tasks are normally estimated between 4h and 16h of work. With this level of detail the whole team understands exactly what to do, and anyone can potentially pick a task from the list. Tasks on the sprint backlog are never assigned; rather, tasks are signed up for by the team members as needed, according to the set priority and the team member skills.
+
+The sprint backlog is property of the Team. Estimations are set by the Team.
+
+== Burn down ==
+
+The burn down chart is a publicly displayed chart showing remaining work in the sprint backlog. Updated every day, it gives a simple view of the sprint progress. It also provides quick visualizations for reference.
+
+It should not be confused with an earned value chart.
 
 
-= Details =
+= Project management =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+The following are some general practices of Scrum:
+Customers become a part of the development team (i.e. the customer must be genuinely interested in the output.)
+Scrum has frequent intermediate deliveries with working functionality, like all other forms of agile software processes. This enables the customer to get working software earlier and enables the project to change its requirements according to changing needs.
+Frequent risk and mitigation plans are developed by the development team itself—risk mitigation, monitoring and management (risk analysis) occurs at every stage and with commitment.
+Transparency in planning and module development—let everyone know who is accountable for what and by when.
+Frequent stakeholder meetings to monitor progress—balanced dashboard updates (delivery, customer, employee, process, stakeholders)
+There should be an advance warning mechanism, i.e. visibility to potential slippage or deviation ahead of time.
+No problems are swept under the carpet. No one is penalized for recognizing or describing any unforeseen problem.
+Workplaces and working hours must be energized—"Working more hours" does not necessarily mean "producing more output."
+
+= Terminology =
+
+The following terminology is used in Scrum:
+
+== Roles ==
+Product Owner 
+The person responsible for maintaining the Product Backlog by representing the interests of the stakeholders.
+ScrumMaster 
+The person responsible for the Scrum process, making sure it is used correctly and maximizes its benefits.
+Team 
+A cross-functional group of people responsible for managing itself to develop the product.
+Scrum Team
+Product Owner, ScrumMaster and Team
+
+== Artifacts ==
+Sprint burn down chart 
+Daily progress for a Sprint over the sprint's length.
+Product backlog 
+A prioritized list of high level requirements.
+Sprint backlog 
+A list of tasks to be completed during the sprint.
+
+== Others ==
+Sprint 
+A time period (typically between 2 weeks and 1 month) in which development occurs on a set of backlog items that the Team has committed to.
+Sashimi 
+A slice of the whole equivalent in content to all other slices of the whole. For the Daily Scrum, the slice of sashimi is a report that something is done.
+
+
+http://en.wikipedia.org/wiki/Scrum_(development)
