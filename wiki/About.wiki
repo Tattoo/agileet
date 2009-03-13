@@ -2,12 +2,23 @@
 
 = Introduction =
 
-Pokkare is originally an unfinished personal project, now chosen to be the subject of the practise work of course 581359, Software Processes and Quality, at Helsinki University.
+Pokkare is originally an unfinished personal project, now chosen to be the subject of the practise work of course 581359, Software Processes and Quality, at Helsinki University. Pokkare is a small J2EE program for keeping score of winners in home poker games.
 
 During the course the program will be refactored and developed further as well as tested and documented properly.
 
-The development team, Agileet, consist of Joonas Murtola and Tatu Kairi. A modified Scrum process will be used in development and project management. A total of five sprints, about one week each, will be completed between 10.3.2009 and xx.4.2009.
+The development team, Agileet, consist of Joonas and Tatu. A modified Scrum process will be used in development and project management. A total of five sprints, about one week each, will be completed between 10.3.2009 and xx.4.2009.
 
 All documentation as well as source code shall be placed on this code.google.com site.
 
-= Details =
+= Documentation =
+
+About 	
+ - About Pokkare
+Process
+ - Defines the process used
+Development_plan
+ - Development plan, task lists and meeting logs by sprint, sprint burn down charts, sprint backlogs & related content
+Requirement_specification
+ - Requirement specification/Product backlog 
+Quality_assurance
+ - Quality assurance aspects
