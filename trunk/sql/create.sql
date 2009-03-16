@@ -1,4 +1,4 @@
-﻿   CREATE DATABASE pokkare CHARACTER SET utf8;
+﻿CREATE DATABASE pokkare CHARACTER SET utf8;
 
 
 DROP TABLE games;
