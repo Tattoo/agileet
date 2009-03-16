@@ -1,2 +1,2 @@
-<a href="index.action"> <-- index </a>
+<a href="index.action"> &lt;-- index </a>
 
