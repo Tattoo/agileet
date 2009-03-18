@@ -166,7 +166,7 @@ public class EventService {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
-			Query query = session.createQuery("select sum(p.points) from score s, points p where s.rank = p.rank and player_id = " + playerId);
+			Query query = session.createQuery("select sum(p.points) from Score s, Points p where s.rank = p.rank and player_id = " + playerId);
 			ArrayList<Long> lista = (ArrayList<Long>)query.list();
 			sum = lista.get(0);
 			
