@@ -13,7 +13,7 @@ New games shall be addable. A game has a host (one of the players), a date and a
 Scores shall be addable to games. Only ranking of players shall be recorded. Points for each position are to be gotten from the database. Ranking must be attached to a game.
 
 == Show ranking ==
-Ranking of players in the statistics shall be presented for each player graphically and numerically, at least totals numerically and in the graph per game.
+Ranking of players in the statistics shall be presented for each player graphically and numerically, at least totals numerically and score per game in the graph.
 
 = Structure =
 
@@ -23,8 +23,12 @@ http://www.cs.helsinki.fi/u/jmurtola/pokkare/struts-hibernate.jpg
 A general diagram of the program's structure
 
 == Class structure ==
+http://www.cs.helsinki.fi/u/jmurtola/pokkare/class_diagram.jpg
+
+Under construction
 
 == Data model ==
 
 http://www.cs.helsinki.fi/u/jmurtola/pokkare/db_model.jpg
+
 Data model
