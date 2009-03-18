@@ -5,9 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
 import pokkare.action.AddRankingAction;
 import pokkare.model.Player;
 import pokkare.model.Score;
+import pokkare.service.HibernateUtil;
 import pokkare.service.EventService;
 
 public class AddRankingActionTest extends TestCase {
@@ -77,15 +81,37 @@ public class AddRankingActionTest extends TestCase {
 		assertEquals(testparams, ranking.getParameters());
 	}
 
-	// TODO: this test case must be able to remove the entry from db
-	// 		before we can run it
-	/*
 	public void testExecute_rest(){
 		// execute tests we're depending on
 		testParametersAccessors();
-		ranking.setChosenGame(new Integer(999));
+		
+		Integer chosenGame = new Integer(999999999);
+		ranking.setChosenGame(chosenGame);
 		ranking.setParameters(testparams);
 		assertEquals("index", ranking.execute());
+		assertEquals(true, deleteTestData(chosenGame));
 	}
-	*/
+	
+	private boolean deleteTestData(Integer chosenGame){
+		// delete stuff that was put in db during this test case
+		event = new EventService();
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		try {
+			session.beginTransaction();
+			for (Score s : event.findScores()){
+				if (s.getGameScoreId().equals(chosenGame)){
+					session.delete(s);
+				}
+			}
+			session.getTransaction().commit();
+			session.close();
+			return true;
+		} catch (Exception e){
+			e.printStackTrace();
+			if (session != null && session.isOpen()){
+				session.close();
+			}
+			return false;
+		}
+	}
 }
