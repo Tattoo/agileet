@@ -2,11 +2,9 @@ package pokkare.tests;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.HashMap;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 import pokkare.action.AddRankingAction;
 import pokkare.model.Player;
@@ -83,8 +81,7 @@ public class AddRankingActionTest extends TestCase {
 
 	public void testExecute_rest(){
 		// execute tests we're depending on
-		testParametersAccessors();
-		
+		testParametersAccessors();		
 		Integer chosenGame = new Integer(999999999);
 		ranking.setChosenGame(chosenGame);
 		ranking.setParameters(testparams);
