@@ -4,6 +4,22 @@
 
 Pokkare is a J2EE program that utilizes Apache Struts 2 as the MVC web framework & Hibernate as the database framework. The database is MySQL and the program is run on an Apache Tomcat server.
 
+= Requirements =
+
+== Add new games ==
+New games shall be addable. A game has a host (one of the players), a date and a description. To keep score of games on account of multiple games on a single date, a running number starting from 1 shall be automatically affixed to each game. First game entered for a given date shall be number 1, second game number 2 etc.
+
+== Add scores to game ==
+Scores shall be addable to games. Only ranking of players shall be recorded. Points for each position are to be gotten from the database. Ranking must be attached to a game.
+
+== Show ranking ==
+Ranking of players in the statistics shall be presented for each player graphically and numerically, at least totals numerically and in the graph per game.
+
+= Structure =
+
 http://www.cs.helsinki.fi/u/jmurtola/pokkare/struts-hibernate.jpg
+
 A general diagram of the program's structure
+
+= Class diagram =
 
