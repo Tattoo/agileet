@@ -17,9 +17,14 @@ Ranking of players in the statistics shall be presented for each player graphica
 
 = Structure =
 
+== General ==
 http://www.cs.helsinki.fi/u/jmurtola/pokkare/struts-hibernate.jpg
 
 A general diagram of the program's structure
 
-= Class diagram =
+== Class structure ==
 
+== Data model ==
+
+http://www.cs.helsinki.fi/u/jmurtola/pokkare/db_model.jpg
+Data model
