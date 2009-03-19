@@ -33,3 +33,7 @@ Other tasks than actual designing and implementation are (implicitly) given the 
     * issue tracking
     * documentation
     * project metrics tracking
+
+==Attitude==
+
+Developers attitude is expected to value the product and make it so it's what customer wants. This means instead of "doing the job" one is expected to care about the product and therefore to care about the product of being exactly what needed.
