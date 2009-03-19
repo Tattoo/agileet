@@ -4,6 +4,8 @@
 
 Pokkare is a J2EE program that utilizes Apache Struts 2 as the MVC web framework & Hibernate as the database framework. The database is MySQL and the program is run on an Apache Tomcat server.
 
+Pokkare is meant to be used in maintaining and viewing scores from poker games. Scores are assigned per tournament according to the players rank in tournament. Players, games, and scores (ranks) must be saved and viewable in a comprehensive form.
+
 = Requirements =
 
 == Add new games ==
