@@ -1,4 +1,5 @@
 #summary Development plan, task lists and meeting logs by sprint, sprint burn down charts & sprint backlogs
+#sidebar TableOfContents
 
 = Sprint 1 (10. - 20.03.) =
 
