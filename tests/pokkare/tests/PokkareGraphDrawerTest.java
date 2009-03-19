@@ -1,4 +1,5 @@
 package pokkare.tests;
+import java.io.File;
 import java.io.FileOutputStream;
 
 import junit.framework.TestCase;
@@ -30,17 +31,18 @@ public class PokkareGraphDrawerTest extends TestCase {
 	}
 	
 /* This cannot be run until createImage() works on Linux
- *  	
+ *
+ 
 	public void testCreateImage(){
 		try {
-			FileOutputStream f = new FileOutputStream("pokkaregraph.jpg");
-			assertNotNull(f);
-			graph.createImage(f);
-			f.close();
+			FileOutputStream fo = new FileOutputStream("pokkaregraph.jpg");
+			assertNotNull(fo);
+			graph.createImage(fo);
+			fo.close();
 		} catch(Exception e) {
 			e.printStackTrace();
 			fail("testCreateImage() threw an exception");
 		}
 	}
-*/
+*/	
 }
