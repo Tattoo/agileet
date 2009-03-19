@@ -1,5 +1,5 @@
  * [Development_plan Development plan]
- * [Requirement_spesification Product backlog]
+ * [Requirement_specification Product backlog]
  * [Quality_assurance Quality assurance plan]
  * [Process]
  * [About]
