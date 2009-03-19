@@ -1,9 +1,6 @@
 package pokkare.model;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.util.List;
 
 /**
  * Persistenssiluokka, sis‰lt‰‰ Hibernaten tarvitsemat get-
