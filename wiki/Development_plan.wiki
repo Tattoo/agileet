@@ -4,19 +4,19 @@
 
 == Theme: Quality in agile processes ==
 
- * Ryhmän tehtävänä on tehdä yhteenveto siitä, miten laatu nähdään ketterissä prosesseissa. Yhteenvedot esitellään harjoitustapaamisessa.
+ * Make a summary how quality is seen in agile processes. This summary is presented in group meeting.
 
 ===Sprint produces: First version of program===
- * Ensimmäinen versio ohjelmistosta on jo toimiva versio. Siinä ei tosin tarvitse olla kovin paljon toiminnallisuutta.
+ * First version of program is already functional. There doesen't need to be much functionality, though.
 
 ----
 = Sprint 2 (20. - 27.03.) =
 
 == Theme 1: Quality assurance plan ==
- * Kukin ryhmä tekee ohjelmistolleen laadunvarmistussuunnitelman. Siitä käy ilmi, miten tehtävän tuotteen laatua valvotaan ja varmistetaan.
+ * Make Quality assurance plan for your team. The plan will dictate, how quality is controlled and assured in the project.
 
 == Theme 2: Metrics used in project ==
- * Kukin ryhmä valitsee sellaiset mittarit, joita he käyttävät valvoessaan prosessin ja tuotteen laatua. Mittarit ovat osa laadunvarmistussuunnitelmaa.
+ * Each team chooses metrics that are used to control process and product quality. These metrics are part of Quality assurance plan.
 
 ===Sprint produces: Second version of program===
 
@@ -24,10 +24,10 @@
 = Sprint 3 (27.03. - 03.04.) =
 
 == Theme 1: CMMI and agile processes ==
- * CMMI on tunnettu prosessien kypsyystasomalli, mutta toimiiko se ketterien prosessien kanssa? Ryhmien tehtäväksi jää ottaa selvää tästä.
+ * CMMI is a process improvement approach that provides organizations with the essential elements for effective process improvement. Does it work with agile processes?
 
 == Theme 2: Description of the process ==
- * Kukin ryhmä kuvaa lyhyesti, mitä projektissa käytetty prosessi sisältää. Kuvauksen jälkeen kuuntelijoilla on oltava niin selkeä käsitys prosessista, että he voivat halutessaan soveltaa sitä omassa projektissa.
+ * Each team describe the process they are using. The description should provide comprehensive understanding among team members about the project's process.
 
 ===Sprint produces: Third version of program===
 
@@ -35,10 +35,10 @@
 = Sprint 4 (03. - 10.04.) =
 
 ==Theme 1: Scalability of agile processes==
- * Ketterät prosessit ovat parhaimmillaan pienissä ja keskisuurissa projekteissa. Miten prosessit toimivat, kun projektissa on mukana satoja työntekijöitä?
+ * Agile processes rule in small- to medium-size projects. How do they work when process have hundreds of workers?
 
 ==Theme 2: Test driven software development==
- * Testauslähtöisessä ohjelmistokehityksessä yksikkötestit kirjoitetaan ennen koodia. Tässä syklissä ryhmät käyttävät tätä laadunvarmistustekniikkaa hyväksi omassa projektissa. (Tekniikkaa saa toki käyttää hyväksi kaikissa sykleissä, jos ryhmä niin haluaa.)
+ * In Test-Driven Development (TDD), one writes unit tests before implementation code. Team member use TDD in this iteration (you can use it in other iterations, of course). 
 
 ===Sprint produces: Fourth version of program===
 
@@ -46,10 +46,10 @@
 = Sprint 5 (10. - 17.04.) =
 
 ==Theme 1: Risk management in agile processes ==
- * Riskienhallinta on oleellinen osa perinteisten projektien projektinhallintaa. Miten riskienhallinta sopii ketteriin prosesseihin?
+ * Risk management is essential part of project management. How does risk management work in agile processes?
 
 ==Theme 2: Quality summary==
- * Laatuyhteenvedossa ryhmä kertoo, miten laadunvarmistus toteutui projektissa ja miten se näkyy ohjelmiston laadussa.
+ * In Quality summary team elaborate, how quality assurance was completed in the project and how it is visible in the quality of final product.
 
 ===Sprint produces: Release of the finished program and documentation===
- * Viidennen syklin lopuksi ohjelmisto ja siitä tehty dokumentaatio luovutetaan harjoitusryhmän ohjaajalle. Työstä ei tarvitse tehdä käyttöohjetta.
+ * After 5th iteration, the product and its documentation is handed over to instructor of group meeting. There is no need to make a user manual for the project.
