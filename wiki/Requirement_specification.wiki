@@ -1,5 +1,5 @@
 #summary Requirement specification/Product backlog
-
+#sidebar TableOfContents
 = Introduction =
 
 Pokkare is a J2EE program that utilizes Apache Struts 2 as the MVC web framework & Hibernate as the database framework. The database is MySQL and the program is run on an Apache Tomcat server.
