@@ -8,19 +8,20 @@ The process if very important if the goal is good quality software. If the proce
     * Early delivery of a partially functioning system correlates with quality
     * Subsequent releases should be frequent; project steering cannot happen in the middle of a sprint
     * Stakeholders should get involved & committed: the team, management and the customer
+    * Management should provide the team with the resources it needs to do it's job
+    * The team is most important stakeholder group; without them there can be no software
+    * Teams work best if self organized; team comes first, management happens only if it's needed
+    * If the team has a problem with the rules the rules should change
     * The customer should be reviewing iterations and giving instant feedback
     * Changes should follow soon after the feedback, don't move on before this version's quality is assured
     * Changing requirements are a good thing; after all, we want to make the right system
-    * KISS: the code
-    * KISS: the process, it's meant to make your life easier, not harder
-    * The team is most important stakeholder group; without them there can be no software
-    * Teams work best if self organized; team comes first, management happens if it's needed
-    * If the team has a problem with the rules the rules should change
+    * KISS: keep the code simple
     * Work at a sustainable pace; not too fast, but not too slow either
     * Use functionality as the metrics; when 30% of functionality is done, we're 30% done
     * Don't let the team slip back to "doing it the old fashioned way"
     * Don't let deadlines slip
     * Measure & review
+    * KISS: keep the process simple, it's meant to make your life easier, not harder
 
 ==Development techniques==
 
