@@ -114,7 +114,7 @@ public class PokkareGraphDrawer {
 		    
 		    //draw notches for horizontal axis
 		    
-		    //horisontaalisia notcheja on yhtä paljon kuin pelejä. jokaiselle pelille varataan tilaa
+		    //horisontaalisia notcheja on yhtï¿½ paljon kuin pelejï¿½. jokaiselle pelille varataan tilaa
 		    double horizontalInterval = (horizontalAxis.x2 - horizontalInset - 20) / horizontalNotches;
 		 
 		    
@@ -128,7 +128,7 @@ public class PokkareGraphDrawer {
 		    	System.out.println("drawing horizontal notch");
 		    	graphics.draw(horizontalNotch);
 		    	
-		    	//TODO: puukota tähän joskus simpledate jne. muista että kuvan täytyy olla tarpeeksi leveä
+		    	//TODO: puukota tï¿½hï¿½n joskus simpledate jne. muista ettï¿½ kuvan tï¿½ytyy olla tarpeeksi leveï¿½
 		    	//draw dates for horizontal axis' notches
 		    	
 		    	SimpleDateFormat formatter = new SimpleDateFormat("d.M. yyyy");
@@ -212,11 +212,7 @@ public class PokkareGraphDrawer {
 
 		    return "image/jpg";
 	  }
-	  
-	  public void setMultiplier(int multiplier) {
-		  this.multiplier = multiplier;
-	  }
-	  
+	  	  
 	  public static void main(String[] args)
 	  {
 	  
@@ -237,5 +233,17 @@ public class PokkareGraphDrawer {
 	  
 	  public void setMaxPoints(int maxPoints) {
 		  this.maxPoints = maxPoints;
+	  }
+	  
+	  public int getMaxPoints(){
+		  return this.maxPoints;
+	  }
+
+	  public void setMultiplier(int multiplier) {
+		  this.multiplier = multiplier;
+	  }
+
+	  public int getMultiplier(){
+		  return this.multiplier;
 	  }
 }
