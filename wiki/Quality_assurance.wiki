@@ -1,5 +1,5 @@
 #summary Quality assurance
-
+#sidebar TableOfContents
 = Introduction =
 
 Add your content here.
