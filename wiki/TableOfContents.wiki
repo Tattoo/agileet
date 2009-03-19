@@ -4,5 +4,4 @@
  * [Process]
  * [About]
 
-[issue:1]
  
