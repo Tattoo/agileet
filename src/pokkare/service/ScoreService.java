@@ -19,7 +19,7 @@ public class ScoreService {
 		
 		/** laita kumulatiivinen summa mappiin */
 		for (int i = 0; i < players.size(); ++i) {
-			
+			// TODO: implement
 		}
 	}
 	
