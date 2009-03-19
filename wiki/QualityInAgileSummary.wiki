@@ -1,0 +1,24 @@
+#summary Summary about quality in agile processes
+=Quality in agile processes=
+
+==Development techniques==
+
+Tend to foster communication
+
+    * More communication `==` avoid misunderstandings among team, between team and management, between team and customer, etc.
+
+Tend to foster reviews
+
+    * Peer-reviews are constant and small. There is no need for heavy, all-team including review meetings (well, not maybe _always_...)
+
+Developers learn new skills
+
+    * Agile demands developers to leave their comfort zone and take part in all aspects of development. The more the developer works in projects, it is almost guaranteed that developers share knowledege ie. there is no _one person, one speciality_-cases .
+
+==Development tools==
+
+     * Should make things easy to change... 
+     * ...which tend to enable productivity...
+     * ...which, in turn, makes development faster...
+     * ...which results in more ground covered...
+     * ...which is why we can do more with less ie. _more quality in the same time as before_
