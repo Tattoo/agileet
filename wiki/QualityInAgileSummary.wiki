@@ -3,7 +3,7 @@
 
 == Process ==
 
-The process if very important if the goal is good quality software. The process must be designed to produce software of good quality.
+The process if very important if the goal is good quality software. If the process is designed to produce software of good quality, we're more likely to end up with some.
 
     * Early delivery of a partially functioning system correlates with quality
     * Subsequent releases should be frequent; project steering cannot happen in the middle of a sprint
