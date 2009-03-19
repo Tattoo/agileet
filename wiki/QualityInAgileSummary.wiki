@@ -3,6 +3,8 @@
 
 ==Development techniques==
 
+Testing isn't essential, *testing is vital*
+
 Tend to foster communication
 
     * More communication `==` avoid misunderstandings among team, between team and management, between team and customer, etc.
