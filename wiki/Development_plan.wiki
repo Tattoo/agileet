@@ -5,6 +5,7 @@
 == Theme: Quality in agile processes ==
 
  * Make a summary how quality is seen in agile processes. This summary is presented in group meeting.
+ * QualityInAgileSummary
 
 ===Sprint produces: First version of program===
  * First version of program is already functional. There doesen't need to be much functionality, though.
