@@ -24,3 +24,12 @@ Should make things easy to change...
      * ...which, in turn, makes development faster...
      * ...which results in more ground covered...
      * ...which is why we can do more with less ie. _more quality in the same time as before_
+
+Other tasks than actual designing and implementation are (implicitly) given the demand to be as automated as possible. This includes:
+    * deployment
+    * unit testing 
+    * integration testing
+    * acceptance testing(!)
+    * issue tracking
+    * documentation
+    * project metrics tracking
