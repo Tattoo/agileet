@@ -1,16 +1,16 @@
 #summary Development plan, task lists and meeting logs by sprint, sprint burn down charts & sprint backlogs
 
-= Sprint 1 [10. - 20.03.] =
+= Sprint 1 (10. - 20.03.) =
 
 == Theme: Quality in agile processes ==
 
  * Ryhmän tehtävänä on tehdä yhteenveto siitä, miten laatu nähdään ketterissä prosesseissa. Yhteenvedot esitellään harjoitustapaamisessa.
 
-*Sprint produces: First version of program*
-
+===Sprint produces: First version of program===
  * Ensimmäinen versio ohjelmistosta on jo toimiva versio. Siinä ei tosin tarvitse olla kovin paljon toiminnallisuutta.
 
-= Sprint 2 [20. - 27.03.] =
+----
+= Sprint 2 (20. - 27.03.) =
 
 == Theme 1: Quality assurance plan ==
  * Kukin ryhmä tekee ohjelmistolleen laadunvarmistussuunnitelman. Siitä käy ilmi, miten tehtävän tuotteen laatua valvotaan ja varmistetaan.
@@ -18,10 +18,10 @@
 == Theme 2: Metrics used in project ==
  * Kukin ryhmä valitsee sellaiset mittarit, joita he käyttävät valvoessaan prosessin ja tuotteen laatua. Mittarit ovat osa laadunvarmistussuunnitelmaa.
 
-*Sprint produces: Second version of program*
+===Sprint produces: Second version of program===
 
-
-= Sprint 3 [27.03. - 03.04.] =
+----
+= Sprint 3 (27.03. - 03.04.) =
 
 == Theme 1: CMMI and agile processes ==
  * CMMI on tunnettu prosessien kypsyystasomalli, mutta toimiiko se ketterien prosessien kanssa? Ryhmien tehtäväksi jää ottaa selvää tästä.
@@ -29,9 +29,10 @@
 == Theme 2: Description of the process ==
  * Kukin ryhmä kuvaa lyhyesti, mitä projektissa käytetty prosessi sisältää. Kuvauksen jälkeen kuuntelijoilla on oltava niin selkeä käsitys prosessista, että he voivat halutessaan soveltaa sitä omassa projektissa.
 
-*Sprint produces: Third version of program*
+===Sprint produces: Third version of program===
 
-= Sprint 4 [03. - 10.04.] =
+----
+= Sprint 4 (03. - 10.04.) =
 
 ==Theme 1: Scalability of agile processes==
  * Ketterät prosessit ovat parhaimmillaan pienissä ja keskisuurissa projekteissa. Miten prosessit toimivat, kun projektissa on mukana satoja työntekijöitä?
@@ -39,9 +40,10 @@
 ==Theme 2: Test driven software development==
  * Testauslähtöisessä ohjelmistokehityksessä yksikkötestit kirjoitetaan ennen koodia. Tässä syklissä ryhmät käyttävät tätä laadunvarmistustekniikkaa hyväksi omassa projektissa. (Tekniikkaa saa toki käyttää hyväksi kaikissa sykleissä, jos ryhmä niin haluaa.)
 
-*Sprint produces: Fourth version of program*
+===Sprint produces: Fourth version of program===
 
-= Sprint 5 [10. - 17.04.] =
+----
+= Sprint 5 (10. - 17.04.) =
 
 ==Theme 1: Risk management in agile processes ==
  * Riskienhallinta on oleellinen osa perinteisten projektien projektinhallintaa. Miten riskienhallinta sopii ketteriin prosesseihin?
@@ -49,5 +51,5 @@
 ==Theme 2: Quality summary==
  * Laatuyhteenvedossa ryhmä kertoo, miten laadunvarmistus toteutui projektissa ja miten se näkyy ohjelmiston laadussa.
 
-Sprint produces: Release of the finished program and documentation
+===Sprint produces: Release of the finished program and documentation===
  * Viidennen syklin lopuksi ohjelmisto ja siitä tehty dokumentaatio luovutetaan harjoitusryhmän ohjaajalle. Työstä ei tarvitse tehdä käyttöohjetta.
