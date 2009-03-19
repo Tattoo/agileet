@@ -2,7 +2,6 @@ package pokkare.action;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import pokkare.model.Player;
 import pokkare.model.Score;
