@@ -4,5 +4,5 @@
  * [Process]
  * [About]
 
-[Issue-1]
+[issue:1]
  
