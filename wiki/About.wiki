@@ -2,7 +2,7 @@
 #sidebar TableOfContents
 = Introduction =
 
-Pokkare is originally an unfinished personal project, now chosen to be the subject of the practise work of course 581359, Software Processes and Quality, at Helsinki University. Pokkare is a small J2EE program for keeping score of winners in home poker games.
+Pokkare is originally an unfinished personal project, now chosen to be the subject of the practice work of course 581359, Software Processes and Quality, at Helsinki University. Pokkare is a small J2EE program for keeping score of winners in home poker games.
 
 The target of the course is to learn practises of agile processes in small groups. During the course the chosen program will be refactored and developed further as well as tested and documented properly.
 
