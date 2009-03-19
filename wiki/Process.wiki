@@ -1,5 +1,5 @@
 #summary The process defined
-
+#sidebar TableOfContents
 = Introduction =
 
 A modified Scrum process will be used in development and project management. This document defines the process.
