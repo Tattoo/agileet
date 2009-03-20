@@ -12,14 +12,6 @@
  * First version of program is already functional. There doesn't need to be much functionality, though.
  * Sprint was accepted.
 
-=== Sprint 2 kick-off ===
-Sprint 2 scope and issues defined in issuelist
-
- * [http://code.google.com/p/agileet/issues/detail?id=8 Critical bug]
- * [http://code.google.com/p/agileet/issues/detail?id=4 Theme task]
- * [http://code.google.com/p/agileet/issues/detail?id=10 Continous integration]
- * [http://code.google.com/p/agileet/issues/detail?id=11 Look'n'feel]
-
 ----
 = Sprint 2 (20. - 27.03.) =
 
@@ -28,6 +20,15 @@ Sprint 2 scope and issues defined in issuelist
 
 == Theme 2: Metrics used in project ==
  * Each team chooses metrics that are used to control process and product quality. These metrics are part of Quality assurance plan.
+
+=== Sprint 2 kick-off ===
+Sprint 2 scope and issues defined in issuelist
+
+ * [http://code.google.com/p/agileet/issues/detail?id=8 Critical bug]
+ * [http://code.google.com/p/agileet/issues/detail?id=4 Theme task]
+ * [http://code.google.com/p/agileet/issues/detail?id=10 Continous integration]
+ * [http://code.google.com/p/agileet/issues/detail?id=11 Look'n'feel]
+
 
 ===Sprint produces: Second version of program===
 
