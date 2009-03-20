@@ -5,19 +5,35 @@
 
 The process if very important if the goal is good quality software. If the process is designed to produce software of good quality, we're more likely to end up with some.
 
-    * Early delivery of a partially functioning system. This has been shown to correlate with quality
+Early delivery of a partially functioning system. This has been shown to correlate with quality
+
     * Subsequent releases should be frequent
-    * Project steering cannot happen in the middle of a sprint
-    * Stakeholders should get involved & committed: the team, management, the customer, the customers customer, etc.
-    * The team is most important stakeholder group; without them there can be no software
-    * Management should provide the team with the resources it needs to do it's job
-    * Teams work best if self organized; team comes first, management happens only if it's needed. If the team has a problem with the rules the rules should change
-    * The customer should be reviewing iterations and giving instant feedback
-    * Changes should follow soon after the feedback, don't move on before this version's quality is assured
-    * Work at a sustainable pace; not too fast, but not too slow either
+
+Project steering cannot happen in the middle of a sprint
+
+Stakeholders should get involved & committed. 
+    * The team
+    * The management
+    * The customer
+    * The customers customer
+    * etc.
+
+The team is most important stakeholder group; without them there can be no software
+
+Management should provide the team with the resources it needs to do it's job
+
+Teams work best if self organized. Management happens only if it's needed. If the team has a problem with the rules the rules should change.
+
     * Don't let the team slip back to "doing it the old fashioned way"
-    * Don't let deadlines slip
-    * Measure & review. Use functionality as the metrics; when 30% of functionality is done, we're 30% done.
+
+The customer should be reviewing iterations and giving instant feedback. Changes should follow soon after the feedback, the team doesn't move on before this version's quality is assured.
+
+Team works at a sustainable pace; not too fast, but not too slow either.
+
+    * Deadlines *are* met.
+
+
+Measure & review. Use functionality as the metrics; when 30% of functionality is done, we're 30% done.
 
 ==Development techniques==
 
