@@ -11,7 +11,7 @@ Ranking
 	<s:property />
 </s:iterator>
 
-<img src="c:\eclipse\pokkaregraph.jpg" />
+<img src="pokkaregraph.jpg" />
 
 <table border="0" cellpadding = 10>
 <tr>

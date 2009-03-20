@@ -8,7 +8,7 @@ import pokkare.model.Score;
 import pokkare.service.EventService;
 import pokkare.service.PokkareGraphDrawer;
 
-public class ViewRankingAction {
+public class ViewRankingAction  {
 	
 	private EventService event = new EventService();
 	private ArrayList<String> ranking = new ArrayList<String>();
@@ -93,7 +93,13 @@ public class ViewRankingAction {
 		
 		try {
 		       FileOutputStream f = new FileOutputStream("pokkaregraph.jpg");
-		       PokkareGraphDrawer drawer = new PokkareGraphDrawer();
+		       
+		       String WEBAPP_ROOT = org.apache.struts2.ServletActionContext.getServletContext().getRealPath("/");
+		       
+		       System.out.println("TESTI!!: : " + WEBAPP_ROOT);
+		       
+		       PokkareGraphDrawer drawer = new PokkareGraphDrawer(WEBAPP_ROOT);
+		       
 		       if (size != null) {
 		    	   if (size.equals("plus"))
 		    		   drawer.setMultiplier(4);
