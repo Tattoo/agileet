@@ -2,6 +2,7 @@ package pokkare.action;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import pokkare.model.Player;
 import pokkare.model.Score;
@@ -14,7 +15,15 @@ public class ViewRankingAction  {
 	private ArrayList<String> ranking = new ArrayList<String>();
 	private String size;
 	Integer picSize = 0;
+	HashMap<String, Integer> scores;
 	
+	public HashMap<String, Integer> getScores(){
+		return this.scores;
+	}
+	
+	public void setScores(HashMap<String, Integer> scores){
+		this.scores = scores;
+	}
 
 	public String getSize() {
 		return size;
@@ -40,7 +49,7 @@ public class ViewRankingAction  {
 	public String execute() {
 	
 		ArrayList<Player> playerList = (ArrayList<Player>)event.findPlayers();
-	
+
 		Integer[] scoreTable = new Integer[playerList.size()];
 		String[] nameTable = new String[playerList.size()];
 		
@@ -82,11 +91,18 @@ public class ViewRankingAction  {
 		}
 		
 		int maxPoints = scoreTable[0];
+
+		HashMap<String, Integer> scoresTable = new HashMap<String, Integer>();
+		for (int i = 0; i < playerList.size(); i++){
+			scoresTable.put(nameTable[i], scoreTable[i]);
+		}
+		setScores(scoresTable);
 		
-		drawPokkareGraph(maxPoints);
 		
+//		drawPokkareGraph(maxPoints);
 		
 		return "success";
+
 	}
 	
 	public void drawPokkareGraph(int maxPoints) {
@@ -108,9 +124,10 @@ public class ViewRankingAction  {
 		       }
 		       else drawer.setMultiplier(3);
 		       drawer.setMaxPoints(maxPoints);
-		       drawer.createImage(f);
-		       f.close(); 
-		    }
+		       drawer.createImage(f); 
+		       f.flush();
+		       f.close();
+		}
 		    catch (Exception e) {
 		      e.printStackTrace();
 		    }

@@ -1,5 +1,6 @@
 <jsp:include page="include/header.jsp"></jsp:include>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib uri="http://big.faceless.org/products/graph" prefix="bfg" %>
 <%@ page import="pokkare.service.EventService,pokkare.model.*,pokkare.action.ViewRankingAction,java.util.List" %>
 
 <div class="viewranking">
@@ -7,12 +8,20 @@ Ranking
 </div>
 
 
-<s:iterator value="ranking">
-	<s:property />
-</s:iterator>
+<bfg:axesgraph width="300" height="200">
+  <bfg:barseries name="Test" barwidth="0.8">
+	  <s:iterator value="scores">
+		<bfg:data x="${key}" y="${value}" />
+	</s:iterator>  
+  </bfg:barseries>
+</bfg:axesgraph>
+
+<!--  
 
 <img src="../pokkaregraph.jpg" />
 
+
+ 
 <table border="0" cellpadding = 10>
 <tr>
 
@@ -29,4 +38,6 @@ Zoom:
 </table>
 <br />
 
+-->
+ 
 <jsp:include page="include/footer.jsp"></jsp:include>
