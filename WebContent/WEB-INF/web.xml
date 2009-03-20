@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app id="WebApp_9" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+<web-app id="WebApp_9" version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
     <display-name>Pokkare</display-name>
 
@@ -33,5 +36,18 @@
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-
+    <servlet>  
+    	<servlet-name>GraphServlet</servlet-name>  
+    	<servlet-class>org.faceless.graph2.tag.GraphServlet</servlet-class> 
+    </servlet> 
+    <servlet-mapping>  
+    	<servlet-name>GraphServlet</servlet-name>  
+    	<url-pattern>/servlet/GraphServlet/*</url-pattern> 
+    </servlet-mapping> 
+	<jsp-config>
+		<taglib>  
+			<taglib-uri>http://big.faceless.org/products/graph</taglib-uri>  
+			<taglib-location>/WEB-INF/lib/bfograph.jar</taglib-location>
+		</taglib> 
+	</jsp-config>
 </web-app>
