@@ -34,6 +34,8 @@ public class PokkareGraphDrawer {
 
 	private int multiplier = 1;
 	private int maxPoints = 0;
+	
+	private String fileDestination;
 
 	EventService event = new EventService();
 	PointsService points = new PointsService();
@@ -222,19 +224,27 @@ public class PokkareGraphDrawer {
 	public static void main(String[] args)
 	{
 
-		try
-		{
-			FileOutputStream f = new FileOutputStream("pokkaregraph.jpg");
-			PokkareGraphDrawer drawer = new PokkareGraphDrawer();
-			drawer.setMultiplier(2);
-			drawer.createImage(f);
-			f.close(); 
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
+//		try
+//		{
+//			FileOutputStream f = new FileOutputStream("pokkaregraph.jpg");
+//			PokkareGraphDrawer drawer = new PokkareGraphDrawer(fileDestination);
+//			drawer.setMultiplier(2);
+//			drawer.createImage(f);
+//			f.close(); 
+//		}
+//		catch (Exception e)
+//		{
+//			e.printStackTrace();
+//		}
 	}
+	
+
+	/**
+     *  Constructor for pokkare graph drawer, set file destination
+     */
+    public PokkareGraphDrawer(String WEBAPP_ROOT) {
+            this.fileDestination = WEBAPP_ROOT;
+    }
 
 
 	public void setMaxPoints(int maxPoints) {
