@@ -6,16 +6,17 @@
 <div class="viewranking">
 Ranking
 </div>
-
-
-<bfg:axesgraph width="300" height="200">
-  <bfg:barseries name="Test" barwidth="0.8">
-	  <s:iterator value="scores">
-		<bfg:data x="${key}" y="${value}" />
-	</s:iterator>  
-  </bfg:barseries>
-</bfg:axesgraph>
-
+<br /><br />
+<center>
+	<bfg:axesgraph width="400" height="300">
+		<bfg:barseries name="Test" barwidth="0.8">
+			<s:iterator value="scores">
+				<bfg:data x="${key}" y="${value}" />
+			</s:iterator>
+		</bfg:barseries>
+	</bfg:axesgraph>
+</center>
+<br /><br />
 <!--  
 
 <img src="../pokkaregraph.jpg" />
