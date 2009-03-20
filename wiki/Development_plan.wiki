@@ -18,6 +18,7 @@ Sprint 2 scope and issues defined in issuelist
  * [http://code.google.com/p/agileet/issues/detail?id=8 Critical bug]
  * [http://code.google.com/p/agileet/issues/detail?id=4 Theme task]
  * [http://code.google.com/p/agileet/issues/detail?id=10 Continous integration]
+ * [http://code.google.com/p/agileet/issues/detail?id=11 Look'n'feel]
 
 ----
 = Sprint 2 (20. - 27.03.) =
