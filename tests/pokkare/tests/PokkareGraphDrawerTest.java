@@ -1,9 +1,5 @@
 package pokkare.tests;
-import java.io.File;
-import java.io.FileOutputStream;
-
 import junit.framework.TestCase;
-
 import pokkare.service.PokkareGraphDrawer;
 
 public class PokkareGraphDrawerTest extends TestCase {
@@ -11,7 +7,8 @@ public class PokkareGraphDrawerTest extends TestCase {
 	PokkareGraphDrawer graph;
 	
 	protected void setUp() throws Exception {
-		graph = new PokkareGraphDrawer();
+		// TODO: correct path
+		graph = new PokkareGraphDrawer("");
 	}
 
 	protected void tearDown() throws Exception {

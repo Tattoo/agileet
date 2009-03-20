@@ -1,7 +1,8 @@
 package pokkare.tests;
+import java.util.ArrayList;
+
 import junit.framework.TestCase;
 import pokkare.action.ViewRankingAction;
-import java.util.ArrayList;
 
 public class ViewRankingActionTest extends TestCase {
 	ViewRankingAction view;

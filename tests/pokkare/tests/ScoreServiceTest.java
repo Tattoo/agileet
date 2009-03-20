@@ -1,7 +1,8 @@
 package pokkare.tests;
+import java.util.HashMap;
+
 import junit.framework.TestCase;
 import pokkare.service.ScoreService;
-import java.util.HashMap;
 
 public class ScoreServiceTest extends TestCase {
 	private ScoreService ss;

@@ -1,9 +1,10 @@
 package pokkare.tests;
 
+import java.util.Date;
+import java.util.HashMap;
+
 import junit.framework.TestCase;
 import pokkare.action.AddEventAction;
-import java.util.HashMap;
-import java.util.Date;
 
 public class AddEventActionTest extends TestCase {
 

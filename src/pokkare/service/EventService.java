@@ -1,15 +1,18 @@
 package pokkare.service;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.ArrayList;
 import java.util.List;
-import pokkare.service.HibernateUtil;
-import pokkare.model.*;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
+import pokkare.model.Games;
+import pokkare.model.Player;
+import pokkare.model.Points;
+import pokkare.model.Score;
 
 public class EventService {
 	

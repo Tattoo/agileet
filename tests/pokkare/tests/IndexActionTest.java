@@ -1,9 +1,8 @@
 package pokkare.tests;
-import junit.framework.TestCase;
-
-import pokkare.action.IndexAction;
-
 import java.util.ArrayList;
+
+import junit.framework.TestCase;
+import pokkare.action.IndexAction;
 
 public class IndexActionTest extends TestCase {
 

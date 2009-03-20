@@ -1,6 +1,5 @@
 package pokkare.tests;
 import junit.framework.TestCase;
-
 import pokkare.model.Player;
 
 public class PlayerTest extends TestCase {

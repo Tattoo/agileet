@@ -1,16 +1,16 @@
 package pokkare.tests;
-import junit.framework.TestCase;
-
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import junit.framework.TestCase;
 
 import org.hibernate.Session;
 
 import pokkare.action.AddRankingAction;
 import pokkare.model.Player;
 import pokkare.model.Score;
-import pokkare.service.HibernateUtil;
 import pokkare.service.EventService;
+import pokkare.service.HibernateUtil;
 
 public class AddRankingActionTest extends TestCase {
 

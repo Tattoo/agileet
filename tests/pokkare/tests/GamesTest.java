@@ -1,9 +1,8 @@
 package pokkare.tests;
-import junit.framework.TestCase;
-
-import pokkare.model.Games;
-
 import java.util.Date;
+
+import junit.framework.TestCase;
+import pokkare.model.Games;
 public class GamesTest extends TestCase {
 	Games testgames;
 	protected void setUp() throws Exception {

@@ -4,8 +4,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import pokkare.model.Player;
 import pokkare.model.Games;
+import pokkare.model.Player;
 import pokkare.service.EventService;
 
 public class AddEventAction {
