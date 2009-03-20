@@ -1,15 +1,18 @@
 package pokkare.tests;
-import junit.framework.TestCase;
-
-import pokkare.service.EventService;
-import pokkare.service.HibernateUtil;
-import pokkare.model.*;
-
 import java.util.Date;
 import java.util.List;
 
-import org.hibernate.Session;
+import junit.framework.TestCase;
+
 import org.hibernate.Query;
+import org.hibernate.Session;
+
+import pokkare.model.Games;
+import pokkare.model.Player;
+import pokkare.model.Points;
+import pokkare.model.Score;
+import pokkare.service.EventService;
+import pokkare.service.HibernateUtil;
 
 public class EventServiceTest extends TestCase {
 

@@ -1,8 +1,8 @@
 package pokkare.tests;
 
-import org.hibernate.Session;
-
 import junit.framework.TestCase;
+
+import org.hibernate.Session;
 
 import pokkare.model.Points;
 import pokkare.service.HibernateUtil;

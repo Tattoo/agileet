@@ -6,8 +6,8 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.ParameterAware;
 
-import pokkare.model.Player;
 import pokkare.model.Games;
+import pokkare.model.Player;
 import pokkare.model.Score;
 import pokkare.service.EventService;
 
