@@ -91,10 +91,10 @@ public class ViewRankingAction  {
 	
 	public void drawPokkareGraph(int maxPoints) {
 		
-		try {
-		       FileOutputStream f = new FileOutputStream("pokkaregraph.jpg");
-		       
+		try {  
 		       String WEBAPP_ROOT = org.apache.struts2.ServletActionContext.getServletContext().getRealPath("/");
+		     
+		       FileOutputStream f = new FileOutputStream(WEBAPP_ROOT + "/pokkaregraph.jpg");
 		       
 		       System.out.println("TESTI!!: : " + WEBAPP_ROOT);
 		       
