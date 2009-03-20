@@ -9,7 +9,15 @@
  * QualityInAgileSummary
 
 ===Sprint produces: First version of program===
- * First version of program is already functional. There doesen't need to be much functionality, though.
+ * First version of program is already functional. There doesn't need to be much functionality, though.
+ * Sprint was accepted.
+
+=== Sprint 2 kick-off ===
+Sprint 2 scope and issues defined in issuelist
+
+ * [http://code.google.com/p/agileet/issues/detail?id=8 Critical bug]
+ * [http://code.google.com/p/agileet/issues/detail?id=4 Theme task]
+ * [http://code.google.com/p/agileet/issues/detail?id=10 Continous integration]
 
 ----
 = Sprint 2 (20. - 27.03.) =
