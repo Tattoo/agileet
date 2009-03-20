@@ -3,5 +3,6 @@
  * [Quality_assurance Quality assurance plan]
  * [Process]
  * [About]
+ * [http://code.google.com/p/agileet/issues/list?can=1&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Summary&sort=&mode=grid&y=Milestone&x=Priority&cells=tiles&nobtn=Update Burndown Chart]
 
  
