@@ -1,40 +1,44 @@
 #summary Quality assurance
 #sidebar TableOfContents
 = Introduction =
-Quality assurance shall be achieved in the Pokkare project by means of direct and undirect procedures. Direct procedures include testing, coding standards and peer reviews etc. Undirect procedures concern the software development process.
+Quality assurance shall be achieved in the Pokkare project by means of several direct and undirect procedures. Direct procedures include testing, coding standards and peer reviews etc. Undirect procedures concern the software development process.
 
 = Direct procedures =
- - Testing
+ == Testing ==
+The target is to have comprehensive JUnit test cases of the system, covering at least 90% of the code. Sprint acceptance testing is done at the weekly peer reviews. Code is not presently integrated continuously. Integration shall be done as often as possible.
 
- - Coding standards
+ == Coding standards ==
+Common coding standards shall be used throughout the project. Standard Java codestyle shall be used as per Eclipse IDE standard behaviour. Code shall be commented where functionality is not clear or it is otherwise needed.
 
- - Peer reviews
+ == Peer reviews ==
+Functionality shall be reviewed by the course practice group weekly. Added and/or changed functionality shall be reviewed internally by the team before issues (be it tasks or fixes) are accepted and closed. 
 
  - deployment 
 
- - unit testing 
+ == Issue tracking ==
+Issues shall be tracked using the code.google.com issue tracker. 
 
- - integration testing 
+ == Documentation ==
+Documentation of Pokkare shall be done according to agile conventions: whenever and only whenever it is needed. Documentation exists primarily for the benefit of the development team.
 
- - acceptance testing(!) 
-
- - issue tracking 
-
- - documentation 
-
- - project metrics tracking
-
+ == Project metrics tracking ==
+Primary metrics in the project is finished functionality and open issues. Measurements according to these metrics shall be executed per sprint.
 
 = Undirect procedures =
+A modified (lightweight) XP process shall be used to ensure quality within the Scrum process.
 
  - Early delivery of a partially functioning system. This has been shown to correlate with quality 
 
- - Subsequent releases should be frequent
+ - Releases are frequent
 
- - Resources
+ - Adequate resources are provided
 
  - Meeting deadlines
 
  - Self organized team
 
  - Communication
+
+ - Priorization of functionality
+
+ - Simple design
