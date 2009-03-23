@@ -1,7 +1,7 @@
 #summary Quality assurance
 #sidebar TableOfContents
 = Introduction =
-Quality assurance shall be achieved in the Pokkare project by means of several direct and undirect procedures. Direct procedures include testing, coding standards and peer reviews etc. Undirect procedures concern the software development process. Some of the quality aspects of XP, modified to fit the special circumstances of this project, are chosen to complement Scrum in order to achieve better quality.
+Quality assurance shall be achieved in the Pokkare project by means of several direct and undirect procedures. Direct procedures include testing, coding standards and peer reviews etc. Undirect procedures concern the software development process. Some of the quality aspects of eXtreme Programming (XP), modified to fit the special circumstances of this project, are chosen to complement Scrum in order to achieve better quality.
 
 = Direct procedures =
  == Unit testing ==
@@ -30,17 +30,25 @@ Primary metrics in the project is finished functionality and open issues. Measur
 = Undirect procedures =
 A modified XP process shall be used to ensure quality within the Scrum process. The following remarks describe the quality driven process.
 
- - Early delivery of a partially functioning system. This has been shown to correlate with quality.
+ == Releases ==
+Early delivery of a partially functioning system. This has been shown to correlate with quality.
 
- - Subsequent releases are frequent, thus steering the project is possible early. A release is made every week for the practice group meeting.
+Subsequent releases are frequent, thus steering the project is possible early. A release is made every week for the practice group meeting.
 
- - Real customer (and a real product). The product is envisioned by a member of the development team. The product is intended for his use, thus making sure the resulting program is what it was supposed to be. The peer group will be responsible for prioritizing the functionality for each release/sprint according to the project owner's suggestions.
+ == Customer == 
+The project has a "real customer" (and the project is a real product). The real customer belongs to the development team. The product is envisioned by the customer, who's a member of the development team. The product was originally intended for his use, thus making sure the resulting program is what it was supposed to be. The peer group will be responsible for prioritizing the functionality for each release/sprint according to the project owner's suggestions.
 
- - User stories of additional functionality shall be used and documented in the code.google.com wiki as issues (tasks) and later included in the requirement specification.
+ == User stories ==
+User stories of additional functionality shall be used and documented in the code.google.com wiki as issues (tasks) and later included in the requirement specification. Releases shall be planned according to these user stories. The stories shall be prioritized and estimated. The team's velocity, or how much the team accomplished, is measured after each sprint. This aids in estimating future stories.
 
- - Metaphors are used to help the developers and peers at the practice group to grasp the system functionality. Main metaphors include the MVC model and user stories documented in the requirement specification.
+ == Metaphors == 
+Metaphors are used to help the developers and peers at the practice group to grasp the system functionality. Main metaphors include the MVC model and user stories documented in the requirement specification.
 
- - Adequate resources are provided. Adequate resources in the scope of the project are provided by the university. Team members are required to provide their own development related equipment.
+ == Resources == 
+Adequate resources need to be provided. Adequate resources in the scope of the project are provided by the university. Team members are required to provide their own development related equipment.
+
+ - Release planning is done 
+http://www.extremeprogramming.org/map/images/iteration.gif
 
  - Meeting deadlines
 
