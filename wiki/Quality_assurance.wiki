@@ -56,7 +56,8 @@ Metaphors are used to help the developers and peers at the practice group to gra
 Adequate resources need to be provided. Adequate resources in the scope of the project are provided by the university. Team members are required to provide their own development related equipment.
 
  == Release planning == 
-Release planning is done according to story priorities, customers wishes, team's velocity and program's state. Release planning is done at the weekly practice group meetings.
+Release planning is done according to story priorities, customers wishes, team's velocity and program's state. Release planning is done at the weekly practice group meetings. Team's velocity, user stories' estimates, their priorization, customer and peer group wishes shall be taken into account when planning the next sprint's task list.
+
 
 http://www.extremeprogramming.org/map/images/iteration.gif
 
