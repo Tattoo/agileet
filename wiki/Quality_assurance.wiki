@@ -4,11 +4,14 @@
 Quality assurance shall be achieved in the Pokkare project by means of several direct and undirect procedures. Direct procedures include testing, coding standards and peer reviews etc. Undirect procedures concern the software development process. Some of the quality aspects of XP, modified to fit the special circumstances of this project, are chosen to complement Scrum in order to achieve better quality.
 
 = Direct procedures =
- == Testing ==
+ == Unit testing ==
 The target is to have comprehensive JUnit test cases of the system, covering at least 90% of the code. Sprint acceptance testing is done at the weekly peer reviews. Code is not presently integrated continuously. Integration shall be done as often as possible.
 
+ == Functional testing ==
+A release candidate is compiled weekly before the practice meeting. The tester shall be responsible for testing the functionality of the release candidate as well as run the JUnit tests. If the release candidate is found defunct, it is not accepted and shall be fixed before the release can be made. Functional tests are written by the development team according to the requirement specification.
+
  == Coding standards ==
-Common coding standards shall be used throughout the project. Standard Java codestyle shall be used as per Eclipse IDE standard behaviour. Code shall be commented where functionality is not clear or it is otherwise needed. Refactoring of the code is done as per XP guidelines: when refactoring helps adding of new functionality or if after implementing the functionality an easier way to accomplish it emerges. The decision to refactor code is not based on the programmer's speculation, instead it's based on reacting to the state of the system.
+Common coding standards shall be used throughout the project. Standard Java codestyle shall be used as per Eclipse IDE standard behaviour. Code shall be commented where functionality is not clear or it is otherwise needed. Refactoring of the code is done as per XP guidelines: when refactoring helps adding of new functionality or if after implementing the functionality an easier way to accomplish it emerges. The decision to refactor code is not based on the programmer's speculation, instead it's based on reacting to the state of the system. Developers are responsible for unit testing their own code, writing and running JUnit tests and documenting functional tests.
 
  == Peer reviews ==
 Functionality shall be reviewed by the course practice group weekly. Added and/or changed functionality shall be reviewed internally by the team before issues (be it tasks or fixes) are accepted and closed. 
