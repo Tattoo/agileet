@@ -1,13 +1,40 @@
 #summary Quality assurance
 #sidebar TableOfContents
 = Introduction =
+Quality assurance shall be achieved in the Pokkare project by means of direct and undirect procedures. Direct procedures include testing, coding standards and peer reviews etc. Undirect procedures concern the software development process.
 
-Add your content here.
+= Direct procedures =
+ - Testing
+
+ - Coding standards
+
+ - Peer reviews
+
+ - deployment 
+
+ - unit testing 
+
+ - integration testing 
+
+ - acceptance testing(!) 
+
+ - issue tracking 
+
+ - documentation 
+
+ - project metrics tracking
 
 
-= Details =
+= Undirect procedures =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+ - Early delivery of a partially functioning system. This has been shown to correlate with quality 
+
+ - Subsequent releases should be frequent
+
+ - Resources
+
+ - Meeting deadlines
+
+ - Self organized team
+
+ - Communication
