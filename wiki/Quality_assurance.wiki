@@ -33,7 +33,7 @@ Team's velocity is used as the secondary metrics. Velocity is calculated by addi
 
 Other metrics include functional test results, number of faults and test cases added as result to spotting faults.
 
-= Undirect procedures =
+= Indirect procedures =
 A modified XP process shall be used to ensure quality within the Scrum process. The following remarks describe the quality driven process.
 
  == Releases ==
