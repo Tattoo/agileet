@@ -11,12 +11,14 @@ The target is to have comprehensive JUnit test cases of the system, covering at 
 A release candidate is compiled weekly before the practice meeting. The tester shall be responsible for testing the functionality of the release candidate as well as run the JUnit tests. If the release candidate is found defunct, it is not accepted and shall be fixed before the release can be made. Functional tests are written by the development team according to the requirement specification.
 
  == Coding standards ==
-Common coding standards shall be used throughout the project. Standard Java codestyle shall be used as per Eclipse IDE standard behaviour. Code shall be commented where functionality is not clear or it is otherwise needed. Refactoring of the code is done as per XP guidelines: when refactoring helps adding of new functionality or if after implementing the functionality an easier way to accomplish it emerges. The decision to refactor code is not based on the programmer's speculation, instead it's based on reacting to the state of the system. Developers are responsible for unit testing their own code, writing and running JUnit tests and documenting functional tests.
+Common coding standards shall be used throughout the project. Standard Java codestyle and best practices shall be used as per Eclipse IDE standard behaviour. Code shall be commented where functionality is not clear or it is otherwise needed. 
+
+Refactoring of the code is done as per XP guidelines: when refactoring helps adding of new functionality or if after implementing the functionality an easier way to accomplish it emerges. The decision to refactor code is not based on the programmer's speculation, rather on reacting to the state of the system. 
+
+Developers are responsible for unit testing their own code, writing and running JUnit tests and documenting functional tests. The code is collectively owned.
 
  == Peer reviews ==
 Functionality shall be reviewed by the course practice group weekly. Added and/or changed functionality shall be reviewed internally by the team before issues (be it tasks or fixes) are accepted and closed. 
-
- - deployment 
 
  == Issue tracking ==
 Issues shall be tracked using the code.google.com issue tracker. 
@@ -27,13 +29,19 @@ Documentation of Pokkare shall be done according to agile conventions: whenever 
  == Project metrics tracking ==
 Primary metrics in the project is finished functionality and open issues. Measurements according to these metrics shall be executed per sprint.
 
+Team's velocity is used as the secondary metrics. Velocity is calculated by adding up the work hour estimates for each task accomplished in a sprint. Early velocity figures are educated guesses.
+
+Other metrics include functional test results, number of faults and test cases added as result to spotting faults.
+
 = Undirect procedures =
 A modified XP process shall be used to ensure quality within the Scrum process. The following remarks describe the quality driven process.
 
  == Releases ==
-Early delivery of a partially functioning system. This has been shown to correlate with quality.
+Early delivery of a partially functioning system has been accomplished. This has been shown to correlate with quality.
 
 Subsequent releases are frequent, thus steering the project is possible early. A release is made every week for the practice group meeting.
+
+A release planning event is held at the practice group weekly meeting.
 
  == Customer == 
 The project has a "real customer" (and the project is a real product). The real customer belongs to the development team. The product is envisioned by the customer, who's a member of the development team. The product was originally intended for his use, thus making sure the resulting program is what it was supposed to be. The peer group will be responsible for prioritizing the functionality for each release/sprint according to the project owner's suggestions.
@@ -47,15 +55,20 @@ Metaphors are used to help the developers and peers at the practice group to gra
  == Resources == 
 Adequate resources need to be provided. Adequate resources in the scope of the project are provided by the university. Team members are required to provide their own development related equipment.
 
- - Release planning is done 
+ == Release planning == 
+Release planning is done according to story priorities, customers wishes, team's velocity and program's state. Release planning is done at the weekly practice group meetings.
+
 http://www.extremeprogramming.org/map/images/iteration.gif
 
- - Meeting deadlines
+ == Spikes ==
+Spikes can be used where applicable. Spikes are very simple discardable sample programs which demonstrate the use of a functionality. They are useful for exploring of potential solutions to technical or design problems.
+
+ == No overtime ==
+The team shall do no overtime. If all intended functionality in a sprint cannot be accomplished, it is left out of the release. Deadlines shall not be postponed. The peer group and customer chooses what needs to be done according to the missing functionality at the next release planning meeting. It can be put to the next releases' task list, it can be modified or even omitted if not applicable anymore.
+
 
  - Self organized team
 
- - Communication
+ - Communication is essential
 
- - Priorization of functionality
-
- - Simple design
+ - Simple design is practiced
