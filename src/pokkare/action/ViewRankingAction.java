@@ -3,24 +3,29 @@ package pokkare.action;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+import pokkare.model.Games;
 import pokkare.model.Player;
 import pokkare.model.Score;
 import pokkare.service.EventService;
 import pokkare.service.PokkareGraphDrawer;
+import pokkare.service.ScoreDataWrapper;
+import pokkare.service.ScoreDataWrapper.ScoreData;
 
 public class ViewRankingAction  {
-	
+
 	private EventService event = new EventService();
 	private ArrayList<String> ranking = new ArrayList<String>();
 	private String size;
 	Integer picSize = 0;
 	HashMap<String, Integer> scores;
-	
+
 	public HashMap<String, Integer> getScores(){
 		return this.scores;
 	}
-	
+
 	public void setScores(HashMap<String, Integer> scores){
 		this.scores = scores;
 	}
@@ -32,45 +37,45 @@ public class ViewRankingAction  {
 	public void setSize(String size) {
 		this.size = size;
 	}
-	
+
 	public ViewRankingAction() {
-		
+
 	}
-	
+
 	public ArrayList<String> getRanking() {
 		return ranking;
 	}
-	
+
 	public void setRanking(ArrayList<String> ranking) {
 		this.ranking = ranking;
 	}
-	
-	
+
+
 	public String execute() {
-	
+
 		ArrayList<Player> playerList = (ArrayList<Player>)event.findPlayers();
 
 		Integer[] scoreTable = new Integer[playerList.size()];
 		String[] nameTable = new String[playerList.size()];
-		
+
 		for (int i = 0; i < playerList.size(); ++i) {
 			Integer playerId = playerList.get(i).getId();
 			String playerName = playerList.get(i).getName();
 			Integer cumulativeScore = 0;
-			
+
 			ArrayList<Score> scores = (ArrayList<Score>)event.findScores(playerId);
-			
+
 			for (int j = 0; j < scores.size(); ++j) {
 				Score score = scores.get(j);
 				Integer rank = score.getRank();
 				cumulativeScore = cumulativeScore + event.findScore(rank);
 			}
-			
+
 			//ranking.put(cumulativeScore, playerName);
 			scoreTable[i] = cumulativeScore;
 			nameTable[i] = playerName;
 		}
-		
+
 		//sorttaa nimet
 		for (int i = 0; i < scoreTable.length; ++i) {
 			for (int j = i + 1; j < scoreTable.length; ++j) {
@@ -84,12 +89,12 @@ public class ViewRankingAction  {
 				}
 			}
 		}
-		
+
 		for (int i = 0; i < scoreTable.length; ++i) {
 			System.out.println(scoreTable[i] + nameTable[i]);
 			ranking.add(nameTable[i] + ": " + scoreTable[i]);
 		}
-		
+
 		int maxPoints = scoreTable[0];
 
 		HashMap<String, Integer> scoresTable = new HashMap<String, Integer>();
@@ -97,42 +102,90 @@ public class ViewRankingAction  {
 			scoresTable.put(nameTable[i], scoreTable[i]);
 		}
 		setScores(scoresTable);
-		
-		
-//		drawPokkareGraph(maxPoints);
-		
+
+
+		drawPokkareGraph(maxPoints);
+
 		return "success";
 
 	}
-	
-	public void drawPokkareGraph(int maxPoints) {
-		
-		try {  
-		       String WEBAPP_ROOT = org.apache.struts2.ServletActionContext.getServletContext().getRealPath("/");
-		     
-		       FileOutputStream f = new FileOutputStream(WEBAPP_ROOT + "/pokkaregraph.jpg");
-		       
-		       System.out.println("TESTI!!: : " + WEBAPP_ROOT);
-		       
-		       PokkareGraphDrawer drawer = new PokkareGraphDrawer(WEBAPP_ROOT);
-		       
-		       if (size != null) {
-		    	   if (size.equals("plus"))
-		    		   drawer.setMultiplier(4);
-		    	   if (size.equals("minus"))
-		    		   drawer.setMultiplier(2);
-		       }
-		       else drawer.setMultiplier(3);
-		       drawer.setMaxPoints(maxPoints);
-		       drawer.createImage(f); 
-		       f.flush();
-		       f.close();
-		}
-		    catch (Exception e) {
-		      e.printStackTrace();
-		    }
-	}
 
-	
-	
+	public void drawPokkareGraph(int maxPoints) {
+
+		try {  
+			String WEBAPP_ROOT = org.apache.struts2.ServletActionContext.getServletContext().getRealPath("/");
+
+			FileOutputStream f = new FileOutputStream(WEBAPP_ROOT + "/pokkaregraph.jpg");
+
+			PokkareGraphDrawer drawer = new PokkareGraphDrawer();
+
+			ScoreDataWrapper dataWrapper = new ScoreDataWrapper();
+			ScoreData scoreData = null;
+
+			//get games and players
+			ArrayList<Games> games = (ArrayList<Games>)event.findGames();
+			ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
+
+			//auxiliary map to aid in keeping score of players' total scores
+			//<player id, player score>
+			Map<Integer, Integer> playerScores = new HashMap<Integer, Integer>();
+
+			Integer maxScore = 0;
+			
+			//loop players
+			for (int i = 0; i < players.size(); ++i) {
+				
+				//get score datas list
+				List<ScoreData> scoreDatas = dataWrapper.getScoreDatas();
+				
+				Player player = players.get(i);
+				
+				//loop games
+				for (int j = 0; j < games.size(); ++j) {
+					Games game = games.get(j);
+					//get scores
+					Integer score = event.findScoreForGameAndPlayer(game.getId(), player.getId());
+					//find and update cumulative score for this player
+					if (playerScores.containsKey(player.getId())) {
+						score = score + playerScores.get(player.getId()).intValue();
+						playerScores.remove(player.getId());
+						playerScores.put(player.getId(), score);
+					}
+					//if none, initialize for this player
+					else {
+						playerScores.put(player.getId(), score);
+					}
+
+					if (score > maxScore) {
+						maxScore = score;
+					}
+					
+					//add new data object
+					scoreData = dataWrapper.new ScoreData(player, game, score.intValue());
+					scoreDatas.add(scoreData);
+				}
+			}
+			
+//			for (int i = 0; i < dataWrapper.getScoreDatas().size(); ++i) {
+//				System.out.println("\nDEBUG!!!!! " + dataWrapper.getScoreDatas().get(i).getGame().getGameDate() + " " + dataWrapper.getScoreDatas().get(i).getPlayer().getName() + dataWrapper.getScoreDatas().get(i).getScore());
+//			}
+
+			drawer.createGraphs(dataWrapper, maxScore, games.size());
+			
+			if (size != null) {
+				if (size.equals("plus"))
+					drawer.setMultiplier(4);
+				if (size.equals("minus"))
+					drawer.setMultiplier(2);
+			}
+			else drawer.setMultiplier(3);
+			drawer.setMaxPoints(maxPoints);
+			drawer.createImage(f); 
+			f.flush();
+			f.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
