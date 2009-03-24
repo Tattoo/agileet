@@ -19,6 +19,7 @@ package pokkare.service;
  */
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.List;
 
 /**
  *  Image producers implement this interface
@@ -26,13 +27,20 @@ import java.io.OutputStream;
  *  the Stream where the image should be output
  *
  */
-public interface ImageProducer
-{
+public interface ImageProducer {
   /**
-   *  Request the producer create an image
+   *  Output the image to the parameterized output stream. The stream is closed and flushed after writing.
    *
    *  @param stream stream to write image into
    *  @return image type
    */
   public String createImage(OutputStream stream) throws IOException;
+  
+  /*
+   *  Create graphs for specified players according to the scores in the wrapper class.
+   *  @param ScoreDataWrapper Wrapper class of all the data objects that need to be output. 
+   *  @param maxScore The biggest score of all the players. This is needed in order to determine image height.
+   *  @param numberOfGame The number of games in the output. This is needed in order to determine image width.
+   */
+  public boolean createGraphs(ScoreDataWrapper scoreDatas, int maxScore, int numberOfGames);
 }

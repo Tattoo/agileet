@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 import java.awt.Color;
@@ -19,7 +20,7 @@ import pokkare.model.Player;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder; 
 
-public class PokkareGraphDrawer {
+public class PokkareGraphDrawer implements ImageProducer {
 
 	private int imageWidth = 75;
 	private int imageHeight = 150;
@@ -32,15 +33,34 @@ public class PokkareGraphDrawer {
 	private Line2D.Double horizontalAxis;
 	private Graphics2D graphics;
 
-	private int multiplier = 1;
+	private int multiplier = 3;
 	private int maxPoints = 0;
-	
-	private String fileDestination;
 
 	EventService event = new EventService();
 	PointsService points = new PointsService();
+	BufferedImage theImage;
 
 	public String createImage(OutputStream stream) throws IOException {
+		JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(stream);
+		if(encoder == null){
+			throw new IllegalStateException("JPEGImageEncoder encoder was null in PokkareGraphDrawer.createImage()");
+		}	
+		ScoreDataWrapper scoreDatas = new ScoreDataWrapper();
+		int maxScore = 0; 
+		int numberOfGames = 0;
+
+		try {
+			encoder.encode(theImage);
+		} 
+		catch (NullPointerException npe) {
+			System.out.println("Image null.");
+		}
+
+		return "image/jpg";
+	}
+
+	public boolean createGraphs(ScoreDataWrapper scoreDatas, int maxScore, int numberOfGames) {
+
 		ArrayList<Games> games = (ArrayList<Games>)event.findGames();
 		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
 
@@ -48,22 +68,23 @@ public class PokkareGraphDrawer {
 
 		System.out.println("horizontalNotches: " + horizontalNotches);
 
+		//round max points up to the nearest 1 notch (length 10 each)
+		int roundedMax = maxScore / 10;
+		roundedMax = maxScore + 10;
+
+		maxPoints = roundedMax;
+		
 		imageWidth = imageWidth * horizontalNotches * multiplier;
 		imageHeight = imageHeight * multiplier;
 		verticalInset = verticalInset * multiplier;
 		horizontalInset = horizontalInset * multiplier;
 		notchLength = notchLength * multiplier;
 
-		JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(stream);
-		if(encoder == null){
-			throw new IllegalStateException("JPEGImageEncoder encoder was null in PokkareGraphDrawer.createImage()");
-		}
-		
 		BufferedImage bi = new BufferedImage(imageWidth, imageHeight, BufferedImage.TYPE_BYTE_INDEXED);
 		if (bi == null){
 			throw new IllegalStateException("BufferedImage bi was null in PokkareGraphDrawer.createImage()");
 		}
-		
+
 		graphics = bi.createGraphics();
 		graphics.setColor(Color.white);
 		graphics.fillRect(0, 0, bi.getWidth(), bi.getHeight());
@@ -213,12 +234,10 @@ public class PokkareGraphDrawer {
 
 		}
 
+		setTheImage(bi);
+		return true;
 
 
-
-		encoder.encode(bi);
-
-		return "image/jpg";
 	}
 
 	public static void main(String[] args)
@@ -226,26 +245,17 @@ public class PokkareGraphDrawer {
 
 //		try
 //		{
-//			FileOutputStream f = new FileOutputStream("pokkaregraph.jpg");
-//			PokkareGraphDrawer drawer = new PokkareGraphDrawer(fileDestination);
-//			drawer.setMultiplier(2);
-//			drawer.createImage(f);
-//			f.close(); 
+//		FileOutputStream f = new FileOutputStream("pokkaregraph.jpg");
+//		PokkareGraphDrawer drawer = new PokkareGraphDrawer(fileDestination);
+//		drawer.setMultiplier(2);
+//		drawer.createImage(f);
+//		f.close(); 
 //		}
 //		catch (Exception e)
 //		{
-//			e.printStackTrace();
+//		e.printStackTrace();
 //		}
 	}
-	
-
-	/**
-     *  Constructor for pokkare graph drawer, set file destination
-     */
-    public PokkareGraphDrawer(String WEBAPP_ROOT) {
-            this.fileDestination = WEBAPP_ROOT;
-    }
-
 
 	public void setMaxPoints(int maxPoints) {
 		this.maxPoints = maxPoints;
@@ -262,4 +272,14 @@ public class PokkareGraphDrawer {
 	public int getMultiplier(){
 		return this.multiplier;
 	}
+
+	public BufferedImage getTheImage() {
+		return theImage;
+	}
+
+	public void setTheImage(BufferedImage theImage) {
+		this.theImage = theImage;
+	}
+
+
 }
