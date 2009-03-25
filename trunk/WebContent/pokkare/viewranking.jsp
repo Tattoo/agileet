@@ -5,6 +5,7 @@
 
 <h1>Ranking</h1>
 <br /><br />
+<!-- 
 <center>
 	<bfg:axesgraph width="400" height="300">
 		<bfg:barseries name="Test" barwidth="0.8">
@@ -15,28 +16,8 @@
 	</bfg:axesgraph>
 </center>
 <br /><br />
-
-<img src="../pokkaregraph.jpg" />
-
-<!--  
-
- 
-<table border="0" cellpadding = 10>
-<tr>
-
-Zoom:
-
-<td><a href='<s:url value="viewranking.action?size=minus" />'> - </a></td>
-<td><a href='<s:url value="viewranking.action" />'> 0 </a></td>
-<td><a href='<s:url value="viewranking.action?size=plus" />'> + </a></td>
-
-<td>
-
-</td>
-</tr>
-</table>
-<br />
-
--->
- 
+ -->
+<center> 
+	<img src="../pokkaregraph.jpg" />
+</center>
 <jsp:include page="include/footer.jsp"></jsp:include>

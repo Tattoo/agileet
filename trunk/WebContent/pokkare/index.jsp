@@ -4,7 +4,7 @@
 <%@ page import="java.util.HashMap" %>
 
 
-<h1>Ranking:</h1>
+<h1>Ranking</h1>
 <br />
 
 <s:iterator value="ranking">
