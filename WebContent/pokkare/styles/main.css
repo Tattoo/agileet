@@ -1,0 +1,90 @@
+body {
+	font: normal .8em georgia;
+}
+
+h1 {
+	font: bold 1.0em georgia;
+	text-align: center;
+/*	background-color: #00CCFF; */
+	background-color: rgb(204,204,204);
+	color: rgb(133,66,66);
+}
+
+#index {
+/*	background-color: #FFFFCC; */
+	background-color: #cccccc;
+	margin: 0em 3em 0em 3em;
+	padding: 0em;
+
+}
+
+#content {
+/* 
+	needed because jquery.corners-plugin breaks if #index has padding
+*/
+	padding: 0em 2em 2em 2em;
+}
+
+#menu {
+	font: normal 1.0em georgia;
+	background-color: rgb(133,66,66);
+	list-style: none;
+	padding: 5px;
+	margin: 5px auto 1em auto;
+	width: 90%;
+}
+
+#menu li {
+	display: inline;
+	margin-right: 3em; 
+}
+
+#menu li a {
+	color: rgb(204,204,204);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#addevent_form label {
+	float: left;
+	width: 5em;
+	line-height: 1.8em;
+}
+#addevent_form input, #addevent_form textarea {
+	margin-left: 1em;
+	width: 13em;
+}
+
+.clear {
+	clear: both;
+}
+
+div.text {
+	text-color: #660000;
+}
+
+div.errors {
+	text-color: #660000;
+}
+
+a:link { 
+	color: #660000;
+}
+	
+a:visited { 
+	color: #660000;
+}
+
+#ui-datepicker-div {
+	background-color: rgb(204,204,204);
+	border: 1px dotted rgb(133,66,66);
+}
+
+a.ui-datepicker-next, a.ui-datepicker-prev {
+	cursor: pointer; 
+}
+
+.radioButtons {
+	float: left;
+	margin: 0em 1em 0em 1em; 
+}

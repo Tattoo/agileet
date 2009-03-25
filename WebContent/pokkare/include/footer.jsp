@@ -1,2 +1,6 @@
-<a href="index.action"> &lt;-- index </a>
+<!-- these fail on purpose -->
+			</div> <!-- end of #content -->
+		</div> <!-- end of #index -->
+	</body>
+</html>
 
