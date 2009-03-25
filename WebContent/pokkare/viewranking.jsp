@@ -3,9 +3,7 @@
 <%@ taglib uri="http://big.faceless.org/products/graph" prefix="bfg" %>
 <%@ page import="pokkare.service.EventService,pokkare.model.*,pokkare.action.ViewRankingAction,java.util.List" %>
 
-<div class="viewranking">
-Ranking
-</div>
+<h1>Ranking</h1>
 <br /><br />
 <center>
 	<bfg:axesgraph width="400" height="300">
@@ -17,10 +15,10 @@ Ranking
 	</bfg:axesgraph>
 </center>
 <br /><br />
-<!--  
 
 <img src="../pokkaregraph.jpg" />
 
+<!--  
 
  
 <table border="0" cellpadding = 10>
