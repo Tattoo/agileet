@@ -77,7 +77,6 @@ a:visited {
 
 #ui-datepicker-div {
 	background-color: rgb(204,204,204);
-	border: 1px dotted rgb(133,66,66);
 }
 
 a.ui-datepicker-next, a.ui-datepicker-prev {
