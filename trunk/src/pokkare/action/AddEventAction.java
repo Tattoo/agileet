@@ -65,7 +65,12 @@ public class AddEventAction {
 	
 	public String execute() {
 		
+		System.out.println("time: "+time);
+		
 		if (time == null) return "success";
+		
+		System.out.println(desc);
+		System.out.println(host);
 		
 		game = new Games();
 		game.setDescription(desc);

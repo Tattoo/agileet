@@ -18,7 +18,16 @@ public class AddRankingAction implements ParameterAware {
 	private static Integer chosenGame = -1;
 	private ArrayList<Player> playerList = new ArrayList<Player>();
 	private Map parameters;
+	private Integer playerListSize;
 
+	public Integer getPlayerListSize(){
+		return this.playerListSize;
+	}
+	
+	public void setPlayerListSize(Integer playerListSize){
+		this.playerListSize = playerListSize;
+	}
+	
 	public Map getParameters() {
 		return parameters;
 	}
@@ -58,7 +67,7 @@ public class AddRankingAction implements ParameterAware {
 
 	public String execute() {
 		playerList = (ArrayList<Player>)event.findPlayers();
-
+		setPlayerListSize(playerList.size());
 		if (chosenGame == null || chosenGame < 0) {
 
 			ArrayList<Games> a = (ArrayList<Games>)event.findGames();
@@ -66,7 +75,6 @@ public class AddRankingAction implements ParameterAware {
 			for (int i = 0; i < a.size(); ++i) {
 				gamesMap.put(a.get(i).getId(), a.get(i).getGameDate() + " nro: " + a.get(i).getGameNumber());
 			}
-			System.out.println("success");
 			return "success";
 		}
 
@@ -102,7 +110,6 @@ public class AddRankingAction implements ParameterAware {
 
 
 		//System.out.println(parameters.size() + " llss " + ((String[])parameters.get("Jones"))[0]);
-		System.out.println("index");
 		chosenGame = -1;
 		return "index";
 

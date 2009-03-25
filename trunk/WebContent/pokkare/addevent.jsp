@@ -3,17 +3,25 @@
 <%@ page import="pokkare.service.EventService,pokkare.model.*,java.util.List" %>
 
 
-<div class="addevent">
-Lis‰‰ peli
-</div>
+<h1>Uusi peli</h1>
 
-<s:form name="formi" method="POST">
-	<s:head theme="ajax" /> <!% mit‰ t‰m‰ edes tekee? datetimepicker ei toimi ilman... %>
-	<s:textarea name="desc" label="kuvaus" />
-	<s:datetimepicker name="time" label="aika" value="today" />
-	<s:radio name="host" list="hosts" label="is‰nt‰"/>
-	<s:submit />
-</s:form>
+<form name="formi" id="addevent_form" method="POST" action="/agileet/pokkare/addevent.action">
+	<label for="desc">kuvaus:</label>
+	<textarea name="desc" style="width: 11.4em;"></textarea> <!-- manual fix for the width needed-->
+	<br class="clear" />
+	
+	<label for="time">aika:</label>
+	<input type="text" name="time" id="time" value="" />
+	<br class="clear" />
+	
+	<label for="hosts">is‰nt‰:</label>
+	<s:iterator value="hosts">
+		<input type="radio" name="host" value="${key}" />${value} 
+	</s:iterator>
+	<br class="clear" />
+	
+	<input type="submit" value="Submit"/>
+</form>
 
 
 
