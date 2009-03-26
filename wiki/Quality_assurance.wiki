@@ -36,7 +36,11 @@ Issues shall be tracked using the code.google.com issue tracker. Issue workflow 
 All tasks need to have:
  * Unit tests that pass (if applicable)
  * Unit tests attached as part of the test suite which passes (if applicable)
- * Proper documentation in proper place. 
+ * Proper documentation in proper place.
+  # Issue tracking
+  # Wiki
+  # Code comments
+  # IRC logs
  * Committed to version control (if applicable). If something that should be in version control byt isn't, it doesen't exist.
  * Issue in issue tracking labeled informatively ("Fixed", "Closed", "!WontFix", etc.) 
  * Issue in issue tracking to be commented how it was resolved by owner.
