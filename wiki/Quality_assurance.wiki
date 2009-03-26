@@ -40,7 +40,7 @@ All tasks need to have:
   # Issue tracking
   # Wiki
   # Code comments
-  # IRC logs
+  # IRC logs/mail messages
  * Committed to version control (if applicable). If something that should be in version control byt isn't, it doesen't exist.
  * Issue in issue tracking labeled informatively ("Fixed", "Closed", "!WontFix", etc.) 
  * Issue in issue tracking to be commented how it was resolved by owner.
