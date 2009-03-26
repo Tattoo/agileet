@@ -47,7 +47,7 @@ All tasks need to have:
  * Committed to version control (if applicable). If something that should be in version control byt isn't, it doesen't exist.
  * Issue in issue tracking labeled informatively ("Fixed", "Closed", "!WontFix", etc.) 
  * Issue in issue tracking to be commented how it was resolved by owner.
- * Issue in issue tracking to be commented by other developer team member to show the task resolution was reviewed
+ * Issue in issue tracking to be labeled _"Verified"_ and commented by other developer team member to show the task resolution was reviewed
  
 
 == Documentation ==
