@@ -8,57 +8,30 @@ import pokkare.model.Player;
 import pokkare.model.Games;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.List;
 /*
  * Also tests ScoreDataWrapper's inner class ScoreData
  * */
 
 public class ScoreDataWrapperTest extends TestCase {
 	private ScoreDataWrapper dw;
-	private ScoreData scoredata1;
-	private ScoreData scoredata2;
+	private Player p;
+	private Games g;
 	protected void setUp() throws Exception {
 		dw = new ScoreDataWrapper();
-		
-		Player p = new Player();
-		p.setId(999999999);
-		p.setName("Foo Foo");
-		
-		Player pl = new Player();
-		pl.setId(999999998);
-		pl.setName("Bar Bar");
-		
-		Games g = new Games();
-		g.setDescription("Test game test");
-		g.setGameDate(new Date(1900,1,1));
-		g.setGameNumber(999999999);
-		g.setGameScoreId(999999999);
-		g.setHost(p.getId());
-		g.setId(999999999);
-		
-		scoredata1 = dw.new ScoreData(p, g, 20);
-		scoredata2 = dw.new ScoreData(pl, g, 10);
-		
-		dw.getScoreDatas().add(scoredata1);
-		dw.getScoreDatas().add(scoredata2);
-		
-		p = null;
-		pl = null;
-		g = null;
 	}
 
 	protected void tearDown() throws Exception {
-		scoredata1 = null;
-		scoredata2 = null;
 		dw = null;
 	}
 	
-	public void testScoreData(){
-		Player p = new Player();
+	private ScoreData getTestScoreData(){
+		p = new Player();
 		p.setId(123456789);
 		String name = "Test Score Data";
 		p.setName(name);
 		
-		Games g = new Games();
+		g = new Games();
 		String desc = "Test Score Data Description";
 		g.setDescription(desc);
 		Date date = new Date(3000,1,1);
@@ -68,8 +41,12 @@ public class ScoreDataWrapperTest extends TestCase {
 		g.setHost(p.getId());
 		g.setId(123456789);
 		
-		ScoreData sd = dw.new ScoreData(p, g, 999);
+		return dw.new ScoreData(p, g, 999);
 		
+	}
+	
+	public void testScoreData(){
+		ScoreData sd = getTestScoreData();
 		assertNotNull(sd);
 		assertEquals(g, sd.getGame());
 		assertEquals(p, sd.getPlayer());
@@ -82,9 +59,14 @@ public class ScoreDataWrapperTest extends TestCase {
 			assertEquals(new ArrayList<ScoreData>(), dw.getScoreDatas()); // expect to throw AssertionFailedError 
 			fail("getScoreDatas() was empty");
 		} catch (AssertionFailedError e){
-			// insert rest of the assertions here instead of out of catch
-			assertEquals(scoredata1, dw.getScoreDatas().get(0));
-			assertEquals(scoredata2, dw.getScoreDatas().get(1));
+			ArrayList<ScoreData> list = new ArrayList<ScoreData>();
+			list.add(getTestScoreData());
+			dw.setScoreDatas(list);
+			assertNotNull(dw.getMaxScore());
+			assertNotNull(dw.getNumberOfGames());
+			assertEquals(list.size(), dw.getScoreDatas().size());
+			assertEquals(list.get(0), dw.getScoreDatas().get(0));
+			
 		}
 	}
 

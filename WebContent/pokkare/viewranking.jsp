@@ -5,9 +5,8 @@
 
 <h1>Ranking</h1>
 <br /><br />
-<!-- 
 <center>
-	<bfg:axesgraph width="400" height="300">
+	<bfg:axesgraph width="400" height="300" alt="Ranking">
 		<bfg:barseries name="Test" barwidth="0.8">
 			<s:iterator value="scores">
 				<bfg:data x="${key}" y="${value}" />
@@ -16,8 +15,9 @@
 	</bfg:axesgraph>
 </center>
 <br /><br />
- -->
+<!-- 
 <center> 
 	<img src="../pokkaregraph.jpg" />
 </center>
+ -->
 <jsp:include page="include/footer.jsp"></jsp:include>

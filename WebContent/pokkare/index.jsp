@@ -1,6 +1,5 @@
 <jsp:include page="include/header.jsp"></jsp:include>
-
-
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page import="java.util.HashMap" %>
 
 
@@ -12,6 +11,7 @@
 </s:iterator>
 
 
+<jsp:include page="include/footer.jsp"></jsp:include>
 
 
 

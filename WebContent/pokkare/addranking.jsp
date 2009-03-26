@@ -8,8 +8,8 @@
 
 ${chosenGame}
 
-<s:form name="formi" validate="true" method="POST">
-	valitse isäntä:<br /><br />
+<s:form name="formi" validate="true" method="post">
+	<label>valitse isäntä:</label><br /><br />
 	
 	<s:iterator value="playerList">
 		<div class="radioButtons">
