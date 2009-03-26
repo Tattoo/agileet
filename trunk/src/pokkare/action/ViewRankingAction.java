@@ -113,6 +113,7 @@ public class ViewRankingAction  {
 	public void drawPokkareGraph(int maxPoints) {
 
 		try {  
+
 			String WEBAPP_ROOT = org.apache.struts2.ServletActionContext.getServletContext().getRealPath("/");
 
 			FileOutputStream f = new FileOutputStream(WEBAPP_ROOT + "/pokkaregraph.jpg");
