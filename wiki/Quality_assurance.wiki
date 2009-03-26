@@ -10,21 +10,21 @@ Quality assurance shall be achieved in the Pokkare project by means of several d
 The target is to have comprehensive JUnit test cases of the system, covering at least 90% of the code. Integration shall be done as often as possible, leaving it to developers discretion.
 
 == Functional testing ==
-A release candidate is compiled weekly before the practice meeting. For the release candidate, testing the functionality as well as running the JUnit tests is mandatory. If the release candidate is found defunct in the meeting, it is not accepted and shall be fixed before the release can be made. Functional tests are written by the development team according to the requirement specification. All test must pass before practice meeting; otherwise release candidate is made from a revision that did passed all of it's tests.
+A release candidate is compiled weekly before the practice meeting. For the release candidate, testing the functionality as well as running the JUnit tests is mandatory. If the release candidate is found defunct in the meeting, it is not accepted and shall be fixed before the release can be made. Functional tests are written by the development team according to the requirement specification. All test must pass before practice meeting; otherwise release candidate is made from a revision that did pass all of it's tests.
 
 == Coding standards ==
-Common coding standards shall be used throughout the project. Standard Java codestyle and best practices shall be used as per Eclipse IDE standard behaviour. Code shall be commented where functionality is not clear or it is otherwise needed. Code should be written to adhere fail-fast principle to improve testing.
+Common coding standards shall be used throughout the project. Standard Java codestyle and best practices shall be used as per Eclipse IDE standard behaviour. Code shall be commented where functionality is not clear or it is otherwise needed. Code should be written to adhere to the fail-fast principle to improve testing.
 
 Refactoring of the code is done as per XP guidelines: when refactoring helps adding of new functionality or if after implementing the functionality an easier way to accomplish it emerges. The decision to refactor code is not based on the programmers speculation, rather on reacting to the state of the system. 
 
-Developers are responsible for unit testing their own code, writing and running JUnit tests and documenting functional tests. The code is collectively owned. 
+Developers are responsible for unit testing their own code, writing and running JUnit tests and documenting functional tests. TDD is required. The code is collectively owned. 
 
 == Peer reviews ==
 Functionality shall be reviewed by the course practice group weekly. Added and/or changed functionality shall be reviewed internally by the team before issues (be it tasks or fixes) are accepted and closed. 
 
 == Issue tracking ==
 Issues shall be tracked using the code.google.com issue tracker. Issue workflow is:
- # When issue arises, it is documented to the issue tracking system by the person who thought it up. It is not assigned to any iteration milestone. Issue is labelled _"New"_ 
+ # When an issue arises, it is documented to the issue tracking system by the person who thought it up. It is not assigned to any iteration milestone. Issue is labelled _"New"_ 
  # In Sprint planning meeting, issues are assigned for the next sprint. Some issues could be tentatively assigned to future sprints, but these are not final until the planning meeting of the sprint in question.
  # At any given point, anybody can comment the issue and thus give his input.
  # Issue is marked _"Accepted"_ when work on the issue is begun by the issues owner. 
