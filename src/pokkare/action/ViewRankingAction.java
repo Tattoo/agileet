@@ -120,57 +120,9 @@ public class ViewRankingAction  {
 			PokkareGraphDrawer drawer = new PokkareGraphDrawer();
 
 			ScoreDataWrapper dataWrapper = new ScoreDataWrapper();
-			ScoreData scoreData = null;
 
-			//get games and players
-			ArrayList<Games> games = (ArrayList<Games>)event.findGames();
-			ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
-
-			//auxiliary map to aid in keeping score of players' total scores
-			//<player id, player score>
-			Map<Integer, Integer> playerScores = new HashMap<Integer, Integer>();
-
-			Integer maxScore = 0;
 			
-			//loop players
-			for (int i = 0; i < players.size(); ++i) {
-				
-				//get score datas list
-				List<ScoreData> scoreDatas = dataWrapper.getScoreDatas();
-				
-				Player player = players.get(i);
-				
-				//loop games
-				for (int j = 0; j < games.size(); ++j) {
-					Games game = games.get(j);
-					//get scores
-					Integer score = event.findScoreForGameAndPlayer(game.getId(), player.getId());
-					//find and update cumulative score for this player
-					if (playerScores.containsKey(player.getId())) {
-						score = score + playerScores.get(player.getId()).intValue();
-						playerScores.remove(player.getId());
-						playerScores.put(player.getId(), score);
-					}
-					//if none, initialize for this player
-					else {
-						playerScores.put(player.getId(), score);
-					}
-
-					if (score > maxScore) {
-						maxScore = score;
-					}
-					
-					//add new data object
-					scoreData = dataWrapper.new ScoreData(player, game, score.intValue());
-					scoreDatas.add(scoreData);
-				}
-			}
-			
-//			for (int i = 0; i < dataWrapper.getScoreDatas().size(); ++i) {
-//				System.out.println("\nDEBUG!!!!! " + dataWrapper.getScoreDatas().get(i).getGame().getGameDate() + " " + dataWrapper.getScoreDatas().get(i).getPlayer().getName() + dataWrapper.getScoreDatas().get(i).getScore());
-//			}
-
-			drawer.createGraphs(dataWrapper, maxScore, games.size());
+			drawer.createGraphs(dataWrapper, dataWrapper.getMaxScore(), dataWrapper.getNumberOfGames());
 			
 			if (size != null) {
 				if (size.equals("plus"))

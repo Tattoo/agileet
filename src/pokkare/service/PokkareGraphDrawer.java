@@ -70,6 +70,7 @@ public class PokkareGraphDrawer implements ImageProducer {
 
 		//round max points up to the nearest 1 notch (length 10 each)
 		int roundedMax = maxScore / 10;
+		//no idea why adding 10 works but meh
 		roundedMax = maxScore + 10;
 
 		maxPoints = roundedMax;
