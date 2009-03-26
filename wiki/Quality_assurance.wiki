@@ -24,13 +24,16 @@ Functionality shall be reviewed by the course practice group weekly. Added and/o
 
 == Issue tracking ==
 Issues shall be tracked using the code.google.com issue tracker. Issue workflow is:
- # When an issue arises, it is documented to the issue tracking system by the person who thought it up. It is not assigned to any iteration milestone. Issue is labelled _"New"_ 
+ # When an issue arises, it is documented to the issue tracking system by the person who thought it up. It is not assigned to any iteration milestone (`*`). Issue is labelled _"New"_ 
  # In Sprint planning meeting, issues are assigned for the next sprint. Some issues could be tentatively assigned to future sprints, but these are not final until the planning meeting of the sprint in question.
  # At any given point, anybody can comment the issue and thus give his input.
- # Issue is marked _"Accepted"_ when work on the issue is begun by the issues owner. 
- # Issue is marked _"Fixed"_ when the owner of the issue is decided that the issue has been handled properly (see Definition of done). Alternatively he can use other labels such as _"!WontFix"_, etc.
- # Verification of other developer team member is needed to fully close the issue. The reviewer can mark issue _"Closed"_, but this is not mandatory.
+ # Issue is marked _"Accepted"_ when the issue owner acknowledges the issue, ie. he knows what the issue is about and what needs to be done. 
+ # When the owner of the issue is decided that the issue has been handled properly (see Definition of done), he communicates to other developer team member so the issue can be reviewed. Alternatively he can mark the issue with labels such as _"!WontFix"_
+ # Verification of other developer team member is needed to fully close the issue. The reviewer marks the issue _"Verified"_. 
+ # If the reviewer sees that the issue is not fully complete and decides to handle the rest himself (this approach is encouraged since all work is collectively shared), then the reviewer temporarily becomes issue owner while the original issue owner needs to review all changes.
  # In Sprint demo meeting, all issues of the sprint are reviewed.
+
+`*`: There is one exception: If during the sprint it emerges that the issue is something else than originally thought, it is allowed to close the original issue and create new issue. Notice that it is demanded that the new issue can be completed in the time frame reserved for the original issue.
 
 === Definition of done ===
 All tasks need to have:
