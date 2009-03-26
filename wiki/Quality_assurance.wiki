@@ -94,4 +94,4 @@ The team will decide it's own workflows and modify existing workflows when they 
 Shared workspace is simulated through constant communication via IRC. All matters need to be discussed with other developer team members. All work is reviewed.
 
 == Simple design is practiced ==
-Design should follow *KISS*. Design should be refactored to adhere KISS.
+Design should follow the principle of *Keep It Simple, Soldier*. Design should be refactored to adhere KISS.
