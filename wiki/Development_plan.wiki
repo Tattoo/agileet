@@ -31,7 +31,7 @@ Sprint 2 scope and issues defined in issuelist
 
 
 ===Sprint produces: Second version of program===
-
+ * Sprint was accepted
 ----
 = Sprint 3 (27.03. - 03.04.) =
 
@@ -40,6 +40,15 @@ Sprint 2 scope and issues defined in issuelist
 
 == Theme 2: Description of the process ==
  * Each team describe the process they are using. The description should provide comprehensive understanding among team members about the project's process.
+
+===Sprint 3 kick-off===
+ * [http://www.cs.helsinki.fi/u/tkairi/task-breakdown-3.png Task breakdown] (large)
+ * [http://code.google.com/p/agileet/issues/detail?id=10 Continuous integration]
+ * [http://code.google.com/p/agileet/issues/detail?id=16 Add/delete users in db]
+ * [http://code.google.com/p/agileet/issues/detail?id=17 Add/delete users in UI]
+ * [http://code.google.com/p/agileet/issues/detail?id=5 Theme task]
+ * [http://code.google.com/p/agileet/issues/detail?id=18 Complete XHTML validation]
+ * [http://code.google.com/p/agileet/issues/detail?id=19 Graph drawing]
 
 ===Sprint produces: Third version of program===
 
