@@ -287,14 +287,39 @@ public class EventService {
 		return i;
 	}
 	
-	/*
-	 * select pl.name, sum(po.points) as pisteet
-from player pl, points po, score s
-where s.player_id = pl.id
-AND po.rank = s.rank
-group by pl.name
-order by pisteet desc
-	 */
+	public boolean savePlayer(Player player) {
+		Session session = null;
+		
+		try {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			session = sessionFactory.openSession();
+			session.beginTransaction();
+			session.save(player);
+			session.getTransaction().commit();
+			session.close(); 
+		}
+		catch (Exception e) { e.printStackTrace(); return false; }
+		finally { if (session != null && session.isOpen()) session.close(); }
+		
+		return true;
+	}
+
+	public boolean deletePlayer(Player player) {
+		Session session = null;
+		
+		try {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			session = sessionFactory.openSession();
+			session.beginTransaction();
+			session.delete(player);
+			session.getTransaction().commit();
+			session.close(); 
+		}
+		catch (Exception e) { e.printStackTrace(); return false; }
+		finally { if (session != null && session.isOpen()) session.close(); }
+		
+		return true;
+	}
 	
 }
 
