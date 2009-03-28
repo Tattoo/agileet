@@ -27,6 +27,7 @@ public class AllTests {
 		suite.addTestSuite(AddRankingActionTest.class);
 		suite.addTestSuite(ViewRankingActionTest.class);
 		suite.addTestSuite(IndexActionTest.class);
+		suite.addTestSuite(AddPlayerActionTest.class);
 
 		return suite;
 	}
