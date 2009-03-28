@@ -24,10 +24,17 @@ public class AddPlayerAction implements ParameterAware {
 	public String execute() {
 		Player addPlayer = new Player();
 		String addPlayerName = ((String[])parameters.get("add_player_name"))[0];
-		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
 		
-		for (int i = 0; i < players.size(); ++i) {
-			if (players.get(i).getName().equals(addPlayerName)) {
+		if (addPlayerName.compareTo("") == 0){
+			// TODO: refactor this to return error instead of blowing stuff up with exceptions
+			// TODO: then, update the test case too!!
+			throw new IllegalArgumentException("add_player_name in parameters was empty string [in AddPlayerAction.execute()]");
+		}
+
+		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
+
+		for (Player p : players){
+			if (p.getName().compareTo(addPlayerName) == 0){
 				return "name_already_exists";
 			}
 		}
