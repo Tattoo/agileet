@@ -14,10 +14,16 @@ public class Player implements Serializable {
 	
 	private Integer id;
 	private String name;
-
+	private char state;
 	
 
 	
+	public char getState() {
+		return state;
+	}
+	public void setState(char state) {
+		this.state = state;
+	}
 	public Integer getId() {
 		return id;	
 	}
