@@ -311,6 +311,24 @@ public class EventService {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
+			Query query = session.createQuery("update Player set state = 'D' where id = " + player.getId());
+			query.executeUpdate();
+			session.getTransaction().commit();
+			session.close(); 
+		}
+		catch (Exception e) { e.printStackTrace(); return false; }
+		finally { if (session != null && session.isOpen()) session.close(); }
+		
+		return true;
+	}
+	
+	public boolean deletePlayerRowFromDatabase(Player player) {
+		Session session = null;
+		
+		try {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			session = sessionFactory.openSession();
+			session.beginTransaction();
 			session.delete(player);
 			session.getTransaction().commit();
 			session.close(); 

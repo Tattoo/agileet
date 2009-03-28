@@ -22,17 +22,29 @@ public class DeletePlayerAction implements ParameterAware {
 	
 	public String execute() {
 		String deletePlayerName = ((String[])parameters.get("delete_player_name"))[0];
+		Player deletePlayer = getDeletablePlayerByPlayerName(deletePlayerName);
+		
+		if (deletePlayer != null) {
+			event.deletePlayer(deletePlayer);
+			return "success";
+		}
+		
+		return "player_not_found";
+	}
+	
+	public boolean deletePlayerRowFromDatabase(Player player) {
+		return event.deletePlayerRowFromDatabase(player);
+	}
+	
+	public Player getDeletablePlayerByPlayerName(String deletePlayerName) {
 		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
 		
 		for (int i = 0; i < players.size(); ++i) {
 			Player deletePlayer = players.get(i);
 			if (deletePlayer.getName().equals(deletePlayerName)) {
-				event.deletePlayer(deletePlayer);
-				return "success";
+				return deletePlayer;
 			}
 		}
-		
-		
-		return "player_not_found";
+		return null;
 	}
 }
