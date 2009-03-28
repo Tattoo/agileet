@@ -1,0 +1,3 @@
+ALTER TABLE player 
+ADD COLUMN state CHAR(1) NOT NULL DEFAULT 'N'
+;
