@@ -34,3 +34,16 @@ Class diagram
 http://www.cs.helsinki.fi/u/jmurtola/pokkare/db_model.jpg
 
 Data model
+
+= Development tools & environment =
+
+ * [http://www.eclipse.org/downloads/moreinfo/jee.php Eclipse Europa]
+ * [http://dev.mysql.com/downloads/mysql/5.1.html MySQL 5.1]
+ * [http://tomcat.apache.org/download-60.cgi Tomcat 6.x]
+ * All jar's from pokkare/WebContent/WEB-INF/lib
+
+Suggested:
+
+ * [http://subclipse.tigris.org/install.html Subclipse] (Eclipse svn plugin)
+  # Requires Mylyn plugin, is automatically installable the same way as Subclipse
+ * [http://eclemma.org/installation.html EclEmma] (Eclipse code coverage plugin)
