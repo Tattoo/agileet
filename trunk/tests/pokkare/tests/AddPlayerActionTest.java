@@ -41,32 +41,29 @@ public class AddPlayerActionTest extends TestCase {
 	}
 	
 	public void testExecute(){
-		try{
-			action.execute();
-//			fail("execute() should've failed with NullPointerException in AddPlayerActionTest");
-		} catch (NullPointerException e){ // things okay, put rest of the test here inside the catch
+		assertEquals("manage",action.execute());
 
-			HashMap<String, String[]> param = new HashMap<String, String[]>();
-			String playerName = "Rafael Tommasi";
-			String[] value = {playerName};
-			param.put("add_player_name", value);
-			
-			action.setParameters(param);
-			
-			assertEquals("success", action.execute());
-			assertEquals("name_already_exists", action.execute());
-			
-			assertTrue(deleteTestData(playerName));
-			
-			value[0] = "";
-			param.put("add_player_name", value);
-			try {
-				action.execute();
-				fail("execute() should've failed with IllegalArgumentException in AddPlayerActionTest");
-			} catch (IllegalArgumentException ex){ 
-				// TODO: put the rest of the test stuff here inside the catch
-			}
+		HashMap<String, String[]> param = new HashMap<String, String[]>();
+		String playerName = "Rafael Tommasi";
+		String[] value = {playerName};
+		param.put("add_player_name", value);
+
+		action.setParameters(param);
+
+		assertEquals("success", action.execute());
+		assertEquals("name_already_exists", action.execute());
+
+		assertTrue(deleteTestData(playerName));
+
+		value[0] = "";
+		param.put("add_player_name", value);
+		try {
+			action.execute();
+			fail("execute() should've failed with IllegalArgumentException in AddPlayerActionTest");
+		} catch (IllegalArgumentException ex){ 
+			// TODO: put the rest of the test stuff here inside the catch
 		}
+
 	}
 	private boolean deleteTestData(String playerName){
 		// delete stuff that was put in db during this test case
