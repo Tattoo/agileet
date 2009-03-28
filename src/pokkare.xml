@@ -27,11 +27,11 @@
 			<result name="index" type="redirect">/pokkare/index.action</result>
 			<result name="error" type="redirect">/pokkare/login.jsp</result>
 		</action>
-		<action name="adduser" class="pokkare.action.AddUserAction">
+		<action name="adduser" class="pokkare.action.AddPlayerAction">
 			<result name="success" type="redirect">/pokkare/index.action</result>
 			<result name="name_already_exists" type="redirect">/pokkare/login.jsp</result>
 		</action>
-		<action name="deleteuser" class="pokkare.action.DeleteUserAction">
+		<action name="deleteuser" class="pokkare.action.DeletePlayerAction">
 			<result name="success" type="redirect">/pokkare/index.action</result>
 			<result name="player_not_found" type="redirect">/pokkare/login.jsp</result>
 		</action>
