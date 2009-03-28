@@ -23,8 +23,13 @@ public class AddPlayerAction implements ParameterAware {
 	
 	public String execute() {
 		Player addPlayer = new Player();
-		String addPlayerName = ((String[])parameters.get("add_player_name"))[0];
+		String addPlayerName = null;
 		
+		try {
+			addPlayerName = ((String[])parameters.get("add_player_name"))[0];
+		} catch (NullPointerException npe) {
+			return "manage";
+		}
 		if (addPlayerName.compareTo("") == 0){
 			// TODO: refactor this to return error instead of blowing stuff up with exceptions
 			// TODO: then, update the test case too!!
