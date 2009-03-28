@@ -37,10 +37,10 @@ Pokkare is meant to be used in maintaining and viewing scores from home poker ga
 4.3) Score per game shall be presented in a graph.<br>
 
 == 5 Environment requirements == 
-5.1) Pokkare is required to be fully useable on the following environments: Windows XP Service pack 3, Linux Release XYZ, Mac OS X Leopard<br>
+5.1) Pokkare is required to be fully useable on the following environments: Windows XP Service pack 3, Linux Release ???, Mac OS X Leopard<br>
  - Fully useable means all functionality listed in this document under requirements are fully operational.<br>
 5.2) The following browsers are supported: Opera 9.64, Firefox 3.0.7.<br>
- - Functioning of pokkare on later or earlier releases of the above listed browsers is likely, but can not be guaranteed in the scope of this project.<br>
+ - Functioning of pokkare on later or earlier releases of the above listed operating systems and/or browsers is likely, but can not be guaranteed in the scope of this project.<br>
 
 = Structure =
 
