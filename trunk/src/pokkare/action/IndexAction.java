@@ -29,15 +29,22 @@ public class IndexAction {
 		ArrayList<Player> playerList = (ArrayList<Player>)event.findPlayers();
 		
 		if (playerList == null) {
-			throw new IllegalStateException("Lollegal state");
+			throw new IllegalStateException("No players available.");
 		}
 		
 		Integer[] scoreTable = new Integer[playerList.size()];
 		String[] nameTable = new String[playerList.size()];
 		
 		for (int i = 0; i < playerList.size(); ++i) {
-			Integer playerId = playerList.get(i).getId();
-			String playerName = playerList.get(i).getName();
+			Player p = playerList.get(i);
+			
+			//skip deleted players
+			if (p.getState() == 'D') {
+				continue;
+			}
+			
+			Integer playerId = p.getId();
+			String playerName = p.getName();
 			Integer cumulativeScore = 0;
 			
 			ArrayList<Score> scores = (ArrayList<Score>)event.findScores(playerId);

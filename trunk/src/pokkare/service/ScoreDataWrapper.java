@@ -61,10 +61,15 @@ public class ScoreDataWrapper {
 		//loop players
 		for (int i = 0; i < players.size(); ++i) {
 			
+			Player player = players.get(i);
+			
+			//do not include deleted players
+			if (player.getState() == 'D') {
+				continue;
+			}
+			
 			//get score datas list
 			List<ScoreData> scoreDatas = this.getScoreDatas();
-			
-			Player player = players.get(i);
 			
 			//loop games
 			for (int j = 0; j < games.size(); ++j) {
