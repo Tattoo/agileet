@@ -55,8 +55,8 @@ public class DeletePlayerActionTest extends TestCase {
 			assertTrue(addTestData(playerName));
 			assertEquals("success", action.execute());
 			
+			action.deletePlayerRowFromDatabase(action.getDeletablePlayerByPlayerName(playerName)); //cleanup
 			action.setParameters(null); // cleanup
-			
 		}
 	}
 	private boolean addTestData(String playerName){
