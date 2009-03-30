@@ -130,6 +130,7 @@ public class ViewRankingAction  {
 			}
 			else {
 				HashMap<Integer, Integer> scoreList = new HashMap<Integer, Integer>();
+				scoreList.put(0,0);
 				scoreList.put(positionInSeries, score);
 				data.put(name, scoreList);
 			}
