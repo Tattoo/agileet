@@ -9,7 +9,7 @@ ${chosenGame}
 
 <form id="addRankingForm" method="post" action="<s:url value='/pokkare/addranking.action' />">
 	<fieldset>
-		<legend>valitse sijoitukset:</legend>
+		<legend>valitse sijoitukset</legend>
 	
 		<s:iterator value="playerList">
 			<div class="radioButtons">
@@ -23,7 +23,7 @@ ${chosenGame}
 	</fieldset>
 	<div class="bigGT">-&gt;</div>
 	<fieldset>
-		<legend>valitse pelin ajankohta:</legend>
+		<legend>valitse peli</legend>
 		<s:iterator value="gamesMap" status="i">
 			<input type="radio" id="addranking_chosenGame${key}" name="chosenGame" value="${key}"/>
 			<label for="addranking_chosenGame${key}">${value}</label><br /> 
