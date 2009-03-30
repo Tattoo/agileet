@@ -1,7 +1,5 @@
 <jsp:include page="include/header.jsp"></jsp:include>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ page import="pokkare.service.EventService,pokkare.model.*,java.util.List" %>
-
 
 <h1>Uusi peli</h1>
 
