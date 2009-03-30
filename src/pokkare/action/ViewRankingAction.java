@@ -25,6 +25,7 @@ public class ViewRankingAction  {
 	private String size;
 	Integer picSize = 0;
 	HashMap<String, HashMap<Integer, Integer>> scores;
+	HashMap<Integer, String> games;
 	ScoreDataWrapper scoreDataWrapper = new ScoreDataWrapper();
 	List<ScoreData> scoreDatas = scoreDataWrapper.getScoreDatas();
 
@@ -72,6 +73,13 @@ public class ViewRankingAction  {
 		this.ranking = ranking;
 	}
 
+	public HashMap<Integer, String> getGames() {
+		return games;
+	}
+
+	public void setGames(HashMap<Integer, String> games) {
+		this.games = games;
+	}
 
 	public String execute() {
 
@@ -121,10 +129,12 @@ public class ViewRankingAction  {
 //		int maxPoints = scoreTable[0];
 
 		HashMap<String, HashMap<Integer, Integer>> data = new HashMap<String, HashMap<Integer, Integer>>();
+		HashMap<Integer, String> games = new HashMap<Integer, String>();
 		for (ScoreData sd : getScoreDatas()){
 			String name = sd.getPlayer().getName();
 			Integer score = sd.getScore();
 			Integer positionInSeries = sd.getPositionInSeries();
+			Games game = sd.getGame();
 			if(data.containsKey(name)){
 				data.get(name).put(positionInSeries, score);
 			}
@@ -133,6 +143,10 @@ public class ViewRankingAction  {
 				scoreList.put(0,0);
 				scoreList.put(positionInSeries, score);
 				data.put(name, scoreList);
+			}
+			if (!games.containsKey(positionInSeries)) {
+				System.out.println(positionInSeries + " " + game.getGameDate() + " #" + game.getGameNumber());
+				games.put(positionInSeries, game.getGameDate() + " #" + game.getGameNumber());
 			}
 		}
 
