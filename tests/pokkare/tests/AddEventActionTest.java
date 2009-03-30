@@ -1,5 +1,6 @@
 package pokkare.tests;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -31,11 +32,13 @@ public class AddEventActionTest extends TestCase {
 		action.setDesc("this is description");
 		assertSame(action.getDesc(), "this is description");
 	}
-	public void testTimeAccessors(){
-		Date time = new Date(2009,1,1);
-		action.setTime(time);
-		Date time2 = new Date(2009,1,1);
-		assertEquals(action.getTime(), time2);
+	public void testTimeAccessors() throws ParseException {
+		action.setTime("03/06/2009");
+		Date time1 = action.dateParser.parse(action.getTime());
+		Date time2 = new Date(2009,06,03);
+//		if (true)
+//			throw new IllegalStateException("" + time1.getYear() + " " + time2.getYear());
+		assertEquals(time1, time2);
 	}
 	public void testHostAccessors(){
 		action.setHost(123);
@@ -43,7 +46,7 @@ public class AddEventActionTest extends TestCase {
 	}
 	public void testExecute(){
 		assertEquals(action.execute(), "success");
-		action.setTime(new Date(2009,1,1));
+		action.setTime("01/01/2009");
 		assertEquals(action.execute(), "index");
 	}
 }

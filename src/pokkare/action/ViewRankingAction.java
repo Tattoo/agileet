@@ -151,7 +151,7 @@ public class ViewRankingAction  {
 		}
 
 		setScores(data);
-
+		setGames(games);
 //		drawPokkareGraph(maxPoints);
 
 		int imageHeight = scoreDataWrapper.getMaxScore() * 10;

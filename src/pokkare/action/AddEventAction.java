@@ -16,7 +16,7 @@ public class AddEventAction {
 	private HashMap<Integer, String> hosts = new HashMap<Integer, String>();
 	private String desc;
 	private String time;
-	private SimpleDateFormat dateParser = new SimpleDateFormat("MM/dd/yyyy");
+	public SimpleDateFormat dateParser = new SimpleDateFormat("MM/dd/yyyy");
 	private Integer host;
 	private Games game;
 	
