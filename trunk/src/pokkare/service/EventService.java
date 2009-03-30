@@ -33,7 +33,10 @@ public class EventService {
 		 
 			playerList = new ArrayList<Player>();
 			for (int i = 0; i < lista.size(); ++i) {
-				playerList.add(((Player)lista.get(i)));
+				Player p = (Player)lista.get(i);
+				if (p.getState() != 'D'){
+					playerList.add(p);
+				}
 			}
 			
 			session.close(); 
@@ -312,6 +315,10 @@ public class EventService {
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("update Player set state = 'D' where id = " + player.getId());
+			query.executeUpdate();
+			session.getTransaction().commit();
+			session.beginTransaction();
+			query = session.createQuery("delete from Score where player_id="+player.getId());
 			query.executeUpdate();
 			session.getTransaction().commit();
 			session.close(); 
