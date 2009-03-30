@@ -29,7 +29,6 @@
 					<bfg:data x="${key}" y="${value}"/>
 				</s:iterator>
 			</bfg:lineseries>
-		
 	</s:iterator>
 	
 	<bfg:key align="bottom" color="#eeeeee">
@@ -39,6 +38,11 @@
 	</bfg:key>
 
 </bfg:axesgraph>
+
+<h2>Pelit</h2>
+<s:iterator value="games">
+	${key}: ${value}
+</s:iterator>
 
 </center>
 <br />
