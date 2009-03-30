@@ -11,8 +11,10 @@
 
 <h1>Poista pelaajia</h1>
 
-<s:iterator value="players">
-	<s:property />
-</s:iterator>
+<ul id="deletePlayersList">
+	<s:iterator value="players">
+		<li><s:property /></li>
+	</s:iterator>
+</ul>
 
 <jsp:include page="include/footer.jsp"></jsp:include>

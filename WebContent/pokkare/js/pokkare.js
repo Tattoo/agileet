@@ -20,12 +20,43 @@
 			});
 		}
 		
-		if (String(window.location).indexOf("manageplayers") != -1){ // check that we are in the right url
+		if (String(window.location).indexOf("addplayer") != -1){ // check that we are in the right url
+			// check that player name is not empty when creating player
 			$("#add_players_form").submit(function(event){
 				if ($("#add_player_name").attr("value") == "" ){
 					alert("Pelaajan nimi ei saisi olla tyhjä");
 					event.preventDefault();
 				}
+			});
+			
+			$("#deletePlayersList > li").each(function(){
+				var el = $(this);
+				el.hover(function(){
+					el.css({
+						"background-color": "rgb(133, 66, 66)", 
+						"color":"#fff", 
+						"cursor":"pointer"
+					});
+				}, function(){
+					el.css({
+						"background-color":"#ccc", 
+						"color":"#000"
+					});
+				});
+				
+				el.click(function(event){
+					var deletePlayer = jQuery.trim(el.text());
+					if(deletePlayer == ""){
+						console.debug("FFFFFFFFFFFFUUUUUUUUUUUUUUUU--");
+						return;
+					}
+					var url = String(window.location).replace("add", "delete");
+					var html = '<form id="deletePlayerForm" action="'+url+'" style="display:none;" method="post">'+
+								'<input type="text" name="delete_player_name" id="delete_player_name" value="'+deletePlayer+'"/>'+
+					  			'</form>'
+					$("#index").append(html);
+					$("#deletePlayerForm").submit();
+				});
 			});
 		}
 	});
