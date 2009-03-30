@@ -1,5 +1,7 @@
 package pokkare.action;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +15,8 @@ public class AddEventAction {
 	private EventService event = new EventService();
 	private HashMap<Integer, String> hosts = new HashMap<Integer, String>();
 	private String desc;
-	private Date time;
+	private String time;
+	private SimpleDateFormat dateParser = new SimpleDateFormat("MM/dd/yyyy");
 	private Integer host;
 	private Games game;
 	
@@ -44,11 +47,11 @@ public class AddEventAction {
 		return desc;
 	}
 	
-	public void setTime(Date time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 	
-	public Date getTime() {
+	public String getTime() {
 		return time;
 	}
 	
@@ -59,9 +62,6 @@ public class AddEventAction {
 	public Integer getHost() {
 		return host;
 	}
-	
-	
-	
 	
 	public String execute() {
 		
@@ -74,8 +74,14 @@ public class AddEventAction {
 		
 		game = new Games();
 		game.setDescription(desc);
-		game.setGameDate(time);
-		game.setGameNumber(event.findGamesForDate(time) + 1);
+		Date theDate = null;
+		try {
+			theDate = dateParser.parse(time);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		game.setGameDate(theDate);
+		game.setGameNumber(event.findGamesForDate(theDate) + 1);
 		game.setGameScoreId(0);
 		game.setHost(host);
 		
@@ -83,6 +89,7 @@ public class AddEventAction {
 		
 		return "index";
 	}
+
 	
 
 	
