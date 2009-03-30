@@ -38,10 +38,12 @@
 
 </bfg:axesgraph>
 
-<h2>Pelit</h2>
-<s:iterator value="games">
-	${key}: ${value}
-</s:iterator>
+<h1>Pelit</h1>
+<div class="games_list">
+	<s:iterator value="games">
+		${key}: ${value}
+	</s:iterator>
+</div>
 
 </center>
 <br />
