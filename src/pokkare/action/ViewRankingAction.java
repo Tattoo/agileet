@@ -6,6 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.catalina.Session;
+
+import com.opensymphony.xwork2.ActionContext;
+
 import pokkare.model.Games;
 import pokkare.model.Player;
 import pokkare.model.Score;
@@ -20,7 +24,7 @@ public class ViewRankingAction  {
 	private ArrayList<String> ranking = new ArrayList<String>();
 	private String size;
 	Integer picSize = 0;
-	HashMap<String, Integer> scores;
+	HashMap<String, HashMap<Integer, Integer>> scores;
 	ScoreDataWrapper scoreDataWrapper = new ScoreDataWrapper();
 	List<ScoreData> scoreDatas = scoreDataWrapper.getScoreDatas();
 
@@ -40,11 +44,11 @@ public class ViewRankingAction  {
 		this.scoreDataWrapper = scoreDataWrapper;
 	}
 
-	public HashMap<String, Integer> getScores(){
+	public HashMap<String, HashMap<Integer, Integer>> getScores(){
 		return this.scores;
 	}
 
-	public void setScores(HashMap<String, Integer> scores){
+	public void setScores(HashMap<String, HashMap<Integer, Integer>> scores){
 		this.scores = scores;
 	}
 
@@ -107,23 +111,41 @@ public class ViewRankingAction  {
 				}
 			}
 		}
+		
 
 		for (int i = 0; i < scoreTable.length; ++i) {
 			System.out.println(scoreTable[i] + nameTable[i]);
 			ranking.add(nameTable[i] + ": " + scoreTable[i]);
 		}
 
-		int maxPoints = scoreTable[0];
+//		int maxPoints = scoreTable[0];
 
-		HashMap<String, Integer> scoresTable = new HashMap<String, Integer>();
-		for (int i = 0; i < playerList.size(); i++){
-			scoresTable.put(nameTable[i], scoreTable[i]);
+		HashMap<String, HashMap<Integer, Integer>> data = new HashMap<String, HashMap<Integer, Integer>>();
+		for (ScoreData sd : getScoreDatas()){
+			String name = sd.getPlayer().getName();
+			Integer score = sd.getScore();
+			Integer positionInSeries = sd.getPositionInSeries();
+			if(data.containsKey(name)){
+				data.get(name).put(positionInSeries, score);
+			}
+			else {
+				HashMap<Integer, Integer> scoreList = new HashMap<Integer, Integer>();
+				scoreList.put(positionInSeries, score);
+				data.put(name, scoreList);
+			}
 		}
-		setScores(scoresTable);
 
+		setScores(data);
 
-		drawPokkareGraph(maxPoints);
+//		drawPokkareGraph(maxPoints);
 
+		int imageHeight = scoreDataWrapper.getMaxScore() * 10;
+		int imageWidth = imageHeight;
+		Map session = ActionContext.getContext().getSession();
+		session.put("image_height", imageHeight <= 500 ? imageHeight : 500);
+		session.put("image_width", imageWidth <= 500 ? imageWidth : 500);
+		
+		
 		return "success";
 
 	}
