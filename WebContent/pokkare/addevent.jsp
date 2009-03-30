@@ -5,7 +5,7 @@
 
 <h1>Uusi peli</h1>
 
-<form name="formi" id="addevent_form" method="post" action="/agileet/pokkare/addevent.action">
+<form name="formi" id="addevent_form" method="post" action="<s:url value='/pokkare/addevent.action' />">
 	<label for="desc">kuvaus:</label>
 	<textarea name="desc" rows="2" cols="1" style="width: 11.4em;"></textarea> <!-- manual fix for the width needed-->
 	<br class="clear" />
