@@ -37,7 +37,7 @@ public class PokkareGraphDrawerTest extends TestCase {
 
 	public void testCreateGraphs(){
 		ScoreDataWrapper dw = new ScoreDataWrapper();		
-		ScoreData sd = dw.new ScoreData(new Player(), new Games(), 999);
+		ScoreData sd = dw.new ScoreData(new Player(), new Games(), 999, 1 , 1);
 		dw.getScoreDatas().add(sd);
 		graph.createGraphs(dw, 999, 1);
 	}
