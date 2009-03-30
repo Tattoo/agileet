@@ -60,11 +60,11 @@ h1 {
 }
 
 div.text {
-	text-color: #660000;
+	color: #660000;
 }
 
 div.errors {
-	text-color: #660000;
+	color: #660000;
 }
 
 a:link { 
@@ -87,6 +87,45 @@ a.ui-datepicker-next, a.ui-datepicker-prev {
 	float: left;
 	margin: 0em 1em 0em 1em; 
 }
+
+#addRankingForm {
+	height: 12em;
+	display: block; 
+	width: 53em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#addRankingForm > fieldset {
+	border: 1px solid rgb(133,66,66); 
+	width: 12em;
+	float: left;
+}
+
+#addRankingForm > fieldset > legend {
+	border: 1px solid rgb(133,66,66);
+	padding: 2px 4px 2px 4px;
+	font-weight: bold;
+}
+
+#addRankingForm .bigGT {
+	float: left;
+	font-size: 6em;
+	color: rgb(133,66,66);
+}
+
+#addRankingForm > button {
+	float:left;
+	width: 155px;
+	height: 39px;
+	background-color: rgb(133,66,66);
+	color: #fff;
+	font-size: 1.5em;
+	border: 1px dashed black;
+	padding: auto;
+	margin-top: 1.6em;
+}
+
 #deletePlayersList {
 	list-style: none;
 }
