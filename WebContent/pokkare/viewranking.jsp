@@ -1,4 +1,3 @@
-<%@page import="pokkare.service.ScoreDataWrapper.ScoreData"%>
 <jsp:include page="include/header.jsp"></jsp:include>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib uri="http://big.faceless.org/products/graph" prefix="bfg"%>
