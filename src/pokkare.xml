@@ -29,7 +29,7 @@
 		</action>
 		<action name="addplayer" class="pokkare.action.AddPlayerAction">
 			<result name="success" type="redirect">/pokkare/index.action</result>
-			<result name="manage" type="redirect">/pokkare/manageplayers.jsp</result>
+			<result name="manage">/pokkare/manageplayers.jsp</result>
 			<result name="name_already_exists" type="redirect">/pokkare/login.jsp</result>
 		</action>
 		<action name="deleteplayer" class="pokkare.action.DeletePlayerAction">
