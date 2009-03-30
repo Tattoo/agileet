@@ -41,7 +41,7 @@ public class ScoreDataWrapperTest extends TestCase {
 		g.setHost(p.getId());
 		g.setId(123456789);
 		
-		return dw.new ScoreData(p, g, 999);
+		return dw.new ScoreData(p, g, 999, 1, 1);
 		
 	}
 	

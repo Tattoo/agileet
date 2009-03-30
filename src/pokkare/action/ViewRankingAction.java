@@ -21,6 +21,24 @@ public class ViewRankingAction  {
 	private String size;
 	Integer picSize = 0;
 	HashMap<String, Integer> scores;
+	ScoreDataWrapper scoreDataWrapper = new ScoreDataWrapper();
+	List<ScoreData> scoreDatas = scoreDataWrapper.getScoreDatas();
+
+	public List<ScoreData> getScoreDatas() {
+		return scoreDatas;
+	}
+
+	public void setScoreDatas(List<ScoreData> scoreDatas) {
+		this.scoreDatas = scoreDatas;
+	}
+
+	public ScoreDataWrapper getScoreDataWrapper() {
+		return scoreDataWrapper;
+	}
+
+	public void setScoreDataWrapper(ScoreDataWrapper scoreDataWrapper) {
+		this.scoreDataWrapper = scoreDataWrapper;
+	}
 
 	public HashMap<String, Integer> getScores(){
 		return this.scores;

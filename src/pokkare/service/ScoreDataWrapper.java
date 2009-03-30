@@ -92,7 +92,7 @@ public class ScoreDataWrapper {
 				}
 				
 				//add new data object
-				scoreData = this.new ScoreData(player, game, score.intValue());
+				scoreData = this.new ScoreData(player, game, score.intValue(), j + 1, games.size());
 				scoreDatas.add(scoreData);
 			}
 		}
@@ -114,11 +114,21 @@ public class ScoreDataWrapper {
 		private Player player;	
 		private Games game;
 		private int score;
+
+		//running number of the score's position in the series (for this player)
+		private int positionInSeries;
+		private boolean firstInSeries;
+		private boolean lastInSeries;
 		
-		public ScoreData(Player player, Games game, int score) {
+		public ScoreData(Player player, Games game, int score, int positionInSeries, int maxPosition) {
 			setPlayer(player);
 			setGame(game);
 			setScore(score);
+			setPositionInSeries(positionInSeries);
+			setFirstInSeries(positionInSeries == 1 ? true : false);
+			setLastInSeries(positionInSeries == maxPosition ? true : false);
+			
+			System.out.println("DE DA DUG DE DUM: " + this.toString());
 		}
 
 		public Games getGame() {
@@ -144,8 +154,34 @@ public class ScoreDataWrapper {
 		public void setPlayer(Player player) {
 			this.player = player;
 		}
-		
 
+		public boolean getFirstInSeries() {
+			return firstInSeries;
+		}
+
+		public void setFirstInSeries(boolean firstInSeries) {
+			this.firstInSeries = firstInSeries;
+		}
+
+		public int getPositionInSeries() {
+			return positionInSeries;
+		}
+
+		public void setPositionInSeries(int positionInSeries) {
+			this.positionInSeries = positionInSeries;
+		}
+
+		public boolean getLastInSeries() {
+			return lastInSeries;
+		}
+
+		public void setLastInSeries(boolean lastInSeries) {
+			this.lastInSeries = lastInSeries;
+		}
+		
+		public String toString() {
+			return this.getPositionInSeries() + " " + this.getFirstInSeries() + " " + this.getLastInSeries() + " " + this.player.getName() + " " + this.getGame().getGameDate() + " #" + this.getGame().getGameNumber() + " " + this.getScore() + " ";
+		}
 	}
 	
 }
