@@ -1,6 +1,5 @@
 <jsp:include page="include/header.jsp"></jsp:include>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ page import="pokkare.service.EventService,java.util.ArrayList,pokkare.model.*" %>
 
 <h1>Lis‰‰ ranking peliin</h1>
 
@@ -8,22 +7,31 @@
 
 ${chosenGame}
 
-<s:form name="formi" validate="true" method="post">
-	<label>valitse sijoitukset:</label><br /><br />
+<form id="addRankingForm" method="post" action="<s:url value='/pokkare/addranking.action' />">
+	<fieldset>
+		<legend>valitse sijoitukset:</legend>
 	
-	<s:iterator value="playerList">
-		<div class="radioButtons">
-			<s:property value="name" /><br />
-			<s:iterator status="i" value="(playerListSize).{ #this }">
-				<input type="radio" name="<s:property value='name' />" value="<s:property value="#i.count" />" /><s:property value="#i.count" /> <br/>
-			</s:iterator>
-		</div>
-	</s:iterator>
-	<br class="clear" /><br />
-
-	<s:radio name="chosenGame" list="gamesMap" label="valitse peli" labelposition="top"/>
-	<s:submit />
-</s:form>
+		<s:iterator value="playerList">
+			<div class="radioButtons">
+				<s:property value="name" /><br />
+				<s:iterator status="i" value="(playerListSize).{ #this }">
+					<input type="radio" name="<s:property value='name' />" value="<s:property value="#i.count" />" /><s:property value="#i.count" /> <br/>
+				</s:iterator>
+			</div>
+		</s:iterator>
+		<br class="clear" />
+	</fieldset>
+	<div class="bigGT">-&gt;</div>
+	<fieldset>
+		<legend>valitse pelin ajankohta:</legend>
+		<s:iterator value="gamesMap" status="i">
+			<input type="radio" id="addranking_chosenGame${key}" name="chosenGame" value="${key}"/>
+			<label for="addranking_chosenGame${key}">${value}</label><br /> 
+		</s:iterator>	
+	</fieldset>
+	<div class="bigGT">-&gt;</div>
+	<button>Lis‰‰ ranking</button>
+</form>
 
 
 <jsp:include page="include/footer.jsp"></jsp:include>

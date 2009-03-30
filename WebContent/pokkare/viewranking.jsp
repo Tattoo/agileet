@@ -12,7 +12,7 @@
 <br />
 <br />
 <center>
-<bfg:axesgraph width="${image_width}" height="${image_height}" backwallpaint="stripe(#eeeeee,axis=bottom,line=#cccccc,altaxis=left)">
+<bfg:axesgraph width="500" height="500" backwallpaint="stripe(#eeeeee,axis=bottom,line=#cccccc,altaxis=left)">
 	<bfg:label font="16pt bold Arial">Pelaajien ranking</bfg:label>
 	<bfg:axis pos="left" type="int">
 		<bfg:label font="12pt bold Arial">Pelaajien pisteet</bfg:label>
@@ -23,11 +23,11 @@
 	
 
 	<s:iterator value="scores">
-			<bfg:lineseries name="${key}" color="<%= colors.remove(0) %>" linethickness="2">
-				<s:iterator value="value">
-					<bfg:data x="${key}" y="${value}"/>
-				</s:iterator>
-			</bfg:lineseries>
+		<bfg:lineseries name="${key}" color="<%= colors.remove(0) %>" linethickness="2">
+			<s:iterator value="value">
+				<bfg:data x="${key}" y="${value}"/>
+			</s:iterator>
+		</bfg:lineseries>
 	</s:iterator>
 	
 	<bfg:key align="bottom" color="#eeeeee">
