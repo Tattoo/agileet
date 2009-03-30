@@ -141,10 +141,18 @@ public class ViewRankingAction  {
 //		drawPokkareGraph(maxPoints);
 
 		int imageHeight = scoreDataWrapper.getMaxScore() * 10;
+		int minSize = 400;
+		int maxSize = 650;
+		if (imageHeight < minSize)
+			imageHeight = minSize;
+		if (imageHeight > maxSize)
+			imageHeight = maxSize;
+		
 		int imageWidth = imageHeight;
+		
 		Map session = ActionContext.getContext().getSession();
-		session.put("image_height", imageHeight <= 500 ? imageHeight : 500);
-		session.put("image_width", imageWidth <= 500 ? imageWidth : 500);
+		session.put("image_height", imageHeight);
+		session.put("image_width", imageWidth);
 		
 		
 		return "success";
