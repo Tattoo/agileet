@@ -11,4 +11,8 @@
 
 <h1>Poista pelaajia</h1>
 
+<s:iterator value="players">
+	<s:property />
+</s:iterator>
+
 <jsp:include page="include/footer.jsp"></jsp:include>
