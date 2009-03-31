@@ -3,11 +3,6 @@ package pokkare.model;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Persistenssiluokka, sis‰lt‰‰ Hibernaten tarvitsemat get-
- * ja set-metodit sek‰ tarvittavat muuttujat GAMES
- * -taulun tietokantaoperaatioita varten.
- */
 
 public class Games implements Serializable {
 	
