@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.catalina.Session;
-
 import com.opensymphony.xwork2.ActionContext;
 
 import pokkare.model.Games;
@@ -125,8 +123,7 @@ public class ViewRankingAction  {
 			System.out.println(scoreTable[i] + nameTable[i]);
 			ranking.add(nameTable[i] + ": " + scoreTable[i]);
 		}
-
-//		int maxPoints = scoreTable[0];
+		// TODO: remove everything above?
 
 		HashMap<String, HashMap<Integer, Integer>> data = new HashMap<String, HashMap<Integer, Integer>>();
 		HashMap<Integer, String> games = new HashMap<Integer, String>();
@@ -152,7 +149,6 @@ public class ViewRankingAction  {
 
 		setScores(data);
 		setGames(games);
-//		drawPokkareGraph(maxPoints);
 
 		int imageHeight = scoreDataWrapper.getMaxScore() * 10;
 		int minSize = 400;
@@ -171,37 +167,5 @@ public class ViewRankingAction  {
 		
 		return "success";
 
-	}
-
-	public void drawPokkareGraph(int maxPoints) {
-
-		try {  
-
-			String WEBAPP_ROOT = org.apache.struts2.ServletActionContext.getServletContext().getRealPath("/");
-
-			FileOutputStream f = new FileOutputStream(WEBAPP_ROOT + "/pokkaregraph.jpg");
-
-			PokkareGraphDrawer drawer = new PokkareGraphDrawer();
-
-			ScoreDataWrapper dataWrapper = new ScoreDataWrapper();
-
-			
-			drawer.createGraphs(dataWrapper, dataWrapper.getMaxScore(), dataWrapper.getNumberOfGames());
-			
-			if (size != null) {
-				if (size.equals("plus"))
-					drawer.setMultiplier(4);
-				if (size.equals("minus"))
-					drawer.setMultiplier(2);
-			}
-			else drawer.setMultiplier(3);
-			drawer.setMaxPoints(maxPoints);
-			drawer.createImage(f); 
-			f.flush();
-			f.close();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 }
