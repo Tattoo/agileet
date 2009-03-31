@@ -6,8 +6,9 @@
               as the first entry and export the buildfile again. -->
 <project basedir="." default="AllTests" name="agileet">
     <property environment="env"/>
-    <property name="lib.link" value="../../../../dump/apache-tomcat-6.0.18/lib"/>
-    <property name="junit.output.dir" value="junit"/>
+    <property name="home" value="/home/tattoo"/>
+    <property name="lib.link" value="${home}/lib"/>
+    <property name="junit.output.dir" value="${home}/junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
