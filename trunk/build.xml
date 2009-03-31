@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- WARNING: Eclipse auto-generated file.
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
@@ -6,11 +6,11 @@
               as the first entry and export the buildfile again. -->
 <project basedir="." default="AllTests" name="agileet">
     <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="/usr/local/bin/eclipse"/>
-    <property name="junit.output.dir" value="/home/tkt_agil/junit"/>
+    <property name="lib.link" value="../../../../dump/apache-tomcat-6.0.18/lib"/>
+    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.5"/>
-    <property name="source" value="1.5"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
     <path id="Web App Libraries.libraryclasspath">
         <pathelement location="WebContent/WEB-INF/lib/antlr-2.7.6.jar"/>
         <pathelement location="WebContent/WEB-INF/lib/asm.jar"/>
@@ -43,22 +43,22 @@
         <pathelement location="build/classes"/>
         <path refid="Web App Libraries.libraryclasspath"/>
         <path refid="EAR Libraries.libraryclasspath"/>
-        <pathelement location="tomcat-lib/annotations-api.jar"/>
-        <pathelement location="tomcat-lib/catalina.jar"/>
-        <pathelement location="tomcat-lib/catalina-ant.jar"/>
-        <pathelement location="tomcat-lib/catalina-ha.jar"/>
-        <pathelement location="tomcat-lib/catalina-tribes.jar"/>
-        <pathelement location="tomcat-lib/el-api.jar"/>
-        <pathelement location="tomcat-lib/jasper.jar"/>
-        <pathelement location="tomcat-lib/jasper-el.jar"/>
-        <pathelement location="tomcat-lib/jasper-jdt.jar"/>
-        <pathelement location="tomcat-lib/jsp-api.jar"/>
-        <pathelement location="tomcat-lib/servlet-api.jar"/>
-        <pathelement location="tomcat-lib/tomcat-coyote.jar"/>
-        <pathelement location="tomcat-lib/tomcat-dbcp.jar"/>
-        <pathelement location="tomcat-lib/tomcat-i18n-es.jar"/>
-        <pathelement location="tomcat-lib/tomcat-i18n-fr.jar"/>
-        <pathelement location="tomcat-lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="lib/annotations-api.jar"/>
+        <pathelement location="lib/catalina.jar"/>
+        <pathelement location="lib/catalina-ant.jar"/>
+        <pathelement location="lib/catalina-ha.jar"/>
+        <pathelement location="lib/catalina-tribes.jar"/>
+        <pathelement location="lib/el-api.jar"/>
+        <pathelement location="lib/jasper.jar"/>
+        <pathelement location="lib/jasper-el.jar"/>
+        <pathelement location="lib/jasper-jdt.jar"/>
+        <pathelement location="lib/jsp-api.jar"/>
+        <pathelement location="lib/servlet-api.jar"/>
+        <pathelement location="lib/tomcat-coyote.jar"/>
+        <pathelement location="lib/tomcat-dbcp.jar"/>
+        <pathelement location="lib/tomcat-i18n-es.jar"/>
+        <pathelement location="lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="lib/tomcat-i18n-ja.jar"/>
     </path>
     <target name="init">
         <mkdir dir="build/classes"/>
@@ -67,6 +67,9 @@
         </copy>
         <copy includeemptydirs="false" todir="build/classes">
             <fileset dir="tests" excludes="**/*.launch, **/*.java"/>
+        </copy>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="${lib.link}" excludes="**/*.launch, **/*.java"/>
         </copy>
     </target>
     <target name="clean">
@@ -85,29 +88,13 @@
             <src path="tests"/>
             <classpath refid="agileet.classpath"/>
         </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" source="${source}" target="${target}">
+            <src path="${lib.link}"/>
+            <include name="*.jar"/>
+            <classpath refid="agileet.classpath"/>
+        </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-        <copy todir="${ant.library.dir}">
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </copy>
-        <unzip dest="${ant.library.dir}">
-            <patternset includes="jdtCompilerAdapter.jar"/>
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </unzip>
-    </target>
-    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-        <antcall target="build"/>
-    </target>
-    <target name="AddPlayerActionTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="pokkare.tests.AddPlayerActionTest" todir="${junit.output.dir}"/>
-            <classpath refid="agileet.classpath"/>
-        </junit>
-    </target>
     <target name="AllTests">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
@@ -116,11 +103,152 @@
             <classpath refid="agileet.classpath"/>
         </junit>
     </target>
-    <target name="DeletePlayerActionTest">
+    <target name="ViewRankingActionTest">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
+            <test name="pokkare.tests.ViewRankingActionTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="agileet">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.AddEventActionTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.AddPlayerActionTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.AddRankingActionTest" todir="${junit.output.dir}"/>
             <test name="pokkare.tests.DeletePlayerActionTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.EventServiceTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.GamesTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.IndexActionTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.PlayerTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.PointsServiceTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.PointsTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.PokkareGraphDrawerTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.ScoreDataWrapperTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.ScoreServiceTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.ScoreTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.ViewRankingActionTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="TestingTests">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.AddEventActionTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="PlayerTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.PlayerTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="PointsTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.PointsTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="PokkareGraphDrawerTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.PokkareGraphDrawerTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="PointsServiceTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.PointsServiceTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="ScoreDataWrapperTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.ScoreDataWrapperTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="AddRankingActionTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.AddRankingActionTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="ScoreTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.ScoreTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="GamesTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.GamesTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="tests">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.AddEventActionTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.AddPlayerActionTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.AddRankingActionTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.AllTests" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.DeletePlayerActionTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.EventServiceTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.GamesTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.IndexActionTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.PlayerTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.PointsServiceTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.PointsTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.PokkareGraphDrawerTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.ScoreDataWrapperTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.ScoreServiceTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.ScoreTest" todir="${junit.output.dir}"/>
+            <test name="pokkare.tests.ViewRankingActionTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="ScoreServiceTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.ScoreServiceTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="IndexActionTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.IndexActionTest" todir="${junit.output.dir}"/>
+            <classpath refid="agileet.classpath"/>
+        </junit>
+    </target>
+    <target name="EventServiceTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="pokkare.tests.EventServiceTest" todir="${junit.output.dir}"/>
             <classpath refid="agileet.classpath"/>
         </junit>
     </target>
