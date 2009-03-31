@@ -59,15 +59,32 @@ http://www.cs.helsinki.fi/u/jmurtola/pokkare/db_model.jpg
 
 Data model
 
-= Development tools & environment =
+= Development tools & environments =
 
+== Tools ==
  * [http://www.eclipse.org/downloads/moreinfo/jee.php Eclipse Europa]
- * [http://dev.mysql.com/downloads/mysql/5.1.html MySQL 5.1]
+ * [http://dev.mysql.com/downloads/mysql/5.1.html MySQL 5.1] 
  * [http://tomcat.apache.org/download-60.cgi Tomcat 6.x]
  * All jar's from pokkare/!WebContent/WEB-INF/lib
 
-Suggested:
+=== Suggested ===
 
  * [http://subclipse.tigris.org/install.html Subclipse] (Eclipse svn plugin)
   # Requires Mylyn plugin, is automatically installable the same way as Subclipse
  * [http://eclemma.org/installation.html EclEmma] (Eclipse code coverage plugin)
+
+== Continuous integration on Alkokrunni ==
+
+=== Get access to alkokrunni for first time ===
+
+ * Get public key from one of the other developers (id_tkt_agil_db.cs.helsinki.fi)
+ * Copy this public key to your department home folder, under the .ssh-folder. If the folder doesen't exist, create it. 
+ * Direct access to alkokrunni must be via melkki/melkinpaasi/etc. department server. The public key file cannot exist in other machines/servers. *Always ssh first to department server, _then_ to alkokrunni*
+ * Use this command to ssh to alkokrunni:
+   {{{~$ ssh -i ~/.ssh/id_tkt_agil_db.cs.helsinki.fi tkt_agil@alkokrunni}}}
+ * To setup handy shortcut, do:
+   {{{~$ echo "ssh -i ~/.ssh/id_tkt_agil_db.cs.helsinki.fi tkt_agil@alkokrunni" > tkt_agil}}}
+   {{{~$chmod a+x tkt_agil}}}
+   # First ssh to melkki, then use this command to continue to alkokrunni:
+     {{{~$ ./tkt_agil}}}
+   
