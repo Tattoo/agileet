@@ -2,11 +2,6 @@ package pokkare.model;
 
 import java.io.Serializable;
 
-/**
- * Persistenssiluokka, sis‰lt‰‰ Hibernaten tarvitsemat get-
- * ja set-metodit sek‰ tarvittavat muuttujat GAMES
- * -taulun tietokantaoperaatioita varten.
- */
 
 public class Points implements Serializable {
 	
