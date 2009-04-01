@@ -25,17 +25,17 @@ Some mapping efforts have been done:
 
 Possible areas of friction:
 
- # Empowerment and trust versus micromanagement
+ # Empowerment and trust versus micromanagement _(source)_
    * Process and Product Quality Assurance
    * Compliance (perhaps?) becomes the focus, not effective practices justified by results
- # Elaboration and review of intermediate work products
+ # Elaboration and review of intermediate work products _(source)_
    * How much is enough to “define” and “elaborate”...
       # requirements before?
       # design and interfaces before?
       # implementation and testing?
    * What is sufficient review?
    * Is bi-directional traceability necessary? To what level?
- # Organization standards versus project standards
+ # Organization standards versus project standards _(source)_
    * Agile teams determine their own process and practices by consensus
    * Question: Does CMMI tailoring guidance allow project team data or consensus to overrule
       # Organizational standards?
