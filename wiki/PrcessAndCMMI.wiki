@@ -1,0 +1,51 @@
+#summary Theme task #1 of iteration 3
+
+= Introduction to CMMI =
+
+*CMMI* (Capability Maturity Model Integration) is follower to  Capability Maturity Model (*CMM*), which was initially created as an abstract model for the military to use as an objective evaluation of software subcontractors. 
+
+http://upload.wikimedia.org/wikipedia/commons/6/64/Characteristics_of_the_Maturity_levels.jpg
+
+CMMI is a collection of best practices that meet the needs of organizations in different areas of interest. A collection of best practices that cover a particular area of interest is called a _CMMI model_. These models are:
+ # _Development_, addresses product and service development processes.
+ # _Acquisition_, addresses supply chain management, acquisition, and outsourcing processes in government and industry.
+ # _Services_, addresses guidance for delivering services within an organization and to external customers.
+
+All CMMI models contain multiple Process Areas (*PA*). A PA has 1 to 4 goals, and each goal is comprised of practices which describe specific activities in each PA. An additional set of (generic) goals and practices applies across all of the process areas. 
+
+
+= Agile processes & CMMI =
+
+General problem is to map the qualities of agile processes to CMMI goals and practices. 
+
+Some mapping efforts have been done:
+ * Agile+ (AgileTek) (Basically, extended XP to meet CMMI Level 3)
+ * Microsoft Solutions Framework (Version 4 was agile “with some overhead” to 
+achieve CMMI Level 3 consistency)
+ * ASCEND (BAE Systems, claims CMMI Level 5 compatibility)
+
+Possible areas of friction:
+
+ # Empowerment and trust versus micromanagement
+   * Process and Product Quality Assurance
+   * Compliance (perhaps?) becomes the focus, not effective practices justified by results
+ # Elaboration and review of intermediate work products
+   * How much is enough to “define” and “elaborate”...
+      # requirements before?
+      # design and interfaces before?
+      # implementation and testing?
+   * What is sufficient review?
+   * Is bi-directional traceability necessary? To what level?
+ # Organization standards versus project standards
+   * Agile teams determine their own process and practices by consensus
+   * Question: Does CMMI tailoring guidance allow project team data or consensus to overrule
+      # Organizational standards?
+      # Accumulated organizational performance data?
+   * _Otherwise, process performers are no longer the process owners_
+ # If we modify CMMI a lot, is it still CMMI?
+   * "We're _basically_ CMMI lvl 4."
+   * "Show me the certificate."
+   * "..."
+
+_[http://www.sei.cmu.edu/cmmi/adoption/pdf/dutton.pdf Source]_
+ 
