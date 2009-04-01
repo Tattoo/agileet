@@ -2,8 +2,8 @@
  * [Requirement_specification Documentation]
  * [QualityInAgileSummary Theme Task 1: Quality in Agile-summary]
  * [Quality_assurance Theme Task 2: Quality assurance plan]
- * [PrcessAndCMMI Theme Task 3: CMMI]
- * [Process]
+ * [PrcessAndCMMI Theme Task 3-a: CMMI]
+ * [Process Theme Task 3-b: Process]
  * [About]
  * [http://code.google.com/p/agileet/issues/list?can=1&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Summary&sort=&mode=grid&y=Milestone&x=Priority&cells=tiles&nobtn=Update Burndown Chart]
 
