@@ -39,7 +39,7 @@ Sprint 2 scope and issues defined in issuelist
 
 == Theme 1: CMMI and agile processes ==
  * CMMI is a process improvement approach that provides organizations with the essential elements for effective process improvement. Does it work with agile processes?
- * PrcessAndCMMI
+ * [PrcessAndCMMI]
 
 == Theme 2: Description of the process ==
  * Each team describe the process they are using. The description should provide comprehensive understanding among team members about the project's process.
