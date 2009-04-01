@@ -19,7 +19,7 @@ All CMMI models contain multiple Process Areas (*PA*). A PA has 1 to 4 goals, an
 General problem is to map the qualities of agile processes to CMMI goals and practices. 
 
 Some mapping efforts have been done:
- * Agile+ (AgileTek) (Basically, extended XP to meet CMMI Level 3)
+ * Agile+ (!AgileTek) (Basically, extended XP to meet CMMI Level 3)
  * Microsoft Solutions Framework (Version 4 was agile “with some overhead” to 
 achieve CMMI Level 3 consistency)
  * ASCEND (BAE Systems, claims CMMI Level 5 compatibility)
