@@ -15,11 +15,13 @@
 ----
 = Sprint 2 (20. - 27.03.) =
 
-== Theme 1: Quality assurance plan ==
+== Theme: Quality assurance plan ==
  * Make Quality assurance plan for your team. The plan will dictate, how quality is controlled and assured in the project.
+ * [Quality_assurance]
 
 == Theme 2: Metrics used in project ==
  * Each team chooses metrics that are used to control process and product quality. These metrics are part of Quality assurance plan.
+ * [Quality_assurance]
 
 === Sprint 2 kick-off ===
 Sprint 2 scope and issues defined in issuelist
@@ -37,6 +39,7 @@ Sprint 2 scope and issues defined in issuelist
 
 == Theme 1: CMMI and agile processes ==
  * CMMI is a process improvement approach that provides organizations with the essential elements for effective process improvement. Does it work with agile processes?
+ * PrcessAndCMMI
 
 == Theme 2: Description of the process ==
  * Each team describe the process they are using. The description should provide comprehensive understanding among team members about the project's process.
