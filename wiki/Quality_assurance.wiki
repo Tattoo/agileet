@@ -58,7 +58,9 @@ Primary metrics in the project is finished functionality and open issues. Measur
 
 Teams velocity is used as the secondary metrics. Velocity is calculated by adding up the work hour estimates for each task accomplished in a sprint. Early velocity figures are educated guesses.
 
-Other metrics include functional test results, number of faults and test cases added as result to spotting faults and the number of refactorings to make the system more robust.
+Other metrics include functional test results, number of faults and test cases added as result to spotting faults and the number of refactorings to make the system more robust. [http://www.aivosto.com/project/help/pm-oo-ck.html CK-metrics(*)] is used to track progam complexity. 
+
+(*) Exception to this is _Lack of Cohesion on Methods_-metric that is encouraged to not use.
 
 = Indirect procedures =
 A modified XP process shall be used to ensure quality within the Scrum process. The following remarks describe the quality driven process.
