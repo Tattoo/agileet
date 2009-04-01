@@ -33,7 +33,7 @@ Issues shall be tracked using the code.google.com issue tracker. Issue workflow 
  # If the reviewer sees that the issue is not fully complete and decides to handle the rest himself (this approach is encouraged since all work is collectively shared), then the reviewer temporarily becomes issue owner while the original issue owner needs to review all changes.
  # In Sprint demo meeting, all issues of the sprint are reviewed.
 
-`*`: There is one exception: If during the sprint it emerges that the issue is something else than originally thought, it is allowed to close the original issue and create new issue. Notice that it is demanded that the new issue can be completed in the time frame reserved for the original issue.
+(`*`): There is one exception: If during the sprint it emerges that the issue is something else than originally thought, it is allowed to close the original issue and create new issue. Notice that it is demanded that the new issue can be completed in the time frame reserved for the original issue.
 
 === Definition of done ===
 All tasks need to have:
@@ -60,7 +60,7 @@ Teams velocity is used as the secondary metrics. Velocity is calculated by addin
 
 Other metrics include functional test results, number of faults and test cases added as result to spotting faults and the number of refactorings to make the system more robust. [http://www.aivosto.com/project/help/pm-oo-ck.html CK-metrics(*)] is used to track progam complexity. 
 
-(*) Exception to this is _Lack of Cohesion on Methods_-metric that is encouraged to not use.
+(`*`): Exception to this is _Lack of Cohesion on Methods_-metric that is encouraged to not use.
 
 = Indirect procedures =
 A modified XP process shall be used to ensure quality within the Scrum process. The following remarks describe the quality driven process.
