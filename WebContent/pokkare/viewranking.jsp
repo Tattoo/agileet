@@ -12,7 +12,7 @@
 <br />
 <br />
 <center>
-<bfg:axesgraph width="500" height="500" backwallpaint="stripe(#eeeeee,axis=bottom,line=#cccccc,altaxis=left)">
+<bfg:axesgraph width="500" alt="Ranking" height="500" backwallpaint="stripe(#eeeeee,axis=bottom,line=#cccccc,altaxis=left)">
 	<bfg:label font="16pt bold Arial">Pelaajien ranking</bfg:label>
 	<bfg:axis pos="left" type="int">
 		<bfg:label font="12pt bold Arial">Pelaajien pisteet</bfg:label>
@@ -41,9 +41,11 @@
 
 <h1>Pelit</h1>
 <div class="games_list">
-	<s:iterator value="games">
-		${key}: ${value}
-	</s:iterator>
+	<dl>
+		<s:iterator value="games">
+			<dt>${key}</dt><dd>${value}</dd>
+		</s:iterator>
+	</dl>
 </div>
 
 </center>

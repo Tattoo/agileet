@@ -59,5 +59,34 @@
 				});
 			});
 		}
+		
+		if (String(window.location).indexOf("viewranking") != -1){ // check that we are in the right url
+			
+			var sortList = $(".games_list > dl").find("dt");
+			var flag = true;
+			while (flag){
+				flag = false;
+				for (var i = 0; i < sortList.length-1; i++){
+					if (sortList[i].innerHTML > sortList[i+1].innerHTML){
+						var temp = sortList[i];
+						sortList[i] = sortList[i+1];
+						sortList[i+1] = temp;
+						flag = true;
+					}
+				}
+			}
+			var html = "";
+			jQuery.each(sortList, function(i, element){
+				html +=  "<dt>"+$(element).text()+"</dt>";
+				html +=  "<dd>"+$(element).next().text()+"</dd><br />";
+			});
+			$(".games_list > dl").html(html);
+			
+			// remove the game number
+			$(".games_list > dl > dd").each(function(){
+				var content = $(this).text().split(" ");
+				$(this).text(content[0]);
+			});
+		}
 	});
 })();

@@ -135,3 +135,17 @@ a.ui-datepicker-next, a.ui-datepicker-prev {
 	margin: 0px 4px 0px 4px;
 	padding: 1px 2px 1px 2px;
 }
+
+.games_list {
+	margin: 0 auto 0 auto;
+	width: 10em;
+}
+
+.games_list > dl {
+	margin: 0 auto 0 auto;
+}
+
+.games_list > dl > dt, .games_list > dl > dd{
+	display: block;
+	float: left;
+}
