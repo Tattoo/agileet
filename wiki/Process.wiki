@@ -38,8 +38,8 @@ Joonas.
 
 == Daily Scrum ==
 Developer team is simulating shared worspace through IRC. A quick meeting is held every time a developer starts working on something and other developers are present at IRC and capable of sharing.  During the meeting, each team member answers three questions:
-  # What have you done since yesterday?
-  # What are you planning to do by today?
+  # What have you done since last check?
+  # What are you planning to do next?
   # Do you have any problems preventing you from accomplishing your goal?
 
 == Sprint Planning Meeting ==
