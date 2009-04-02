@@ -48,7 +48,7 @@ At the beginning of the sprint cycle (every Friday), a Sprint Planning Meeting i
 == Sprint Review Meeting ==
 At the end of a sprint cycle (every Friday), two meetings are held: the Sprint Demo Meeting and the Sprint Retrospective. 
 
-In the review, the work that was completed and not completed is reviewed and the completed work to the stakeholders (a.k.a. "the demo")
+In the review, the work that was completed and not completed is reviewed and the completed work (known as _release candidate_) presented to the stakeholders (a.k.a. "the demo")
 
 Some time after the practice group meeting, development team members have a quick retrospective, where all team members reflect on the past sprint. Two main questions is answered: 
   # What went well during the sprint? 
@@ -62,9 +62,13 @@ The product backlog is the issue tracking at Google Code-project page (http://co
 
 The product backlog is property of the Product Owner. Business value is set by the Product Owner. Development effort is set by the Team.
 
+In the Sprint demo and Sprint planning meetings, issues can be moved out of the Product backlog by the Customer. In real-life, they are moved to "obsolete"-milestone and labeled accordingly with comments to show when the issue was decided. 
+
+No issue can ever be removed entirely from the Product backlog.
+
 == Sprint backlog ==
 
-Since the project has fixed, one-week sprints, the sprint backlog is the issue tracking at Google Code-project page containing only the issues that are labeled to belong to the sprint at hand.
+Since the project has fixed, one-week sprints, the sprint backlog is the issue tracking at Google Code-project page containing only the issues that are labeled to belong to the sprint at hand. Sprint backlog is hence subset of Product backlog
 
 Issues on the sprint backlog are never assigned; rather, tasks are signed up for by the team members as needed, according to the set priority and the team member skills. 
 
@@ -114,6 +118,9 @@ The product backlog is a high-level document for the entire project. It contains
 
 ===Sprint backlog===
 A list of issues to be completed during the sprint at hand.
+
+===Release candidate===
+The working software that demonstrated what was and was not completed.
 
 == Others ==
 
