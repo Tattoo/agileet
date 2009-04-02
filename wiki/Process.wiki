@@ -91,6 +91,9 @@ To ensure ever-increasing quality, the _*[Quality_assurance Quality Assurance Pl
 The following terminology is used in the project:
 
 == Roles ==
+
+Roles describe different roles in the project.
+
 ===Product Owner ===
 
 The person responsible for maintaining the Product Backlog by representing the interests of the stakeholders.
@@ -104,6 +107,8 @@ A cross-functional group of people responsible for managing itself to develop th
 
 == Artifacts ==
 
+Artifacts describe management tools and processes. 
+
 ===Product backlog===
 The product backlog is a high-level document for the entire project. It contains issues: broad descriptions of all required features, wish-list items, defects, etc. prioritised by business value. It is the "What" that will be built. It is open and editable by anyone and contains at least rough estimates of both business value and development effort. 
 
@@ -111,6 +116,7 @@ The product backlog is a high-level document for the entire project. It contains
 A list of issues to be completed during the sprint at hand.
 
 == Others ==
+
 ===Sprint===
 A time period (in this project, one week (8 days) from Friday to Friday, inclusive) in which development occurs on a set of backlog items that the Team has committed to.
 
