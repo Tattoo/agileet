@@ -41,7 +41,7 @@ Possible areas of friction:
       # Organizational standards?
       # Accumulated organizational performance data?
    * _Otherwise, process performers are no longer the process owners_
- # If we modify CMMI a lot, is it still CMMI?
+ # If we modify CMMI to fit, is it still CMMI? If we modify our agile process, is it still agile?
    * "We're _basically_ CMMI lvl 4."
    * "Show me the certificate."
    * "..."
