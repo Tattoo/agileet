@@ -26,7 +26,7 @@ public class ViewRankingAction  {
 	HashMap<Integer, String> games;
 	ScoreDataWrapper scoreDataWrapper = new ScoreDataWrapper();
 	List<ScoreData> scoreDatas = scoreDataWrapper.getScoreDatas();
-
+	
 	public List<ScoreData> getScoreDatas() {
 		return scoreDatas;
 	}
@@ -160,10 +160,11 @@ public class ViewRankingAction  {
 		
 		int imageWidth = imageHeight;
 		
+		/* TODO: refactor image width and height smarter than this
 		Map session = ActionContext.getContext().getSession();
 		session.put("image_height", imageHeight);
 		session.put("image_width", imageWidth);
-		
+		*/
 		
 		return "success";
 
