@@ -107,7 +107,7 @@ A cross-functional group of people responsible for managing itself to develop th
 
 == Artifacts ==
 
-Artifacts describe management tools and processes. 
+Artifacts describe important concepts all project memebers need to know. 
 
 ===Product backlog===
 The product backlog is a high-level document for the entire project. It contains issues: broad descriptions of all required features, wish-list items, defects, etc. prioritised by business value. It is the "What" that will be built. It is open and editable by anyone and contains at least rough estimates of both business value and development effort. 
