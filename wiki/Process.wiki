@@ -112,6 +112,6 @@ A list of issues to be completed during the sprint at hand.
 
 == Others ==
 ===Sprint===
-A time period (typically between 2 weeks and 1 month) in which development occurs on a set of backlog items that the Team has committed to.
+A time period (in this project, one week (8 days) from Friday to Friday, inclusive) in which development occurs on a set of backlog items that the Team has committed to.
 
-[http://en.wikipedia.org/wiki/Scrum_(development)]
+[http://en.wikipedia.org/wiki/Scrum_(development) Source]
