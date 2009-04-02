@@ -23,6 +23,7 @@ h1 {
 	needed because jquery.corners-plugin breaks if #index has padding
 */
 	padding: 0em 2em 2em 2em;
+	overflow:auto;
 }
 
 #menu {

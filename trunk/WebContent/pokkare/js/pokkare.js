@@ -13,7 +13,7 @@
 		if(String(window.location).indexOf("addevent") != -1){ // check that we are in right url
 			$("#time").datepicker({
 				showOn: 'button', 
-				buttonImage: '/pokkare/pokkare/images/datepicker.gif', 
+				buttonImage: '/agileet/pokkare/images/datepicker.gif', 
 				buttonImageOnly: true,
 				firstDay: 1,
 				appendText: ' <small>(mm-dd-yyyy)</small>'
