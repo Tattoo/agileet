@@ -14,10 +14,6 @@ public class AddPlayerAction implements ParameterAware {
 	private EventService event = new EventService();
 
 	public ArrayList<String> getPlayers(){
-		players = new ArrayList<String>();
-		for (Player p : event.findPlayers()){
-			players.add(p.getName());
-		}
 		return players;
 	}
 	
