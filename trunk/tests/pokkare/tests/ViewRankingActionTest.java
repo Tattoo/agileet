@@ -30,17 +30,6 @@ public class ViewRankingActionTest extends TestCase {
 		view.setRanking(testRanking);
 		assertEquals(testRanking, view.getRanking());
 	}
-	/* TODO: When graph-drawing works, uncomment
-	 * 
-	 
-	public void testDrawPokkareGraph(){
-		try {
-			view.drawPokkareGraph(999);
-		} catch (Exception e){
-			e.printStackTrace();
-			fail("testDrawPokkareGraph() threw an exception");
-		}
-	}
 	
 	public void testExecute(){
 		String response = null;
@@ -53,5 +42,4 @@ public class ViewRankingActionTest extends TestCase {
 			assertEquals("success", response);
 		}
 	}
-	*/
 }

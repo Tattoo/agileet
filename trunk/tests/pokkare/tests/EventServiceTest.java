@@ -191,6 +191,21 @@ public class EventServiceTest extends TestCase {
 		session.getTransaction().commit();
 		session.close();
 	}
+
+	public void testDeletePlayerRowFromDatabase(){
+		Player mock = new Player();
+		mock.setId(999999991);
+		mock.setName("Dave James Hendrix");
+		mock.setState('D'); 
+		event.savePlayer(mock);
+		assertTrue(event.deletePlayerRowFromDatabase(mock));
+		for (Player p : event.findPlayers()){
+			if (p.getId().equals(mock.getId()) || p.getName().compareTo(mock.getName()) == 0){
+				fail("deletePlayerRowFromDatabase should've deleted player but it didn't...");
+			}
+		}
+	}
+	
 	
 	/*
 	 * Helper methods
