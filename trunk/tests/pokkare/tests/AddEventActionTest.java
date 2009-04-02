@@ -1,7 +1,10 @@
 package pokkare.tests;
 
 import java.text.ParseException;
+import java.text.ParsePosition;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 import junit.framework.TestCase;
@@ -33,12 +36,11 @@ public class AddEventActionTest extends TestCase {
 		assertSame(action.getDesc(), "this is description");
 	}
 	public void testTimeAccessors() throws ParseException {
-		action.setTime("03/06/2009");
+		action.setTime("12/30/2009");
 		Date time1 = action.dateParser.parse(action.getTime());
-		Date time2 = new Date(2009,06,03);
-//		if (true)
-//			throw new IllegalStateException("" + time1.getYear() + " " + time2.getYear());
-		assertEquals(time1, time2);
+		// from API: Month is 0-based. e.g., 0 for January
+		GregorianCalendar cal = new GregorianCalendar(2009, 11, 30); 
+        assertEquals(cal.getTime(), time1);
 	}
 	public void testHostAccessors(){
 		action.setHost(123);

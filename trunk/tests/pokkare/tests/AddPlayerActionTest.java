@@ -5,6 +5,7 @@ import pokkare.model.Player;
 import pokkare.service.EventService;
 import pokkare.service.HibernateUtil;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.hibernate.Session;
@@ -19,6 +20,15 @@ public class AddPlayerActionTest extends TestCase {
 	
 	protected void tearDown() throws Exception {
 		action = null;
+	}
+	
+	public void testPlayersAccessors(){
+		assertEquals(new ArrayList<String>(), action.getPlayers());
+		ArrayList<String> arr = new ArrayList<String>();
+		arr.add("Foo");
+		action.setPlayers(arr);
+		assertEquals(1, action.getPlayers().size());
+		assertEquals(arr, action.getPlayers());
 	}
 	
 	public void testParametersAccessors(){
