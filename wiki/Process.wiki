@@ -62,7 +62,7 @@ The product backlog is the issue tracking at Google Code-project page (http://co
 
 The product backlog is property of the Product Owner. Business value is set by the Product Owner. Development effort is set by the Team.
 
-In the Sprint demo and Sprint planning meetings, issues can be moved out of the Product backlog by the Customer. In real-life, they are moved to "obsolete"-milestone and labeled accordingly with comments to show when the issue was decided. 
+In the Sprint demo and Sprint planning meetings, issues can be moved out of the Product backlog by the practice group and product owner. In real-life, they are moved to "obsolete"-milestone and labeled accordingly with comments to show when the issue was decided. 
 
 No issue can ever be removed entirely from the Product backlog.
 
@@ -127,4 +127,4 @@ The working software that demonstrated what was and was not completed.
 ===Sprint===
 A time period (in this project, one week (8 days) from Friday to Friday, inclusive) in which development occurs on a set of backlog items that the Team has committed to.
 
-[http://en.wikipedia.org/wiki/Scrum_(development) Source]
+[http://en.wikipedia.org/wiki/Scrum_(development) Source: Wikipedia]
