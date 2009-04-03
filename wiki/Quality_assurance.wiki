@@ -19,6 +19,8 @@ Refactoring of the code is done as per XP guidelines: when refactoring helps add
 
 Developers are responsible for unit testing their own code, writing and running JUnit tests and documenting functional tests. TDD is required. The code is collectively owned. 
 
+It is encouraged to debug hard problems together.
+
 == Peer reviews ==
 Functionality shall be reviewed by the course practice group weekly. Added and/or changed functionality shall be reviewed internally by the team before issues (be it tasks or fixes) are accepted and closed. 
 
