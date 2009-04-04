@@ -43,7 +43,7 @@ Sprint 2 scope and issues defined in issuelist
 
 == Theme 2: Description of the process ==
  * Each team describe the process they are using. The description should provide comprehensive understanding among team members about the project's process.
-
+ * [Process]
 ===Sprint 3 kick-off===
 ====[http://www.cs.helsinki.fi/u/tkairi/task-breakdown-3.png Task breakdown] (large)====
  * [http://code.google.com/p/agileet/issues/detail?id=10 Continuous integration]
