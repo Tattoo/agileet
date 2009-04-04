@@ -65,7 +65,7 @@ Sprint 2 scope and issues defined in issuelist
  * In Test-Driven Development (TDD), one writes unit tests before implementation code. Team member use TDD in this iteration (you can use it in other iterations, of course). 
 
 ===Sprint 4 kick-off===
-Task breakdown
+Task breakdown _*TODO*_
  * [http://code.google.com/p/agileet/issues/detail?id=24 Order games by ranking-bug]
  * [http://code.google.com/p/agileet/issues/detail?id=23 Reactivate deleted player]
  * [http://code.google.com/p/agileet/issues/detail?id=22 Success and error messages]
