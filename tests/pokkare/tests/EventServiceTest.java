@@ -206,7 +206,19 @@ public class EventServiceTest extends TestCase {
 		}
 	}
 	
-	
+	public void testDeletePlayer(){
+		Player mock = new Player();
+		mock.setId(999999992);
+		mock.setName("Jimmy Hendrix");
+		mock.setState('N');
+		event.savePlayer(mock);
+		assertTrue(event.deletePlayer(mock));
+		for (Player p : event.findPlayers()){
+			if (p.getId().equals(mock.getId()) || p.getName().compareTo(mock.getName()) == 0){
+				fail("deletePlayer should've deleted player but it didn't...");
+			}
+		}		
+	}
 	/*
 	 * Helper methods
 	 */	
