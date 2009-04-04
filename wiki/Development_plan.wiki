@@ -54,7 +54,7 @@ Sprint 2 scope and issues defined in issuelist
  * [http://code.google.com/p/agileet/issues/detail?id=19 Graph drawing]
 
 ===Sprint produces: Third version of program===
-
+ * Sprint was accepted
 ----
 = Sprint 4 (03. - 10.04.) =
 
@@ -63,6 +63,14 @@ Sprint 2 scope and issues defined in issuelist
 
 ==Theme 2: Test driven software development==
  * In Test-Driven Development (TDD), one writes unit tests before implementation code. Team member use TDD in this iteration (you can use it in other iterations, of course). 
+
+===Sprint 4 kick-off===
+Task breakdown
+ * [http://code.google.com/p/agileet/issues/detail?id=24 Order games by ranking-bug]
+ * [http://code.google.com/p/agileet/issues/detail?id=23 Reactivate deleted player]
+ * [http://code.google.com/p/agileet/issues/detail?id=22 Success and error messages]
+ * [http://code.google.com/p/agileet/issues/detail?id=21 Update documentation]
+ * [http://code.google.com/p/agileet/issues/detail?id=6 Theme task]
 
 ===Sprint produces: Fourth version of program===
 
