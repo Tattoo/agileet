@@ -20,12 +20,10 @@ public class EventService {
 	private static List<Games> gamesList;
 	private static List<Score> scoreList;
 	private static List<Points> pointsList;
-	
+	private SessionFactory sessionFactory = HibernateUtil.getSessionFactory();	
+	private Session session;
 	public List<Player> findPlayers() {
-		Session session = null;
-		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("from Player");
@@ -41,54 +39,67 @@ public class EventService {
 			
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		
+		catch (Exception e) { 
+			e.printStackTrace(); 
+		}
+		finally { 
+			if (session != null && session.isOpen()) {
+				session.close(); 
+			}
+		}
+		session = null;
 		return playerList;
 	}
 	
 	public Player findPlayer(Integer id) {
-		Session session = null;
 		Player player = null;
 		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			player = (Player)session.get(Player.class, id);
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); }
-		finally { if (session != null && session.isOpen()) session.close(); }
-			
+		catch (Exception e) { 
+			e.printStackTrace(); 
+		}
+		finally { 
+			if (session != null && session.isOpen()){ 
+				session.close(); 
+			}
 		
+		}
+			
+		session = null;
 		return player;
 	}
 	
 	public Integer findScore(Integer rank) {
-		Session session = null;
 		Points point = null;
 		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			point = (Points)session.get(Points.class, rank);
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); }
-		finally { if (session != null && session.isOpen()) session.close(); }
+		catch (Exception e) { 
+			e.printStackTrace(); 
+		}
+		finally { 
+			if (session != null && session.isOpen()){ 
+				session.close(); 
+			}
+		}
 			
-		
+		session = null;
 		return point.getPoints();
 	}
 	
 	
 	public List<Games> findGames() {
-		Session session = null;
 		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("from Games");
@@ -101,48 +112,61 @@ public class EventService {
 			
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		
+		catch (Exception e) { 
+			e.printStackTrace(); 
+		}
+		finally { 
+			if (session != null && session.isOpen()){ 
+				session.close(); 
+			}
+		}
+		session = null;
 		return gamesList;
 	}
 	
 	public boolean saveGame(Games game) {
-		Session session = null;
-		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			session.save(game);
 			session.getTransaction().commit();
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); return false; }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		
+		catch (Exception e) { 
+			e.printStackTrace(); 
+			return false; 
+		}
+		finally { 
+			if (session != null && session.isOpen()){ session.close(); 
+			}
+		}
+		session = null;
 		return true;
 	}
 
 	public boolean saveScore(Score score) {
-		Session session = null;
 		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			session.save(score);
 			session.getTransaction().commit();
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); return false; }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		
+		catch (Exception e) { 
+			e.printStackTrace(); 
+			return false; 
+		}
+		finally { 
+			if (session != null && session.isOpen()) {
+				session.close(); 				
+			}
+		}
+		session = null;
 		return true;
 	}
 	
 	public Integer findGamesForDate(Date date) {
-		Session session = null;
 		Long count = 0L;
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
@@ -154,22 +178,25 @@ public class EventService {
 			Query query = session.createQuery("select count(*) from Games where game_date = '" + queryDate + "'");
 			ArrayList<Long> lista = (ArrayList<Long>)query.list();
 			count = lista.get(0);
-			
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		//System.out.println("asff " + queryDate + " " + count.intValue());
+		catch (Exception e) { 
+			e.printStackTrace(); 
+		}
+		finally { 
+			if (session != null && session.isOpen()){
+				session.close(); 
+			}
+		}
+		session = null;
 		return count.intValue();
 	}
 	
 	
 	
 	public Integer findScoreForPlayer(Integer playerId) {
-		Session session = null;
 		Long sum = 0L;
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("select sum(p.points) from Score s, Points p where s.rank = p.rank and player_id = " + playerId);
@@ -185,8 +212,7 @@ public class EventService {
 	
 	
 	public List<Score> findScores(Integer playerId) {
-		Session session = null;
-		
+	
 		try {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
@@ -194,26 +220,24 @@ public class EventService {
 			Query query = session.createQuery("from Score where player_id=" + playerId);
 			List<Score> lista = (List<Score>)query.list();
 			
-			//System.out.println(lista.size() + " debuggia" );
-		 
 			scoreList = new ArrayList<Score>();
 			for (int i = 0; i < lista.size(); ++i) {
 				scoreList.add(((Score)lista.get(i)));
 			}
 			
-			//System.out.println(scoreList.size() + " debuggia2" );
-			
 			session.close(); 
 		}
 		catch (Exception e) { e.printStackTrace(); }
-		finally { if (session != null && session.isOpen()) session.close(); }
+		finally { 
+			if (session != null && session.isOpen()) {
+				session.close(); 
+			}
+		}
 		
 		return scoreList;
 	}
 	
 	public List<Score> findScores() {
-		Session session = null;
-		
 		try {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
@@ -221,25 +245,24 @@ public class EventService {
 			Query query = session.createQuery("from Score");
 			List<Score> lista = (List<Score>)query.list();
 			
-			//System.out.println(lista.size() + " debuggia" );
-		 
 			scoreList = new ArrayList<Score>();
 			for (int i = 0; i < lista.size(); ++i) {
 				scoreList.add(((Score)lista.get(i)));
 			}
 			
-			//System.out.println(scoreList.size() + " debuggia2" );
-			
 			session.close(); 
 		}
 		catch (Exception e) { e.printStackTrace(); }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		
+		finally { 
+			if (session != null && session.isOpen()) { 
+				session.close(); 
+			}
+		}
+		session = null;
 		return scoreList;
 	}
 	
 	public List<Points> findPoints() {
-		Session session = null;
 		
 		try {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -255,14 +278,19 @@ public class EventService {
 			
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		
+		catch (Exception e) { 
+			e.printStackTrace(); 
+		}
+		finally { 
+			if (session != null && session.isOpen()){ 
+				session.close(); 
+			}
+		}
+		session = null;
 		return pointsList;
 	}
 	
 	public Integer findScoreForGameAndPlayer(Integer gameId, Integer playerId) {
-		Session session = null;
 		Integer i = 0;
 		try {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -285,13 +313,16 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { e.printStackTrace(); }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		//System.out.println("asff " + queryDate + " " + count.intValue());
+		finally { 
+			if (session != null && session.isOpen()){ 
+				session.close(); 
+			}
+		}
+		session = null;
 		return i;
 	}
 	
 	public boolean savePlayer(Player player) {
-		Session session = null;
 		
 		try {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -301,14 +332,20 @@ public class EventService {
 			session.getTransaction().commit();
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); return false; }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		
+		catch (Exception e) { 
+			e.printStackTrace(); 
+			return false; 
+		}
+		finally { 
+			if (session != null && session.isOpen()){ 
+				session.close();
+			}
+		}
+		session = null;
 		return true;
 	}
 
 	public boolean deletePlayer(Player player) {
-		Session session = null;
 		
 		try {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -323,14 +360,20 @@ public class EventService {
 			session.getTransaction().commit();
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); return false; }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		
+		catch (Exception e) { 
+			e.printStackTrace(); 
+			return false; 
+		}
+		finally { 
+			if (session != null && session.isOpen()){
+				session.close();
+			}
+		}
+		session = null;
 		return true;
 	}
 	
 	public boolean deletePlayerRowFromDatabase(Player player) {
-		Session session = null;
 		
 		try {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -340,9 +383,16 @@ public class EventService {
 			session.getTransaction().commit();
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); return false; }
-		finally { if (session != null && session.isOpen()) session.close(); }
-		
+		catch (Exception e) { 
+			e.printStackTrace(); 
+			return false; 
+		}
+		finally { 
+			if (session != null && session.isOpen()){ 
+				session.close(); 
+			}
+		}
+		session = null;
 		return true;
 	}
 	
