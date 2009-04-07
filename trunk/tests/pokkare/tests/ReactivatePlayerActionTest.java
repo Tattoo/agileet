@@ -1,5 +1,6 @@
 package pokkare.tests;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import junit.framework.TestCase;
@@ -43,7 +44,7 @@ public class ReactivatePlayerActionTest extends TestCase {
 	public void testExecute(){
 		try{
 			action.execute();
-			fail("execute() should've failed with NullPointerException in DeletePlayerActionTest");
+			fail("execute() should've failed with NullPointerException in ReactivatePlayerActionTest");
 		} catch (NullPointerException e){ // things okay, put rest of the test here inside the catch
 			HashMap<String, String[]> param = new HashMap<String, String[]>();
 			String playerName = "Rafael Tommasi";
@@ -53,7 +54,17 @@ public class ReactivatePlayerActionTest extends TestCase {
 			action.setParameters(param);
 			
 			assertEquals("player_not_found", action.execute());
+			
 			assertTrue(addTestData(playerName));
+			
+			ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
+			Player p = null;
+			for (int i = 0; i < players.size(); ++i) {
+				if (players.get(i).getName().equals(playerName)) {
+					p = players.get(i);
+				}
+			}
+			assertTrue(p != null && p.getState() == 'N');
 			assertEquals("success", action.execute());
 			
 			event.deletePlayerRowFromDatabase(action.getReactivatePlayerByPlayerName(playerName)); //cleanup
