@@ -42,8 +42,9 @@
 <h1>Pelit</h1>
 <div class="games_list">
 	<dl>
-		<s:iterator value="games">
-			<dt>${key}</dt><dd>${value}</dd>
+		<s:iterator value="gamesList">
+			<dt><s:property value="positionInSeries"/></dt>
+			<dd><p><s:property value="gameDate"/>#<s:property value="gameNumber"/></p></dd>
 		</s:iterator>
 	</dl>
 </div>
