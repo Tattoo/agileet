@@ -44,7 +44,11 @@
 	<dl>
 		<s:iterator value="gamesList">
 			<dt><s:property value="positionInSeries"/></dt>
-			<dd><p><s:property value="gameDate"/>#<s:property value="gameNumber"/></p></dd>
+			<dd>
+				<p>
+					<s:property value="gameDate"/>#<s:property value="gameNumber"/>
+				</p>
+			</dd>
 		</s:iterator>
 	</dl>
 </div>
