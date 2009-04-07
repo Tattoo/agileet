@@ -328,6 +328,7 @@ public class EventService {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
+			player.setState('N');
 			session.save(player);
 			session.getTransaction().commit();
 			session.close(); 
