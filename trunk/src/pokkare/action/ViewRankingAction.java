@@ -2,6 +2,7 @@ package pokkare.action;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,7 @@ public class ViewRankingAction  {
 	Integer picSize = 0;
 	HashMap<String, HashMap<Integer, Integer>> scores;
 	HashMap<Integer, String> games;
+	ArrayList<GameDataObject> gamesList;
 	ScoreDataWrapper scoreDataWrapper = new ScoreDataWrapper();
 	List<ScoreData> scoreDatas = scoreDataWrapper.getScoreDatas();
 	
@@ -79,6 +81,14 @@ public class ViewRankingAction  {
 		this.games = games;
 	}
 
+	public ArrayList<GameDataObject> getGamesList() {
+		return gamesList;
+	}
+
+	public void setGamesList(ArrayList<GameDataObject> gamesList) {
+		this.gamesList = gamesList;
+	}
+	
 	public String execute() {
 
 		ArrayList<Player> playerList = (ArrayList<Player>)event.findPlayers();
@@ -127,6 +137,7 @@ public class ViewRankingAction  {
 
 		HashMap<String, HashMap<Integer, Integer>> data = new HashMap<String, HashMap<Integer, Integer>>();
 		HashMap<Integer, String> games = new HashMap<Integer, String>();
+		gamesList = new ArrayList<GameDataObject>();
 		for (ScoreData sd : getScoreDatas()){
 			String name = sd.getPlayer().getName();
 			Integer score = sd.getScore();
@@ -142,8 +153,11 @@ public class ViewRankingAction  {
 				data.put(name, scoreList);
 			}
 			if (!games.containsKey(positionInSeries)) {
-				System.out.println(positionInSeries + " " + game.getGameDate() + " #" + game.getGameNumber());
-				games.put(positionInSeries, game.getGameDate() + " #" + game.getGameNumber());
+				GameDataObject g = new GameDataObject(positionInSeries, game.getGameDate(), game.getGameNumber());
+				String s = positionInSeries + ": " + game.getGameDate() + " #" + game.getGameNumber();
+				gamesList.add(g);
+				System.out.println(s);
+				games.put(positionInSeries, s);
 			}
 		}
 
@@ -169,4 +183,38 @@ public class ViewRankingAction  {
 		return "success";
 
 	}
+
+	public class GameDataObject {
+		private int positionInSeries;
+		private Date gameDate;
+		private int gameNumber;
+		
+		public GameDataObject(int positionInSeries, Date gameDate, int gameNumber) {
+			this.positionInSeries = positionInSeries;
+			this.gameDate = gameDate;
+			this.gameNumber = gameNumber;
+		}
+		
+		public int getPositionInSeries() {
+			return positionInSeries;
+		}
+		public void setPositionInSeries(int positionInSeries) {
+			this.positionInSeries = positionInSeries;
+		}
+		public Date getGameDate() {
+			return gameDate;
+		}
+		public void setGameDate(Date gameDate) {
+			this.gameDate = gameDate;
+		}
+		public int getGameNumber() {
+			return gameNumber;
+		}
+		public void setGameNumber(int gameNumber) {
+			this.gameNumber = gameNumber;
+		}
+
+		
+	}
+
 }
