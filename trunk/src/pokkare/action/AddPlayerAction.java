@@ -5,10 +5,12 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.ParameterAware;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import pokkare.model.Player;
 import pokkare.service.EventService;
 
-public class AddPlayerAction implements ParameterAware {
+public class AddPlayerAction extends ActionSupport implements ParameterAware {
 	private Map parameters;
 	ArrayList<String> players = new ArrayList<String>();
 	ArrayList<String> stateDPlayers = new ArrayList<String>();
@@ -64,6 +66,7 @@ public class AddPlayerAction implements ParameterAware {
 		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
 		for (Player p : players){
 			if (p.getName().compareTo(addPlayerName) == 0){
+				addActionError("A player with this name already exists");
 				return "name_already_exists";
 			}
 		}
