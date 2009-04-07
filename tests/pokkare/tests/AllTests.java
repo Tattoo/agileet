@@ -29,6 +29,7 @@ public class AllTests {
 		suite.addTestSuite(IndexActionTest.class);
 		suite.addTestSuite(DeletePlayerActionTest.class); // MUST BE BEFORE AddPLayerActionTest
 		suite.addTestSuite(AddPlayerActionTest.class); // MUST BE AFTER DeletePlayerActionTest
+		suite.addTestSuite(ReactivatePlayerActionTest.class); // MUST BE AFTER DeletePLayerActionTest
 		
 
 		return suite;
