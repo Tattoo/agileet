@@ -61,7 +61,7 @@ public class PokkareGraphDrawer implements ImageProducer {
 
 	public boolean createGraphs(ScoreDataWrapper scoreDatas, int maxScore, int numberOfGames) {
 
-		ArrayList<Games> games = (ArrayList<Games>)event.findGames();
+		ArrayList<Games> games = (ArrayList<Games>)event.findGamesOrderedByDate();
 		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
 
 		int horizontalNotches = games.size();

@@ -124,6 +124,47 @@ public class EventService {
 		return gamesList;
 	}
 	
+	public List<Games> findGamesOrderedByDate() {
+		
+		//HQL order by doesn't work so let's hack it
+		List<Games> gamesList = findGames();
+		
+		//really ugly, but I'm not getting paid for this, so...
+		for (int i = 0; i < gamesList.size(); ++i) {
+			Games gI = gamesList.get(i);
+			for (int j = i; j < gamesList.size(); ++j) {
+				Games gJ = gamesList.get(j);
+				
+				if (gJ.getGameDate().getTime() < gI.getGameDate().getTime()) {
+					gI = gamesList.remove(i);
+					gamesList.add(i, gJ);
+					gJ = gamesList.remove(j);
+					gamesList.add(j, gI);
+				}
+			}
+		}
+		
+		for (int i = 0; i < gamesList.size(); ++i) {
+			Games gI = gamesList.get(i);
+			for (int j = i; j < gamesList.size(); ++j) {
+				Games gJ = gamesList.get(j);
+				if (gJ.getGameDate().getYear() == gI.getGameDate().getYear() &&
+						gJ.getGameDate().getMonth() == gI.getGameDate().getMonth() &&
+						gJ.getGameDate().getDay() == gI.getGameDate().getDay()) {
+					if (gJ.getGameNumber() < gI.getGameNumber()) {
+						gI = gamesList.remove(i);
+						gamesList.add(i, gJ);
+						gJ = gamesList.remove(j);
+						gamesList.add(j, gI);
+						System.out.println("bar");
+					}
+				}
+			}
+		}
+		
+		return gamesList;
+	}
+	
 	public boolean saveGame(Games game) {
 		try {
 			session = sessionFactory.openSession();
