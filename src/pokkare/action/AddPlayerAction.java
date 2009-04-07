@@ -11,6 +11,7 @@ import pokkare.service.EventService;
 public class AddPlayerAction implements ParameterAware {
 	private Map parameters;
 	ArrayList<String> players = new ArrayList<String>();
+	ArrayList<String> stateDPlayers = new ArrayList<String>();
 	private EventService event = new EventService();
 
 	public ArrayList<String> getPlayers(){
@@ -29,11 +30,25 @@ public class AddPlayerAction implements ParameterAware {
 		this.parameters = parameters;
 	}
 	
+	public ArrayList<String> getStateDPlayers() {
+		return stateDPlayers;
+	}
+
+	public void setStateDPlayers(ArrayList<String> stateDPlayers) {
+		this.stateDPlayers = stateDPlayers;
+	}
+
 	public String execute() {
 		Player addPlayer = new Player();
 		String addPlayerName = null;
+		
+		//this gets a list of active player's names for deletion
 		for (Player p : (ArrayList<Player>)event.findPlayers()){
 			players.add(p.getName());
+		}
+		//this gets a list of status 'D' players for reactivation
+		for (Player p: (ArrayList<Player>)event.findPlayersWithDeletedState()) {
+			stateDPlayers.add(p.getName());
 		}
 
 		try {
@@ -57,5 +72,6 @@ public class AddPlayerAction implements ParameterAware {
 		
 		return "success";
 	}
+
 
 }

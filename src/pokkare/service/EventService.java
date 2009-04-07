@@ -373,6 +373,60 @@ public class EventService {
 		return true;
 	}
 	
+	public boolean reactivatePlayer(Player player) {
+		
+		try {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			session = sessionFactory.openSession();
+			session.beginTransaction();
+			Query query = session.createQuery("update Player set state = 'N' where id = " + player.getId());
+			query.executeUpdate();
+			session.getTransaction().commit();
+			session.beginTransaction();
+			session.close(); 
+		}
+		catch (Exception e) { 
+			e.printStackTrace(); 
+			return false; 
+		}
+		finally { 
+			if (session != null && session.isOpen()){
+				session.close();
+			}
+		}
+		session = null;
+		return true;
+	}
+	
+	public List<Player> findPlayersWithDeletedState() {
+		try {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			session = sessionFactory.openSession();
+			session.beginTransaction();
+			Query query = session.createQuery("from Player where state = 'D'");
+			List<Player> lista = (List<Player>)query.list();
+	 
+			playerList = new ArrayList<Player>();
+			for (int i = 0; i < lista.size(); ++i) {
+				playerList.add(((Player)lista.get(i)));
+			}
+			
+			session.close(); 
+		}
+		catch (Exception e) { 
+			e.printStackTrace(); 
+		}
+		finally { 
+			if (session != null && session.isOpen()){ 
+				session.close(); 
+			}
+		}
+		session = null;
+		return playerList;
+	}
+	
+	//use deletePlayer(Player) if you want to change player state to 'D' instead of this
+	//this really removes player data from database
 	public boolean deletePlayerRowFromDatabase(Player player) {
 		
 		try {
