@@ -24,10 +24,10 @@ ${chosenGame}
 	<div class="bigGT">-&gt;</div>
 	<fieldset>
 		<legend>valitse peli</legend>
-		<s:iterator value="gamesMap" status="i">
-			<input type="radio" id="addranking_chosenGame${key}" name="chosenGame" value="${key}"/>
-			<label for="addranking_chosenGame${key}">${value}</label><br /> 
-		</s:iterator>	
+		<s:iterator value="gamesList">
+			<input type="radio" id="addranking_chosenGame<s:property value='id'/>" name="chosenGame" value="<s:property value='id'/>"/>
+			<label for="addranking_chosenGame<s:property value='id'/>"><s:property value='gameDate'/> #<s:property value='gameNumber'/></label><br /> 
+		</s:iterator>
 	</fieldset>
 	<div class="bigGT">-&gt;</div>
 	<button>Lis‰‰ ranking</button>

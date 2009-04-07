@@ -14,6 +14,7 @@ import pokkare.service.EventService;
 public class AddRankingAction implements ParameterAware {
 
 	private HashMap<Integer, String> gamesMap = new HashMap<Integer, String>();
+	private ArrayList<Games> gamesList = new ArrayList<Games>();
 	EventService event = new EventService();
 	private static Integer chosenGame = -1;
 	private ArrayList<Player> playerList = new ArrayList<Player>();
@@ -60,6 +61,14 @@ public class AddRankingAction implements ParameterAware {
 	public HashMap<Integer, String> getGamesMap() {
 		return gamesMap;
 	}
+	
+	public ArrayList<Games> getGamesList() {
+		return gamesList;
+	}
+
+	public void setGamesList(ArrayList<Games> gamesList) {
+		this.gamesList = gamesList;
+	}
 
 	public AddRankingAction() {
 
@@ -70,11 +79,12 @@ public class AddRankingAction implements ParameterAware {
 		setPlayerListSize(playerList.size());
 		if (chosenGame == null || chosenGame < 0) {
 
-			ArrayList<Games> a = (ArrayList<Games>)event.findGames();
-
-			for (int i = 0; i < a.size(); ++i) {
-				gamesMap.put(a.get(i).getId(), a.get(i).getGameDate() + " nro: " + a.get(i).getGameNumber());
-			}
+			ArrayList<Games> a = (ArrayList<Games>)event.findGamesOrderedByDate();
+			gamesList = a;
+			
+//			for (int i = 0; i < a.size(); ++i) {
+//				gamesMap.put(a.get(i).getId(), a.get(i).getGameDate() + " nro: " + a.get(i).getGameNumber());
+//			}
 			return "success";
 		}
 

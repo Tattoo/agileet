@@ -49,7 +49,7 @@ public class ScoreDataWrapper {
 		EventService event = new EventService();
 		
 		//get games and players
-		ArrayList<Games> games = (ArrayList<Games>)event.findGames();
+		ArrayList<Games> games = (ArrayList<Games>)event.findGamesOrderedByDate();
 		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
 
 		//auxiliary map to aid in keeping score of players' total scores
