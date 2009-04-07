@@ -21,7 +21,7 @@ public class ReactivatePlayerAction implements ParameterAware {
 	}
 	
 	public String execute() {
-		String deletePlayerName = ((String[])parameters.get("delete_player_name"))[0];
+		String deletePlayerName = ((String[])parameters.get("reactivate_player_name"))[0];
 		Player reactivatePlayer = getReactivatePlayerByPlayerName(deletePlayerName);
 		
 		if (reactivatePlayer != null) {
