@@ -17,4 +17,12 @@
 	</s:iterator>
 </ul>
 
+<h1>Aktivoi poistettu pelaaja</h1>
+<p>Aktivoi aiemmin poistettu pelaaja uudelleen valitsemalla nimi listasta</p>
+<ul id="reactivatePlayersList">
+	<s:iterator value="stateDPlayers">
+		<li><s:property /></li> 
+	</s:iterator>
+</ul> 
+
 <jsp:include page="include/footer.jsp"></jsp:include>
