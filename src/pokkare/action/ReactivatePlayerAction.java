@@ -55,9 +55,10 @@ public class ReactivatePlayerAction extends ActionSupport implements ParameterAw
 		}
 		
 		if (reactivatePlayer != null) {
-			event.reactivatePlayer(reactivatePlayer);
-			addActionMessage("Pelaaja aktivoitu.");
-			return "success";
+			if (event.reactivatePlayer(reactivatePlayer)) {
+				addActionMessage("Pelaaja aktivoitu.");
+				return "success";
+			}
 		}
 		
 		addActionError("Virhe: tämän nimistä pelaajaa ei löytynyt.");

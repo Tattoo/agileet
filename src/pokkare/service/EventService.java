@@ -22,6 +22,8 @@ public class EventService {
 	private static List<Points> pointsList;
 	private SessionFactory sessionFactory = HibernateUtil.getSessionFactory();	
 	private Session session;
+	
+	//finds players whose state is not 'D'
 	public List<Player> findPlayers() {
 		try {
 			session = sessionFactory.openSession();
@@ -35,6 +37,33 @@ public class EventService {
 				if (p.getState() != 'D'){
 					playerList.add(p);
 				}
+			}
+			
+			session.close(); 
+		}
+		catch (Exception e) { 
+			e.printStackTrace(); 
+		}
+		finally { 
+			if (session != null && session.isOpen()) {
+				session.close(); 
+			}
+		}
+		session = null;
+		return playerList;
+	}
+	
+	public List<Player> findPlayersIgnoreState() {
+		try {
+			session = sessionFactory.openSession();
+			session.beginTransaction();
+			Query query = session.createQuery("from Player");
+			List<Player> lista = (List<Player>)query.list();
+		 
+			playerList = new ArrayList<Player>();
+			for (int i = 0; i < lista.size(); ++i) {
+				Player p = (Player)lista.get(i);
+				playerList.add(p);
 			}
 			
 			session.close(); 
@@ -421,11 +450,15 @@ public class EventService {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
+			System.out.println("woot?");
 			Query query = session.createQuery("update Player set state = 'N' where id = " + player.getId());
-			query.executeUpdate();
+			int changed = query.executeUpdate();
 			session.getTransaction().commit();
 			session.beginTransaction();
 			session.close(); 
+			if (changed != 1) {
+				return false;
+			}
 		}
 		catch (Exception e) { 
 			e.printStackTrace(); 

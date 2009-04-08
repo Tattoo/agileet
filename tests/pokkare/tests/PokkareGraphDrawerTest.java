@@ -35,12 +35,13 @@ public class PokkareGraphDrawerTest extends TestCase {
 		assertEquals(2, graph.getMultiplier());
 	}
 
-	public void testCreateGraphs(){
-		ScoreDataWrapper dw = new ScoreDataWrapper();		
-		ScoreData sd = dw.new ScoreData(new Player(), new Games(), 999, 1 , 1);
-		dw.getScoreDatas().add(sd);
-		graph.createGraphs(dw, 999, 1);
-	}
+	//this tests the old functionality now replaced by other implementation
+//	public void testCreateGraphs() {
+//		ScoreDataWrapper dw = new ScoreDataWrapper();		
+//		ScoreData sd = dw.new ScoreData(new Player(), new Games(), 999, 1 , 1);
+//		dw.getScoreDatas().add(sd);
+//		graph.createGraphs(dw, 999, 1);
+//	}
 	
 /* This cannot be run until createImage() works on Linux
  *
