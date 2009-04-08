@@ -11,6 +11,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import pokkare.model.Games;
 import pokkare.model.Player;
 import pokkare.model.Score;
+import pokkare.service.ActionMessages;
+import pokkare.service.ErrorMessages;
 import pokkare.service.EventService;
 
 public class AddRankingAction extends ActionSupport implements ParameterAware {
@@ -106,7 +108,7 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 				try { 
 					playerRank = Integer.parseInt(((String[])parameters.get(playerName))[0]);
 				} catch (Exception e) { 
-					addActionError("Virhe: tapahtui sisäinen virhe.");
+					addActionError(ErrorMessages.INTERNAL_ERROR);
 					e.printStackTrace(); 
 					return "error";
 				}
@@ -126,7 +128,7 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 		gamesList = a;
 		
 		chosenGame = -1;
-		addActionMessage("Ranking onnistuneesti lisätty.");
+		addActionMessage(ActionMessages.RANKING_ADDED);
 		return "success";
 
 	}

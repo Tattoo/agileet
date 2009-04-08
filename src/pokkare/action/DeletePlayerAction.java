@@ -8,6 +8,8 @@ import org.apache.struts2.interceptor.ParameterAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import pokkare.model.Player;
+import pokkare.service.ActionMessages;
+import pokkare.service.ErrorMessages;
 import pokkare.service.EventService;
 
 public class DeletePlayerAction extends ActionSupport implements ParameterAware {
@@ -56,11 +58,11 @@ public class DeletePlayerAction extends ActionSupport implements ParameterAware 
 				stateDPlayers.add(p.getName());
 			}
 			
-			addActionMessage("Pelaaja onnistuneesti poistettu.");
+			addActionMessage(ActionMessages.PLAYER_DELETED);
 			return "success";
 		}
 		
-		addActionError("Virhe: tämän nimistä pelaajaa ei löydetty.");
+		addActionError(ErrorMessages.PLAYER_BY_THIS_NAME_NOT_FOUND);
 		return "player_not_found";
 	}
 	

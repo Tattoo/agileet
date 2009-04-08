@@ -8,6 +8,8 @@ import junit.framework.TestCase;
 import pokkare.action.ReactivatePlayerAction;
 import pokkare.model.Player;
 
+import pokkare.service.ActionMessages;
+import pokkare.service.ErrorMessages;
 import pokkare.service.EventService;
 
 public class ReactivatePlayerActionTest extends TestCase {
@@ -54,7 +56,9 @@ public class ReactivatePlayerActionTest extends TestCase {
 			action.setParameters(param);
 			
 			assertEquals("player_not_found", action.execute());
-			
+			//get action error messages. 
+			ArrayList<String> a = (ArrayList<String>)action.getActionErrors();
+			assertEquals(a.get(0), ErrorMessages.PLAYER_BY_THIS_NAME_NOT_FOUND);
 			assertTrue(addTestData(playerName));
 			
 			ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
@@ -66,6 +70,9 @@ public class ReactivatePlayerActionTest extends TestCase {
 			}
 			assertTrue(p != null && p.getState() == 'N');
 			assertEquals("success", action.execute());
+			
+			a = (ArrayList<String>)action.getActionMessages();
+			assertEquals(a.get(0), ActionMessages.PLAYER_REACTIVATED);
 			
 			event.deletePlayerRowFromDatabase(action.getReactivatePlayerByPlayerName(playerName)); //cleanup
 			action.setParameters(null); // cleanup

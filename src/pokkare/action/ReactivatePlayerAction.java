@@ -8,6 +8,8 @@ import org.apache.struts2.interceptor.ParameterAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import pokkare.model.Player;
+import pokkare.service.ActionMessages;
+import pokkare.service.ErrorMessages;
 import pokkare.service.EventService;
 
 public class ReactivatePlayerAction extends ActionSupport implements ParameterAware {
@@ -56,12 +58,12 @@ public class ReactivatePlayerAction extends ActionSupport implements ParameterAw
 		
 		if (reactivatePlayer != null) {
 			if (event.reactivatePlayer(reactivatePlayer)) {
-				addActionMessage("Pelaaja aktivoitu.");
+				addActionMessage(ActionMessages.PLAYER_REACTIVATED);
 				return "success";
 			}
 		}
 		
-		addActionError("Virhe: tämän nimistä pelaajaa ei löytynyt.");
+		addActionError(ErrorMessages.PLAYER_BY_THIS_NAME_NOT_FOUND);
 		return "player_not_found";
 	}
 	

@@ -9,17 +9,19 @@ import org.hibernate.Session;
 import pokkare.action.AddRankingAction;
 import pokkare.model.Player;
 import pokkare.model.Score;
+import pokkare.service.ActionMessages;
+import pokkare.service.ErrorMessages;
 import pokkare.service.EventService;
 import pokkare.service.HibernateUtil;
 
 public class AddRankingActionTest extends TestCase {
 
-	private AddRankingAction ranking;
+	private AddRankingAction action;
 	private HashMap<String, String[]> testparams;
 	private EventService event;
 	
 	protected void setUp() throws Exception {
-		ranking = new AddRankingAction();
+		action = new AddRankingAction();
 		testparams = new HashMap<String, String[]>();
 		String[] testranking1 = {"1"};
 		String[] testrankin2 = {"2"};
@@ -28,7 +30,7 @@ public class AddRankingActionTest extends TestCase {
 	}
 
 	protected void tearDown() throws Exception {
-		ranking = null;
+		action = null;
 		testparams = null;
 	}
 	
@@ -38,15 +40,15 @@ public class AddRankingActionTest extends TestCase {
 		p.setId(999);
 		p.setName("Foo Foo");
 		temp.add(p);
-		ranking.setPlayerList(temp);
-		assertEquals(1, ranking.getPlayerList().size());
-		assertSame(p, ranking.getPlayerList().get(0));
+		action.setPlayerList(temp);
+		assertEquals(1, action.getPlayerList().size());
+		assertSame(p, action.getPlayerList().get(0));
 	}
 	
 	// suppressed warning about accessing static method un-static way 
 	@SuppressWarnings("static-access")
 	public void testGetChosenGame(){
-		assertEquals(ranking.getChosenGame(), new Integer(-1));
+		assertEquals(action.getChosenGame(), new Integer(-1));
 	}
 	
 	// suppressed warning about accessing static method un-static way	
@@ -54,38 +56,43 @@ public class AddRankingActionTest extends TestCase {
 	public void testSetChosenGame(){
 		testGetChosenGame();
 		// save game so we can tear this case down
-		Integer game = ranking.getChosenGame();  
-		ranking.setChosenGame(new Integer(999));
-		assertEquals(new Integer(999), ranking.getChosenGame());
-		ranking.setChosenGame(game);
+		Integer game = action.getChosenGame();  
+		action.setChosenGame(new Integer(999));
+		assertEquals(new Integer(999), action.getChosenGame());
+		action.setChosenGame(game);
 		testGetChosenGame(); // test that tear down was successful
 	}
 	
 	public void testGamesListAccessors(){
-		assertEquals(new HashMap<Integer, String>(), ranking.getGamesMap());
+		assertEquals(new HashMap<Integer, String>(), action.getGamesMap());
 		HashMap<Integer, String> hashmap = new HashMap<Integer, String>();
 		hashmap.put(0, "Bar Bar");
-		ranking.setGamesMap(hashmap);
-		assertEquals(hashmap, ranking.getGamesMap());
+		action.setGamesMap(hashmap);
+		assertEquals(hashmap, action.getGamesMap());
 	}
 	
 	public void testExecute_ChosenGameLessThanZero(){
-		assertEquals(ranking.execute(), "addranking");
+		assertEquals(action.execute(), "addranking");
 	}
 	
 	public void testParametersAccessors(){
-		assertEquals(null, ranking.getParameters());
-		ranking.setParameters(testparams);
-		assertEquals(testparams, ranking.getParameters());
+		assertEquals(null, action.getParameters());
+		action.setParameters(testparams);
+		assertEquals(testparams, action.getParameters());
 	}
 
 	public void testExecute_rest(){
 		// execute tests we're depending on
 		testParametersAccessors();		
 		Integer chosenGame = new Integer(999999999);
-		ranking.setChosenGame(chosenGame);
-		ranking.setParameters(testparams);
-		assertEquals("success", ranking.execute());
+		action.setChosenGame(chosenGame);
+		action.setParameters(testparams);
+		
+		assertEquals("success", action.execute());
+		
+		ArrayList<String> a = (ArrayList<String>)action.getActionMessages();
+		assertEquals(a.get(0), ActionMessages.RANKING_ADDED);
+		
 		assertEquals(true, deleteTestData(chosenGame));
 	}
 	
