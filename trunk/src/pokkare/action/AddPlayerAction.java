@@ -63,8 +63,8 @@ public class AddPlayerAction extends ActionSupport implements ParameterAware {
 			// TODO: then, update the test case too!!
 			throw new IllegalArgumentException("add_player_name in parameters was empty string [in AddPlayerAction.execute()]");
 		}
-		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
-		for (Player p : players){
+		ArrayList<Player> plrs = (ArrayList<Player>)event.findPlayers();
+		for (Player p : plrs){
 			if (p.getName().compareTo(addPlayerName) == 0){
 				addActionError("Virhe: tämän niminen pelaaja on jo olemassa.");
 				return "name_already_exists";
@@ -73,6 +73,7 @@ public class AddPlayerAction extends ActionSupport implements ParameterAware {
 		addPlayer.setName(addPlayerName);
 		event.savePlayer(addPlayer);
 		
+		players.add(addPlayer.getName());
 		addActionMessage("Pelaaja lisätty.");
 		return "success";
 	}
