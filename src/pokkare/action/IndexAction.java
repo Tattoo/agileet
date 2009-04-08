@@ -2,11 +2,13 @@ package pokkare.action;
 
 import java.util.ArrayList;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import pokkare.model.Player;
 import pokkare.model.Score;
 import pokkare.service.EventService;
 
-public class IndexAction {
+public class IndexAction extends ActionSupport {
 	
 	private EventService event = new EventService();
 	private ArrayList<String> ranking = new ArrayList<String>();
@@ -29,7 +31,8 @@ public class IndexAction {
 		ArrayList<Player> playerList = (ArrayList<Player>)event.findPlayers();
 		
 		if (playerList == null) {
-			throw new IllegalStateException("No players available.");
+			addActionError("Tietokannassa ei ole pelaajia.");
+			return "error";
 		}
 		
 		Integer[] scoreTable = new Integer[playerList.size()];

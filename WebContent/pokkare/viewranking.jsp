@@ -9,6 +9,8 @@
 %>
 
 <h1>Ranking</h1>
+<div class="errors"><s:actionerror/></div>
+<div class="actionmessages"><s:actionmessage/></div>
 <br />
 <br />
 <center>

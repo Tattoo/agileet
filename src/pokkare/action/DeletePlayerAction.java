@@ -5,10 +5,12 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.ParameterAware;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import pokkare.model.Player;
 import pokkare.service.EventService;
 
-public class DeletePlayerAction implements ParameterAware {
+public class DeletePlayerAction extends ActionSupport implements ParameterAware {
 	private Map parameters;
 	EventService event = new EventService();
 	
@@ -26,9 +28,11 @@ public class DeletePlayerAction implements ParameterAware {
 		
 		if (deletePlayer != null) {
 			event.deletePlayer(deletePlayer);
+			addActionMessage("Pelaaja onnistuneesti poistettu.");
 			return "success";
 		}
 		
+		addActionError("Virhe: tämän nimistä pelaajaa ei löydetty.");
 		return "player_not_found";
 	}
 	

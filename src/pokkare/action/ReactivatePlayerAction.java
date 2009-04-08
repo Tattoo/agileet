@@ -5,10 +5,12 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.ParameterAware;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import pokkare.model.Player;
 import pokkare.service.EventService;
 
-public class ReactivatePlayerAction implements ParameterAware {
+public class ReactivatePlayerAction extends ActionSupport implements ParameterAware {
 	private Map parameters;
 	private EventService event = new EventService();
 	
@@ -26,9 +28,11 @@ public class ReactivatePlayerAction implements ParameterAware {
 		
 		if (reactivatePlayer != null) {
 			event.reactivatePlayer(reactivatePlayer);
+			addActionMessage("Pelaaja aktivoitu.");
 			return "success";
 		}
 		
+		addActionError("Virhe: tämän nimistä pelaajaa ei löytynyt.");
 		return "player_not_found";
 	}
 	

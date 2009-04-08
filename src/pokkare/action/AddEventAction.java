@@ -5,11 +5,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import pokkare.model.Games;
 import pokkare.model.Player;
 import pokkare.service.EventService;
 
-public class AddEventAction {
+public class AddEventAction extends ActionSupport {
 	
 	private EventService event = new EventService();
 	private HashMap<Integer, String> hosts = new HashMap<Integer, String>();
@@ -66,7 +68,7 @@ public class AddEventAction {
 		
 		System.out.println("time: "+time);
 		
-		if (time == null) return "success";
+		if (time == null) return "addevent";
 		
 		System.out.println(desc);
 		System.out.println(host);
@@ -77,7 +79,9 @@ public class AddEventAction {
 		try {
 			theDate = dateParser.parse(time);
 		} catch (Exception e) {
+			addActionError("Virhe: antamaasi p‰iv‰m‰‰r‰‰ ei voitu k‰sitell‰.");
 			e.printStackTrace();
+			return "error";
 		}
 		game.setGameDate(theDate);
 		game.setGameNumber(event.findGamesForDate(theDate) + 1);
@@ -86,7 +90,8 @@ public class AddEventAction {
 		
 		event.saveGame(game);
 		
-		return "index";
+		addActionMessage("Peli onnistuneesti lis‰tty.");
+		return "success";
 	}
 
 	

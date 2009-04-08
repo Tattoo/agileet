@@ -4,7 +4,7 @@
 <h1>Lis‰‰ ranking peliin</h1>
 
 <div class="errors"><s:actionerror value="testi"/></div>
-
+<div class="actionmessages"><s:actionmessage/></div>
 ${chosenGame}
 
 <form id="addRankingForm" method="post" action="<s:url value='/pokkare/addranking.action' />">
