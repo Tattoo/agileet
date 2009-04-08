@@ -66,13 +66,14 @@ public class AddPlayerAction extends ActionSupport implements ParameterAware {
 		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
 		for (Player p : players){
 			if (p.getName().compareTo(addPlayerName) == 0){
-				addActionError("A player with this name already exists");
+				addActionError("Virhe: tämän niminen pelaaja on jo olemassa.");
 				return "name_already_exists";
 			}
 		}
 		addPlayer.setName(addPlayerName);
 		event.savePlayer(addPlayer);
 		
+		addActionMessage("Pelaaja lisätty.");
 		return "success";
 	}
 

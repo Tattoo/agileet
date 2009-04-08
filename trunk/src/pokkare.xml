@@ -8,16 +8,16 @@
 
 		<action name="index" class="pokkare.action.IndexAction">
 			<result name="success">/pokkare/index.jsp</result>
-			<result name="error" type="redirect">/pokkare/login.jsp</result>
+			<result name="error">/pokkare/index.jsp</result>
 		</action>
 		<action name="addevent" class="pokkare.action.AddEventAction">
 			<result name="success">/pokkare/addevent.jsp</result>
-			<result name="index" type="redirect">/pokkare/index.action</result>
+			<result name="addevent">/pokkare/addevent.jsp</result>
 			<result name="error">/pokkare/addevent.jsp</result>
 		</action>
 		<action name="addranking" class="pokkare.action.AddRankingAction">
 			<result name="success">/pokkare/addranking.jsp</result>
-			<result name="index" type="redirect">/pokkare/index.action</result>
+			<result name="addranking">/pokkare/addranking.jsp</result>
 			<result name="score" type="redirect">/pokkare/addranking.action</result>
 			<result name="error">/pokkare/addranking.jsp</result>
 		</action>

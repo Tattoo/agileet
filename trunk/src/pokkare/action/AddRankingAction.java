@@ -6,12 +6,14 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.ParameterAware;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import pokkare.model.Games;
 import pokkare.model.Player;
 import pokkare.model.Score;
 import pokkare.service.EventService;
 
-public class AddRankingAction implements ParameterAware {
+public class AddRankingAction extends ActionSupport implements ParameterAware {
 
 	private HashMap<Integer, String> gamesMap = new HashMap<Integer, String>();
 	private ArrayList<Games> gamesList = new ArrayList<Games>();
@@ -85,7 +87,7 @@ public class AddRankingAction implements ParameterAware {
 //			for (int i = 0; i < a.size(); ++i) {
 //				gamesMap.put(a.get(i).getId(), a.get(i).getGameDate() + " nro: " + a.get(i).getGameNumber());
 //			}
-			return "success";
+			return "addranking";
 		}
 
 		//tï¿½ssï¿½ luupataan lï¿½pi parameters-mappi josta haetaan pelaaja, 
@@ -104,8 +106,9 @@ public class AddRankingAction implements ParameterAware {
 				try { 
 					playerRank = Integer.parseInt(((String[])parameters.get(playerName))[0]);
 				} catch (Exception e) { 
+					addActionError("Virhe: tapahtui sisäinen virhe.");
 					e.printStackTrace(); 
-					throw new IllegalStateException("Convert mismatch"); 
+					return "error";
 				}
 
 				Score score = new Score();
@@ -118,10 +121,9 @@ public class AddRankingAction implements ParameterAware {
 			}
 		}
 
-
-		//System.out.println(parameters.size() + " llss " + ((String[])parameters.get("Jones"))[0]);
 		chosenGame = -1;
-		return "index";
+		addActionMessage("Ranking onnistuneesti lisätty.");
+		return "success";
 
 	}
 
