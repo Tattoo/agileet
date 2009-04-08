@@ -121,6 +121,10 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 			}
 		}
 
+		//repopulate games list so it's still populated when doing "success" 
+		ArrayList<Games> a = (ArrayList<Games>)event.findGamesOrderedByDate();
+		gamesList = a;
+		
 		chosenGame = -1;
 		addActionMessage("Ranking onnistuneesti lisätty.");
 		return "success";
