@@ -6,6 +6,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import pokkare.model.Player;
 import pokkare.model.Score;
+import pokkare.service.ErrorMessages;
 import pokkare.service.EventService;
 
 public class IndexAction extends ActionSupport {
@@ -31,7 +32,7 @@ public class IndexAction extends ActionSupport {
 		ArrayList<Player> playerList = (ArrayList<Player>)event.findPlayers();
 		
 		if (playerList == null) {
-			addActionError("Tietokannassa ei ole pelaajia.");
+			addActionError(ErrorMessages.NO_PLAYERS_AVAILABLE);
 			return "error";
 		}
 		

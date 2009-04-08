@@ -2,6 +2,8 @@ package pokkare.tests;
 import junit.framework.TestCase;
 import pokkare.action.AddPlayerAction;
 import pokkare.model.Player;
+import pokkare.service.ActionMessages;
+import pokkare.service.ErrorMessages;
 import pokkare.service.EventService;
 import pokkare.service.HibernateUtil;
 
@@ -60,9 +62,15 @@ public class AddPlayerActionTest extends TestCase {
 
 		action.setParameters(param);
 
+		
 		assertEquals("success", action.execute());
+		ArrayList<String> a = (ArrayList<String>)action.getActionMessages();
+		assertEquals(a.get(0), ActionMessages.PLAYER_ADDED);
+		
 		assertEquals("name_already_exists", action.execute());
-
+		ArrayList<String> e = (ArrayList<String>)action.getActionErrors();
+		assertEquals(e.get(0), ErrorMessages.DUPLICATE_PLAYER_NAME);
+		
 		assertTrue(deleteTestData(playerName));
 
 		value[0] = "";

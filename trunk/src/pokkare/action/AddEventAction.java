@@ -9,6 +9,8 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import pokkare.model.Games;
 import pokkare.model.Player;
+import pokkare.service.ActionMessages;
+import pokkare.service.ErrorMessages;
 import pokkare.service.EventService;
 
 public class AddEventAction extends ActionSupport {
@@ -79,8 +81,8 @@ public class AddEventAction extends ActionSupport {
 		try {
 			theDate = dateParser.parse(time);
 		} catch (Exception e) {
-			addActionError("Virhe: antamaasi p‰iv‰m‰‰r‰‰ ei voitu k‰sitell‰.");
 			e.printStackTrace();
+			addActionError(ErrorMessages.DATE_NOT_PROCESSABLE);
 			return "error";
 		}
 		game.setGameDate(theDate);
@@ -90,7 +92,7 @@ public class AddEventAction extends ActionSupport {
 		
 		event.saveGame(game);
 		
-		addActionMessage("Peli onnistuneesti lis‰tty.");
+		addActionMessage(ActionMessages.GAME_ADDED);
 		return "success";
 	}
 

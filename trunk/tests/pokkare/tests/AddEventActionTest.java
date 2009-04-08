@@ -11,6 +11,8 @@ import java.util.HashMap;
 import junit.framework.TestCase;
 import pokkare.action.AddEventAction;
 import pokkare.model.Player;
+import pokkare.service.ActionMessages;
+import pokkare.service.ErrorMessages;
 import pokkare.service.EventService;
 
 public class AddEventActionTest extends TestCase {
@@ -62,5 +64,14 @@ public class AddEventActionTest extends TestCase {
 		assertEquals(action.execute(), "addevent");
 		action.setTime("01/01/2009");
 		assertEquals(action.execute(), "success");
+		
+		ArrayList<String> a = (ArrayList<String>)action.getActionMessages();
+		assertEquals(a.get(0), ActionMessages.GAME_ADDED);
+		
+		action.setTime("69-69-6969");
+		assertEquals(action.execute(), "error");
+	
+		ArrayList<String> e = (ArrayList<String>)action.getActionErrors();
+		assertEquals(e.get(0), ErrorMessages.DATE_NOT_PROCESSABLE);
 	}
 }

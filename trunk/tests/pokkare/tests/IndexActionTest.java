@@ -3,33 +3,42 @@ import java.util.ArrayList;
 
 import junit.framework.TestCase;
 import pokkare.action.IndexAction;
+import pokkare.service.ActionMessages;
+import pokkare.service.ErrorMessages;
 
 public class IndexActionTest extends TestCase {
 
-	private IndexAction index;
+	private IndexAction action;
 	
 	protected void setUp() throws Exception {
-		index = new IndexAction();
+		action = new IndexAction();
 	}
 	
 	protected void tearDown() throws Exception  {
-		index = null;
+		action = null;
 	}
 	
+//	public void testEmptlyPlayers() {
+//		assertEquals("error", action.execute());
+//		
+//		ArrayList<String> e = (ArrayList<String>)action.getActionErrors();
+//		assertEquals(e.get(0), ErrorMessages.NO_PLAYERS_AVAILABLE);
+//	}
+	
 	public void testRankingAccessors(){
-		assertEquals(new ArrayList<String>(), index.getRanking());
+		assertEquals(new ArrayList<String>(), action.getRanking());
 		ArrayList<String> ranking = new ArrayList<String>();
 		ranking.add("1");
 		ranking.add("2");
 		ranking.add("3");
-		index.setRanking(ranking);
-		assertEquals(3, index.getRanking().size());
+		action.setRanking(ranking);
+		assertEquals(3, action.getRanking().size());
 		for (int i = 0; i < ranking.size(); i++){
-			assertEquals(ranking.get(i), index.getRanking().get(i));
+			assertEquals(ranking.get(i), action.getRanking().get(i));
 		}
 	}
 	
 	public void testExecute(){
-		assertEquals("success", index.execute());
+		assertEquals("success", action.execute());
 	}
 }

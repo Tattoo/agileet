@@ -8,6 +8,8 @@ import org.apache.struts2.interceptor.ParameterAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import pokkare.model.Player;
+import pokkare.service.ActionMessages;
+import pokkare.service.ErrorMessages;
 import pokkare.service.EventService;
 
 public class AddPlayerAction extends ActionSupport implements ParameterAware {
@@ -66,7 +68,7 @@ public class AddPlayerAction extends ActionSupport implements ParameterAware {
 		ArrayList<Player> plrs = (ArrayList<Player>)event.findPlayers();
 		for (Player p : plrs){
 			if (p.getName().compareTo(addPlayerName) == 0){
-				addActionError("Virhe: tämän niminen pelaaja on jo olemassa.");
+				addActionError(ErrorMessages.DUPLICATE_PLAYER_NAME);
 				return "name_already_exists";
 			}
 		}
@@ -74,7 +76,7 @@ public class AddPlayerAction extends ActionSupport implements ParameterAware {
 		event.savePlayer(addPlayer);
 		
 		players.add(addPlayer.getName());
-		addActionMessage("Pelaaja lisätty.");
+		addActionMessage(ActionMessages.PLAYER_ADDED);
 		return "success";
 	}
 
