@@ -2,6 +2,7 @@ package pokkare.tests;
 
 import java.text.ParseException;
 import java.text.ParsePosition;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -9,8 +10,11 @@ import java.util.HashMap;
 
 import junit.framework.TestCase;
 import pokkare.action.AddEventAction;
+import pokkare.model.Player;
+import pokkare.service.EventService;
 
 public class AddEventActionTest extends TestCase {
+	EventService event = new EventService();
 
 	private AddEventAction action;
 	
@@ -22,8 +26,16 @@ public class AddEventActionTest extends TestCase {
 		action = null;
 	}
 	
-	public void testGetHosts(){
-		assertEquals(action.getHosts().size(), 2);
+	public void testGetHosts() {
+		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
+		for (int i = 0; i < players.size(); ++i) {
+			if (players.get(i).getState() == 'D') {
+				players.remove(i);
+				i -= 1;
+			}
+		}
+			
+		assertEquals(action.getHosts().size(), players.size());
 	}
 	public void testSetHosts(){
 		HashMap<Integer, String> test = new HashMap<Integer, String>();
@@ -47,8 +59,8 @@ public class AddEventActionTest extends TestCase {
 		assertEquals(action.getHost(), new Integer(123));
 	}
 	public void testExecute(){
-		assertEquals(action.execute(), "success");
+		assertEquals(action.execute(), "addevent");
 		action.setTime("01/01/2009");
-		assertEquals(action.execute(), "index");
+		assertEquals(action.execute(), "success");
 	}
 }

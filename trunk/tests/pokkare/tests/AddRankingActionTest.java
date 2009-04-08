@@ -70,7 +70,7 @@ public class AddRankingActionTest extends TestCase {
 	}
 	
 	public void testExecute_ChosenGameLessThanZero(){
-		assertEquals(ranking.execute(), "success");
+		assertEquals(ranking.execute(), "addranking");
 	}
 	
 	public void testParametersAccessors(){
@@ -85,7 +85,7 @@ public class AddRankingActionTest extends TestCase {
 		Integer chosenGame = new Integer(999999999);
 		ranking.setChosenGame(chosenGame);
 		ranking.setParameters(testparams);
-		assertEquals("index", ranking.execute());
+		assertEquals("success", ranking.execute());
 		assertEquals(true, deleteTestData(chosenGame));
 	}
 	

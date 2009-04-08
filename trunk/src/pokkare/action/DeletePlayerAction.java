@@ -70,7 +70,7 @@ public class DeletePlayerAction extends ActionSupport implements ParameterAware 
 	}
 	
 	public Player getDeletablePlayerByPlayerName(String deletePlayerName) {
-		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
+		ArrayList<Player> players = (ArrayList<Player>)event.findPlayersIgnoreState();
 		
 		for (int i = 0; i < players.size(); ++i) {
 			Player deletePlayer = players.get(i);

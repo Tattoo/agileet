@@ -217,7 +217,8 @@ public class EventServiceTest extends TestCase {
 			if (p.getId().equals(mock.getId()) || p.getName().compareTo(mock.getName()) == 0){
 				fail("deletePlayer should've deleted player but it didn't...");
 			}
-		}		
+		}
+		assertTrue(event.deletePlayerRowFromDatabase(mock)); //cleanup
 	}
 	/*
 	 * Helper methods
