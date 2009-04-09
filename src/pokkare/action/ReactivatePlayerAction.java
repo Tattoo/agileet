@@ -68,7 +68,7 @@ public class ReactivatePlayerAction extends ActionSupport implements ParameterAw
 		}
 		return null;
 	}
-	
+	// setup data for the jsp
 	private void setUpData(){
 		players = new ArrayList<String>(); // reset the variable
 		stateDPlayers = new ArrayList<String>(); // reset the variable
