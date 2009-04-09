@@ -29,6 +29,7 @@
 				}
 			});
 			
+			// delete player-functionality
 			$("#deletePlayersList > li").each(function(){
 				var el = $(this);
 				el.hover(function(){
@@ -50,6 +51,7 @@
 						console.debug("FFFFFFFFFFFFUUUUUUUUUUUUUUUU--");
 						return;
 					}
+					// create form ad hoc and send it
 					var url = String(window.location).replace("add", "delete");
 					var html = '<form id="deletePlayerForm" action="'+url+'" style="display:none;" method="post">'+
 								'<input type="text" name="delete_player_name" id="delete_player_name" value="'+deletePlayer+'"/>'+
@@ -59,33 +61,18 @@
 				});
 			});
 		}
-		
-		if (String(window.location).indexOf("viewranking") != -1){ // check that we are in the right url
-			
-			var sortList = $(".games_list > dl").find("dt");
-			var flag = true;
-			while (flag){
-				flag = false;
-				for (var i = 0; i < sortList.length-1; i++){
-					if (sortList[i].innerHTML > sortList[i+1].innerHTML){
-						var temp = sortList[i];
-						sortList[i] = sortList[i+1];
-						sortList[i+1] = temp;
-						flag = true;
-					}
-				}
-			}
-			var html = "";
-			jQuery.each(sortList, function(i, element){
-				html +=  "<dt>"+$(element).text()+"</dt>";
-				html +=  "<dd>"+$(element).next().text()+"</dd><br />";
-			});
-			$(".games_list > dl").html(html);
-			
-			// remove the game number
+		if (String(window.location).indexOf("viewranking") != -1){
+			// show game number if there's more games with same date
+			// by default, game number isn't shown
 			$(".games_list > dl > dd").each(function(){
-				var content = $(this).text().split(" ");
-				$(this).text(content[0]);
+				var el = $(this);
+				var thisGameDate = jQuery.trim(el.text().split(" ")[0]);
+				var nextGameDate = jQuery.trim(el.next().next().text().split(" ")[0]);
+				
+				if (thisGameDate == nextGameDate){
+					el.find("p > span.gameNumber").css("visibility", "visible");
+					el.next().next().find("p > span.gameNumber").css("visibility", "visible");
+				}
 			});
 		}
 	});
