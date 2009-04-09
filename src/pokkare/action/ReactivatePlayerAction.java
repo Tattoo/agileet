@@ -44,20 +44,12 @@ public class ReactivatePlayerAction extends ActionSupport implements ParameterAw
 	}
 	
 	public String execute() {
+		setUpData();
 		String deletePlayerName = ((String[])parameters.get("reactivate_player_name"))[0];
 		Player reactivatePlayer = getReactivatePlayerByPlayerName(deletePlayerName);
-		
-		//this gets a list of active player's names for deletion
-		for (Player p : (ArrayList<Player>)event.findPlayers()){
-			players.add(p.getName());
-		}
-		//this gets a list of status 'D' players for reactivation
-		for (Player p: (ArrayList<Player>)event.findPlayersWithDeletedState()) {
-			stateDPlayers.add(p.getName());
-		}
-		
 		if (reactivatePlayer != null) {
 			if (event.reactivatePlayer(reactivatePlayer)) {
+				setUpData();
 				addActionMessage(ActionMessages.PLAYER_REACTIVATED);
 				return "success";
 			}
@@ -75,6 +67,20 @@ public class ReactivatePlayerAction extends ActionSupport implements ParameterAw
 			}
 		}
 		return null;
+	}
+	
+	private void setUpData(){
+		players = new ArrayList<String>(); // reset the variable
+		stateDPlayers = new ArrayList<String>(); // reset the variable
+		
+		//this gets a list of active player's names for deletion
+		for (Player p : (ArrayList<Player>)event.findPlayers()){
+			players.add(p.getName());
+		}
+		//this gets a list of status 'D' players for reactivation
+		for (Player p: (ArrayList<Player>)event.findPlayersWithDeletedState()) {
+			stateDPlayers.add(p.getName());
+		}		
 	}
 	
 	
