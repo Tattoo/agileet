@@ -46,7 +46,8 @@
 				});
 			});
 			
-			// delete player-functionality
+			// attach either delete player- or reactivate player-functionlaity
+			// to all list items in a page 
 			$("ul:not([id='menu']) > li").each(function(){
 				var el = $(this);
 				var parentId = el.parent().attr("id");
@@ -59,12 +60,12 @@
 					}
 					// create form ad hoc and send it
 					var url = "";
-					var input = "";
-					if (parentId == "deletePlayersList"){
+					var input = ""; 
+					if (parentId == "deletePlayersList"){ // delete player-functionality
 						url = String(window.location).replace("add", "delete");
 						input = '<input type="text" name="delete_player_name" id="delete_player_name" value="'+player+'"/>';
 					}
-					else if (parentId == "reactivatePlayersList"){
+					else if (parentId == "reactivatePlayersList"){ // reactivate player-functionality
 						url = String(window.location).replace("add", "reactivate");
 						input = '<input type="text" name="reactivate_player_name" id="reactivate_player_name" value="'+player+'"/>';
 					}
