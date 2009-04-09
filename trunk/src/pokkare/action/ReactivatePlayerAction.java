@@ -69,11 +69,8 @@ public class ReactivatePlayerAction extends ActionSupport implements ParameterAw
 	
 	//find and return player by player name
 	public Player getReactivatePlayerByPlayerName(String playerName) {
-		ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
-		
-		for (int i = 0; i < players.size(); ++i) {
-			Player p = players.get(i);
-			if (p.getName().equals(playerName)) {
+		for (Player p : event.findPlayersWithDeletedState()){
+			if (p.getName().compareTo(playerName) == 0){
 				return p;
 			}
 		}
