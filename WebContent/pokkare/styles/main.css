@@ -127,11 +127,11 @@ a.ui-datepicker-next, a.ui-datepicker-prev {
 	margin-top: 1.6em;
 }
 
-#deletePlayersList {
+#deletePlayersList, #reactivatePlayersList {
 	list-style: none;
 }
 
-#deletePlayersList li {
+#deletePlayersList li, #reactivatePlayersList li {
 	display: inline;
 	margin: 0px 4px 0px 4px;
 	padding: 1px 2px 1px 2px;

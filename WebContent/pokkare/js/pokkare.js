@@ -29,8 +29,8 @@
 				}
 			});
 			
-			// delete player-functionality
-			$("#deletePlayersList > li").each(function(){
+			// hovers effects for player lists
+			$("ul:not([id='menu']) > li").each(function(){
 				var el = $(this);
 				el.hover(function(){
 					el.css({
@@ -44,20 +44,33 @@
 						"color":"#000"
 					});
 				});
-				
+			});
+			
+			// delete player-functionality
+			$("ul:not([id='menu']) > li").each(function(){
+				var el = $(this);
+				var parentId = el.parent().attr("id");
+				console.debug(parentId);	
 				el.click(function(event){
-					var deletePlayer = jQuery.trim(el.text());
-					if(deletePlayer == ""){
+					var player = jQuery.trim(el.text());
+					if(player == ""){
 						console.debug("FFFFFFFFFFFFUUUUUUUUUUUUUUUU--");
 						return;
 					}
 					// create form ad hoc and send it
-					var url = String(window.location).replace("add", "delete");
-					var html = '<form id="deletePlayerForm" action="'+url+'" style="display:none;" method="post">'+
-								'<input type="text" name="delete_player_name" id="delete_player_name" value="'+deletePlayer+'"/>'+
-					  			'</form>'
+					var url = "";
+					var input = "";
+					if (parentId == "deletePlayersList"){
+						url = String(window.location).replace("add", "delete");
+						input = '<input type="text" name="delete_player_name" id="delete_player_name" value="'+player+'"/>';
+					}
+					else if (parentId == "reactivatePlayersList"){
+						url = String(window.location).replace("add", "reactivate");
+						input = '<input type="text" name="reactivate_player_name" id="reactivate_player_name" value="'+player+'"/>';
+					}
+					var html = '<form id="PlayerForm" action="'+url+'" style="display:none;" method="post">'+input+'</form>'
 					$("#index").append(html);
-					$("#deletePlayerForm").submit();
+					$("#PlayerForm").submit();
 				});
 			});
 		}
