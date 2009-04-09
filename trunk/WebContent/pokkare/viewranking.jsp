@@ -48,7 +48,7 @@
 			<dt><s:property value="positionInSeries"/></dt>
 			<dd>
 				<p>
-					<s:property value="gameDate"/>#<s:property value="gameNumber"/>
+					<s:property value="gameDate"/> <span class="gameNumber">#<s:property value="gameNumber"/></span>
 				</p>
 			</dd>
 		</s:iterator>

@@ -99,8 +99,8 @@ a.ui-datepicker-next, a.ui-datepicker-prev {
 
 #addRankingForm > fieldset {
 	border: 1px solid rgb(133,66,66); 
-	width: 12em;
 	float: left;
+	padding: 0 auto 0 auto;
 }
 
 #addRankingForm > fieldset > legend {
@@ -142,11 +142,11 @@ a.ui-datepicker-next, a.ui-datepicker-prev {
 	width: 10em;
 }
 
-.games_list > dl {
-	margin: 0 auto 0 auto;
+.games_list > dl > dt {
+	display: block; 
+	float: left;
 }
 
-.games_list > dl > dt, .games_list > dl > dd{
-	display: block;
-	float: left;
+.gameNumber {
+	visibility: hidden;
 }
