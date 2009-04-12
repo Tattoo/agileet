@@ -2,8 +2,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <h1>Uusi peli</h1>
-<div class="actionmessages"><s:actionmessage/></div>
-<div class="errors"><s:actionerror/></div>
 <form name="formi" id="addevent_form" method="post" action="<s:url value='/pokkare/addevent.action' />">
 	<label for="desc">kuvaus:</label>
 	<textarea name="desc" rows="2" cols="1" style="width: 11.4em;"></textarea> <!-- manual fix for the width needed-->

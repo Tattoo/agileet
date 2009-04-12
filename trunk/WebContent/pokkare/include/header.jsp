@@ -19,8 +19,8 @@
 	
 		<div id="index">
 			<div id="content"> <!-- needed because jquery.corners-plugin breaks if #index has padding -->
-					<center>
-				<ul id="menu">
+				<center>
+					<ul id="menu">
 
 						<li><a href='<s:url value="index.action" />'>index</a></li>
 						<li><a href='<s:url value="addevent.action" />'>uusi peli</a></li> 
@@ -28,5 +28,8 @@
 						<li><a href='<s:url value="addplayer.action" />'>lisää tai poista pelaaja</a></li> 
 						<li><a href='<s:url value="viewranking.action" />'>ranking</a></li>
 
-				</ul>
-									</center>
+					</ul>
+				</center>
+				<div class="errors"><s:actionerror/></div>
+				<div class="actionmessages"><s:actionmessage/></div>
+				<br class="clear" />

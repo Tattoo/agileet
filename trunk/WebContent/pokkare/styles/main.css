@@ -28,8 +28,8 @@ h1 {
 
 #menu {
 	font: normal 1.0em georgia;
-	background-color: rgb(133,66,66);
-	list-style: none;
+	background-color: rgb(133,66,66); /* #854242 */
+	list-style: none; 
 	padding: 5px;
 	margin: 5px auto 1em auto;
 	width: 90%;
@@ -60,12 +60,26 @@ h1 {
 	clear: both;
 }
 
-div.text {
-	color: #660000;
+.errors {
+	background-color: #AC1A1A;
 }
 
-div.errors {
-	color: #660000;
+.actionmessages {
+	background-color: #418541;	
+}
+
+.errors, .actionmessages {
+	color: #ccc;
+	width: 10em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.errors > ul, .actionmessages > ul {
+	list-style: none;
+	margin: 0;
+	padding: 5px;
 }
 
 a:link { 
@@ -149,4 +163,8 @@ a.ui-datepicker-next, a.ui-datepicker-prev {
 
 .gameNumber {
 	visibility: hidden;
+}
+
+.clear {
+	clear: both;
 }
