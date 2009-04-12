@@ -43,21 +43,18 @@ public class DeletePlayerAction extends ActionSupport implements ParameterAware 
 	}
 	
 	public String execute() {
-		String deletePlayerName = ((String[])parameters.get("delete_player_name"))[0];
+		setupData();
+		
+		String[] temp = (String[])parameters.get("delete_player_name");
+		if (temp == null){
+			addActionError(ErrorMessages.NO_PLAYER_IN_REQUEST);
+			return "error";
+		}
+		String deletePlayerName = temp[0];
 		Player deletePlayer = getDeletablePlayerByPlayerName(deletePlayerName);
 		
 		if (deletePlayer != null) {
 			event.deletePlayer(deletePlayer);
-			
-			//this gets a list of active player's names for deletion
-			for (Player p : (ArrayList<Player>)event.findPlayers()){
-				players.add(p.getName());
-			}
-			//this gets a list of status 'D' players for reactivation
-			for (Player p: (ArrayList<Player>)event.findPlayersWithDeletedState()) {
-				stateDPlayers.add(p.getName());
-			}
-			
 			addActionMessage(ActionMessages.PLAYER_DELETED);
 			return "success";
 		}
@@ -81,5 +78,22 @@ public class DeletePlayerAction extends ActionSupport implements ParameterAware 
 			}
 		}
 		return null;
+	}
+	
+	private void setupData(){
+		// cleanup before usage
+		players = null;
+		players = new ArrayList<String>();
+		stateDPlayers = null;
+		stateDPlayers = new ArrayList<String>();
+		
+		//this gets a list of active player's names for deletion
+		for (Player p : (ArrayList<Player>)event.findPlayers()){
+			players.add(p.getName());
+		}
+		//this gets a list of status 'D' players for reactivation
+		for (Player p: (ArrayList<Player>)event.findPlayersWithDeletedState()) {
+			stateDPlayers.add(p.getName());
+		}		
 	}
 }

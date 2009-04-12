@@ -34,10 +34,12 @@
 		<action name="deleteplayer" class="pokkare.action.DeletePlayerAction">
 			<result name="success">/pokkare/manageplayers.jsp</result>
 			<result name="player_not_found">/pokkare/manageplayers.jsp</result>
+			<result name="error">/pokkare/manageplayers.jsp</result>
 		</action>
 		<action name="reactivateplayer" class="pokkare.action.ReactivatePlayerAction">
 			<result name="success">/pokkare/manageplayers.jsp</result>
 			<result name="player_not_found">/pokkare/manageplayers.jsp</result>
+			<result name="error">/pokkare/manageplayers.jsp</result>
 		</action>
 	</package>
 </struts>
