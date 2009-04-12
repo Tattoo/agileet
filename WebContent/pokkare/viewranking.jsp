@@ -9,10 +9,6 @@
 %>
 
 <h1>Ranking</h1>
-<div class="errors"><s:actionerror/></div>
-<div class="actionmessages"><s:actionmessage/></div>
-<br />
-<br />
 <center>
 <bfg:axesgraph width="500" alt="Ranking" height="500" backwallpaint="stripe(#eeeeee,axis=bottom,line=#cccccc,altaxis=left)">
 	<bfg:label font="16pt bold Arial">Pelaajien ranking</bfg:label>

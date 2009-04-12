@@ -2,8 +2,6 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <h1>Lis‰‰ pelaajia</h1>
-<div class="errors"><s:actionerror/></div>
-<div class="actionmessages"><s:actionmessage/></div>
 <form id="add_players_form" action="<s:url value='pokkare/addplayer.action'/>" method="post" >
 	<label for="add_player_name">Uuden pelaajan nimi:</label>
 	<input type="text" id="add_player_name" name="add_player_name" value="" /> <br />

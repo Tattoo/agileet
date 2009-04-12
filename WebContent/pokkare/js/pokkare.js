@@ -1,4 +1,5 @@
 (function(){
+	
 	$(document).ready(function(){
 		$("#index").corner("30px");
 		$("#menu").corner("4px sharp");
@@ -10,7 +11,25 @@
 			$(this).css("border-bottom", "none");
 		});
 		
-		if(String(window.location).indexOf("addevent") != -1){ // check that we are in right url
+		// check that error box is visible on page, otherwise skip
+		if($(".errors").height() != 0){
+			// cornerize and set one-time event to hide the box when clicked 
+			$(".errors").corner("5px").one("click", function(){
+				$(".errors").slideUp();
+			});
+		}
+		
+		// check that notification box is visible on page, otherwise skip
+		if($(".actionmessages").height() != 0 ){
+			// cornerize and set one-time event to hide the box when clicked 
+			$(".actionmessages").corner("5px").one("click", function(){
+				$(".actionmessages").slideUp();
+			});
+		}
+		
+		var windowLocation = String(window.location);
+		
+		if(windowLocation.indexOf("addevent") != -1){ // check that we are in right url
 			$("#time").datepicker({
 				showOn: 'button', 
 				buttonImage: '/agileet/pokkare/images/datepicker.gif', 
@@ -20,8 +39,11 @@
 			});
 		}
 		
-		if (String(window.location).indexOf("addplayer") != -1){ // check that we are in the right url
-			// check that player name is not empty when creating player
+		// check that we are in the right url
+		if (windowLocation.indexOf("addplayer") != -1 || windowLocation.indexOf("deleteplayer") != -1 
+			|| windowLocation.indexOf("reactivateplayer") != -1){
+			 
+			// validate that player name is not empty when creating player
 			$("#add_players_form").submit(function(event){
 				if ($("#add_player_name").attr("value") == "" ){
 					alert("Pelaajan nimi ei saisi olla tyhjä");
@@ -29,9 +51,13 @@
 				}
 			});
 			
-			// hovers effects for player lists
-			$("ul:not([id='menu']) > li").each(function(){
+
+			// attach either delete player- or reactivate player-functionality
+			// to all list items in a page 
+			$("#deletePlayersList> li, #reactivatePlayersList > li").each(function(){
 				var el = $(this);
+				
+				// hovers effects for player lists				
 				el.hover(function(){
 					el.css({
 						"background-color": "rgb(133, 66, 66)", 
@@ -44,14 +70,9 @@
 						"color":"#000"
 					});
 				});
-			});
-			
-			// attach either delete player- or reactivate player-functionlaity
-			// to all list items in a page 
-			$("ul:not([id='menu']) > li").each(function(){
-				var el = $(this);
+				
 				var parentId = el.parent().attr("id");
-				console.debug(parentId);	
+	
 				el.click(function(event){
 					var player = jQuery.trim(el.text());
 					if(player == ""){
