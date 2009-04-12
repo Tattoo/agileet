@@ -45,7 +45,12 @@ public class ReactivatePlayerAction extends ActionSupport implements ParameterAw
 	
 	public String execute() {
 		setUpData();
-		String deletePlayerName = ((String[])parameters.get("reactivate_player_name"))[0];
+		String[] temp = (String[])parameters.get("reactivate_player_name");
+		if (temp == null){
+			addActionError(ErrorMessages.NO_PLAYER_IN_REQUEST);
+			return "error";
+		}
+		String deletePlayerName = temp[0];
 		Player reactivatePlayer = getReactivatePlayerByPlayerName(deletePlayerName);
 		if (reactivatePlayer != null) {
 			if (event.reactivatePlayer(reactivatePlayer)) {
