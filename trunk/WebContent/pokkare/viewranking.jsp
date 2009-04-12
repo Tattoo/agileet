@@ -5,7 +5,7 @@
 
 <%  ArrayList<String> colors = new ArrayList<String>();
 	colors.add("#339900"); colors.add("#FF9900"); colors.add("#993399"); colors.add("#CC0033");
-	colors.add("#3366FF");
+	colors.add("#3366FF"); colors.add("#9900FF"); colors.add("#FFFF80"); colors.add("#FF80FF");
 %>
 
 <h1>Ranking</h1>
@@ -21,7 +21,10 @@
 	
 
 	<s:iterator value="scores">
-		<bfg:lineseries name="${key}" color="<%= colors.remove(0) %>" linethickness="2">
+		<%  // If predefined colors run out, make the rest be drawn in default color 
+			String color = (colors.size() > 0) ? colors.remove(0) : "#993399"; 
+		%>
+		<bfg:lineseries name="${key}" color="<%= color %>" linethickness="2">
 			<s:iterator value="value">
 				<bfg:data x="${key}" y="${value}"/>
 			</s:iterator>
