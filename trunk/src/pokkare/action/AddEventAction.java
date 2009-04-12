@@ -22,9 +22,12 @@ public class AddEventAction extends ActionSupport {
 	public SimpleDateFormat dateParser = new SimpleDateFormat("MM/dd/yyyy");
 	private Integer host;
 	private Games game;
-	
-	public AddEventAction() {
-		
+
+	public EventService getEvent(){
+		return this.event;
+	}
+	public void setEvent(EventService event){
+		this.event = event;
 	}
 	
 	public HashMap<Integer, String> getHosts() {
