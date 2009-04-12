@@ -56,6 +56,7 @@ public class DeletePlayerAction extends ActionSupport implements ParameterAware 
 		if (deletePlayer != null) {
 			event.deletePlayer(deletePlayer);
 			addActionMessage(ActionMessages.PLAYER_DELETED);
+			setupData();
 			return "success";
 		}
 		
