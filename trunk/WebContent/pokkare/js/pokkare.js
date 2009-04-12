@@ -46,7 +46,11 @@
 			// validate that player name is not empty when creating player
 			$("#add_players_form").submit(function(event){
 				if ($("#add_player_name").attr("value") == "" ){
-					alert("Pelaajan nimi ei saisi olla tyhjä");
+				
+					// add hide-event, show it, add error message and cornerize the error box
+					$(".errors").one("click", function(){
+						$(".errors").slideUp();
+					}).animate({height: "1.7em", lineHeight: "1.7em"}, 1000).text("Pelaajan nimi ei saisi olla tyhjä").corner("5px");
 					event.preventDefault();
 				}
 			});
@@ -54,7 +58,7 @@
 
 			// attach either delete player- or reactivate player-functionality
 			// to all list items in a page 
-			$("#deletePlayersList> li, #reactivatePlayersList > li").each(function(){
+			$("#deletePlayersList > li, #reactivatePlayersList > li").each(function(){
 				var el = $(this);
 				
 				// hovers effects for player lists				
@@ -80,14 +84,14 @@
 						return;
 					}
 					// create form ad hoc and send it
-					var url = "";
+					var url = windowLocation.substring(0, windowLocation.lastIndexOf("/")+1);
 					var input = ""; 
 					if (parentId == "deletePlayersList"){ // delete player-functionality
-						url = String(window.location).replace("add", "delete");
+						url += "deleteplayer.action"
 						input = '<input type="text" name="delete_player_name" id="delete_player_name" value="'+player+'"/>';
 					}
 					else if (parentId == "reactivatePlayersList"){ // reactivate player-functionality
-						url = String(window.location).replace("add", "reactivate");
+						url += "reactivateplayer.action";
 						input = '<input type="text" name="reactivate_player_name" id="reactivate_player_name" value="'+player+'"/>';
 					}
 					var html = '<form id="PlayerForm" action="'+url+'" style="display:none;" method="post">'+input+'</form>'
