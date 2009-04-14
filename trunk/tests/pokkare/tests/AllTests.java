@@ -20,7 +20,6 @@ public class AllTests {
 		suite.addTestSuite(PointsServiceTest.class); // MUST BE BEFORE PokkareGraphDrawerTest
 		suite.addTestSuite(EventServiceTest.class);
 		suite.addTestSuite(ScoreServiceTest.class);
-		suite.addTestSuite(PokkareGraphDrawerTest.class); // MUST BE AFTER PointsServiceTest AND ScoreDataWrapperTest
 				
 		// action tests
 		suite.addTestSuite(AddEventActionTest.class);
