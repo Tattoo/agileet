@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import junit.framework.TestCase;
 
+import pokkare.action.DeletePlayerAction;
 import pokkare.action.ReactivatePlayerAction;
 import pokkare.model.Player;
 
@@ -61,20 +62,20 @@ public class ReactivatePlayerActionTest extends TestCase {
 			assertEquals(a.get(0), ErrorMessages.PLAYER_BY_THIS_NAME_NOT_FOUND);
 			assertTrue(addTestData(playerName));
 			
-			ArrayList<Player> players = (ArrayList<Player>)event.findPlayers();
 			Player p = null;
-			for (int i = 0; i < players.size(); ++i) {
-				if (players.get(i).getName().equals(playerName)) {
-					p = players.get(i);
+			for (Player pl : (ArrayList<Player>)event.findPlayers()){
+				if (pl.getName().compareTo(playerName) == 0){
+					p = pl;
 				}
 			}
 			assertTrue(p != null && p.getState() == 'N');
+			event.deletePlayer(p); // delete player so we can reactivate
 			assertEquals("success", action.execute());
 			
 			a = (ArrayList<String>)action.getActionMessages();
 			assertEquals(a.get(0), ActionMessages.PLAYER_REACTIVATED);
 			
-			event.deletePlayerRowFromDatabase(action.getReactivatePlayerByPlayerName(playerName)); //cleanup
+			event.deletePlayerRowFromDatabase(p); //cleanup
 			action.setParameters(null); // cleanup
 		}
 	}
