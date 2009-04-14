@@ -185,7 +185,6 @@ public class EventService {
 						gamesList.add(i, gJ);
 						gJ = gamesList.remove(j);
 						gamesList.add(j, gI);
-						System.out.println("bar");
 					}
 				}
 			}
@@ -242,7 +241,6 @@ public class EventService {
 		cal.setTime(date);
 		String queryDate = "" + cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.DAY_OF_MONTH);
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("select count(*) from Games where game_date = '" + queryDate + "'");
@@ -275,8 +273,14 @@ public class EventService {
 			
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); }
-		finally { if (session != null && session.isOpen()) session.close(); }
+		catch (Exception e) { 
+			e.printStackTrace(); 
+		}
+		finally { 
+			if (session != null && session.isOpen()) {
+				session.close();
+			} 
+		}
 		return sum.intValue();
 	}
 	
@@ -284,7 +288,6 @@ public class EventService {
 	public List<Score> findScores(Integer playerId) {
 	
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("from Score where player_id=" + playerId);
@@ -309,7 +312,6 @@ public class EventService {
 	
 	public List<Score> findScores() {
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("from Score");
