@@ -122,7 +122,7 @@ public class EventService {
 		}
 			
 		session = null;
-		return point.getPoints();
+		return (point != null) ? point.getPoints() : null;
 	}
 	
 	
@@ -524,6 +524,14 @@ public class EventService {
 		session = null;
 		return true;
 	}
-	
+
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 }
 
