@@ -13,7 +13,6 @@ import pokkare.model.Games;
 import pokkare.model.Player;
 import pokkare.model.Score;
 import pokkare.service.EventService;
-import pokkare.service.PokkareGraphDrawer;
 import pokkare.service.ScoreDataWrapper;
 import pokkare.service.ScoreDataWrapper.ScoreData;
 
