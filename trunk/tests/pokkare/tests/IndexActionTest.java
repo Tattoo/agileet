@@ -1,10 +1,13 @@
 package pokkare.tests;
 import java.util.ArrayList;
+import java.util.List;
 
 import junit.framework.TestCase;
 import pokkare.action.IndexAction;
+import pokkare.model.Player;
 import pokkare.service.ActionMessages;
 import pokkare.service.ErrorMessages;
+import pokkare.service.EventService;
 
 public class IndexActionTest extends TestCase {
 
@@ -18,12 +21,14 @@ public class IndexActionTest extends TestCase {
 		action = null;
 	}
 	
-//	public void testEmptlyPlayers() {
-//		assertEquals("error", action.execute());
-//		
-//		ArrayList<String> e = (ArrayList<String>)action.getActionErrors();
-//		assertEquals(e.get(0), ErrorMessages.NO_PLAYERS_AVAILABLE);
-//	}
+	public void testEventServiceAccessors(){
+		assertNotNull(action.getEvent());
+		EventService temp = action.getEvent();
+		action.setEvent(null);
+		assertNull(action.getEvent());
+		action.setEvent(temp);
+		assertNotNull(action.getEvent());
+	}
 	
 	public void testRankingAccessors(){
 		assertEquals(new ArrayList<String>(), action.getRanking());
@@ -40,5 +45,23 @@ public class IndexActionTest extends TestCase {
 	
 	public void testExecute(){
 		assertEquals("success", action.execute());
+		EventService temp = action.getEvent();
+		action.setEvent(new MockEventService());
+		assertEquals("error", action.execute());
+		action.setEvent(temp);
+		assertEquals("success", action.execute());
+	}
+
+	/*
+	 * Helpers
+	 * */
+	
+	private class MockEventService extends EventService{
+
+		@Override
+		public List<Player> findPlayers() {
+			return null;
+		}
+		
 	}
 }
