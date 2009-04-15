@@ -42,9 +42,7 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()) {
 				session.close(); 
 			}
@@ -69,9 +67,7 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()) {
 				session.close(); 
 			}
@@ -91,14 +87,10 @@ public class EventService {
 		}
 		catch (Exception e) { 
 			e.printStackTrace(); 
-		}
-		finally { 
 			if (session != null && session.isOpen()){ 
 				session.close(); 
 			}
-		
-		}
-			
+		}			
 		session = null;
 		return player;
 	}
@@ -114,8 +106,6 @@ public class EventService {
 		}
 		catch (Exception e) { 
 			e.printStackTrace(); 
-		}
-		finally { 
 			if (session != null && session.isOpen()){ 
 				session.close(); 
 			}
@@ -142,9 +132,7 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()){ 
 				session.close(); 
 			}
@@ -202,12 +190,11 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-			return false; 
-		}
-		finally { 
-			if (session != null && session.isOpen()){ session.close(); 
+			e.printStackTrace();
+			if (session != null && session.isOpen()){ 
+				session.close(); 
 			}
+			return false; 
 		}
 		session = null;
 		return true;
@@ -223,13 +210,11 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-			return false; 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()) {
 				session.close(); 				
 			}
+			return false;
 		}
 		session = null;
 		return true;
@@ -249,9 +234,7 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()){
 				session.close(); 
 			}
@@ -275,11 +258,9 @@ public class EventService {
 		}
 		catch (Exception e) { 
 			e.printStackTrace(); 
-		}
-		finally { 
 			if (session != null && session.isOpen()) {
 				session.close();
-			} 
+			}
 		}
 		return sum.intValue();
 	}
@@ -300,8 +281,8 @@ public class EventService {
 			
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); }
-		finally { 
+		catch (Exception e) { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()) {
 				session.close(); 
 			}
@@ -324,8 +305,8 @@ public class EventService {
 			
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); }
-		finally { 
+		catch (Exception e) { 
+			e.printStackTrace(); 
 			if (session != null && session.isOpen()) { 
 				session.close(); 
 			}
@@ -337,7 +318,6 @@ public class EventService {
 	public List<Points> findPoints() {
 		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("from Points");
@@ -351,9 +331,7 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()){ 
 				session.close(); 
 			}
@@ -384,8 +362,8 @@ public class EventService {
 			i = new EventService().findScore(rank);
 			session.close(); 
 		}
-		catch (Exception e) { e.printStackTrace(); }
-		finally { 
+		catch (Exception e) { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()){ 
 				session.close(); 
 			}
@@ -406,13 +384,11 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-			return false; 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()){ 
 				session.close();
 			}
+			return false; 
 		}
 		session = null;
 		return true;
@@ -434,13 +410,11 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-			return false; 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()){
 				session.close();
 			}
+			return false; 
 		}
 		session = null;
 		return true;
@@ -463,13 +437,11 @@ public class EventService {
 			}
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-			return false; 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()){
 				session.close();
 			}
+			return false; 
 		}
 		session = null;
 		return true;
@@ -491,9 +463,7 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()){ 
 				session.close(); 
 			}
@@ -515,13 +485,11 @@ public class EventService {
 			session.close(); 
 		}
 		catch (Exception e) { 
-			e.printStackTrace(); 
-			return false; 
-		}
-		finally { 
+			e.printStackTrace();
 			if (session != null && session.isOpen()){ 
 				session.close(); 
 			}
+			return false; 
 		}
 		session = null;
 		return true;
