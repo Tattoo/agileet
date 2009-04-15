@@ -28,7 +28,7 @@ public class IndexAction extends ActionSupport {
 	
 	
 	public String execute() {
-		
+		// TODO: refactor this....
 		ArrayList<Player> playerList = (ArrayList<Player>)event.findPlayers();
 		
 		if (playerList == null) {
@@ -85,6 +85,14 @@ public class IndexAction extends ActionSupport {
 		
 		
 		return "success";
+	}
+
+	public EventService getEvent() {
+		return event;
+	}
+
+	public void setEvent(EventService event) {
+		this.event = event;
 	}
 	
 }
