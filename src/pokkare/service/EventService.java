@@ -343,7 +343,6 @@ public class EventService {
 	public Integer findScoreForGameAndPlayer(Integer gameId, Integer playerId) {
 		Integer i = 0;
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("from Score where game_score_id = " + gameId + " AND player_id = " + playerId);
@@ -375,7 +374,6 @@ public class EventService {
 	public boolean savePlayer(Player player) {
 		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			player.setState('N');
@@ -397,7 +395,6 @@ public class EventService {
 	public boolean deletePlayer(Player player) {
 		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("update Player set state = 'D' where id = " + player.getId());
@@ -423,7 +420,6 @@ public class EventService {
 	public boolean reactivatePlayer(Player player) {
 		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			System.out.println("woot?");
@@ -449,7 +445,6 @@ public class EventService {
 	
 	public List<Player> findPlayersWithDeletedState() {
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			Query query = session.createQuery("from Player where state = 'D'");
@@ -477,7 +472,6 @@ public class EventService {
 	public boolean deletePlayerRowFromDatabase(Player player) {
 		
 		try {
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			session.delete(player);
