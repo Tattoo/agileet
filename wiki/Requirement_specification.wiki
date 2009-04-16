@@ -22,13 +22,18 @@ Pokkare is meant to be used in maintaining and viewing scores from home poker ga
 
 == Add and delete players ==
  # Players shall be addable and deletable from the database. 
- # Players are distinguished by their name. 
+ # Players are distinguished by their (unique) name. 
  # The maximum length of a player's name is 100 characters long. 
  # Two players with the same name shall not be addable, regardless of state (see 3.6)
  # Players shall be deletable from the database by using their name. 
- # If a player is removed, it shall not be removed from the database. Instead, the database shall have a state field for this player indicating the deletion. 
- # Score related information for this player is discarded while calculating ranking and scores.
- # Other data, such as game host data, is left intact, functionality shall be the same as for an not-delete player.
+ # When a player is deleted, it shall not be removed from the database. Instead, the database shall have a state field for this player indicating the deletion. 
+ # Score related information for a deleted player is discarded while calculating ranking and scores.
+ # Other data for a deleted player, such as game host data, is left intact. Functionality shall be the same as for an not-delete player.
+
+== Reactivate player ==
+ # Deleted players shall be reactivateable.
+ # When a player is reactivated, their state field is set to normal state. They shall function similarly to other normal players.
+ # Data other than state for a reactivated player is left intact. The player shall be at the state it was before deletion occurred.
 
 == Show ranking ==
  # Ranking of players in the statistics shall be presented for each player graphically and numerically as per 4.2) and 4.3).
