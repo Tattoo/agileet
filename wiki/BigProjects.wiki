@@ -2,23 +2,23 @@
 
 = Big projects and agile methods =
 
-To get big projects and agile methods to work together, one can either scale the methods, or break the project down for teams of ~10 persons (which is average team size in most agile methods). 
+To get big projects and agile methods to work together, one can either scale the methods, or break the project down for teams of ~10 persons (which is the average team size in most agile methods). 
 
-Agile methods, although empirically proven`[`2`]` to being successfully applied to large projects, don't usually give any details on how to deal with these extra challenges, that large project imposes:
+Agile methods, although empirically proven`[`2`]` to be successfully applied to large projects, don't usually give any details on how to deal with these extra challenges  imposed by large projects:
  * Communication overhead, or how to optimize communication
  * Project roles and their distribution
  * How to deal with geographical scatterness
  * Manage work politics, eg. numerous stakeholders
 
-One challenge is to differiante about _project personnel_ and _organization structure_. `[`1`]` One must also be prepared of clashes, since not actively working in team means one is not part of the active interpersonal communication which leads to project actions not being transperent. This could lead to mistrust and therefore demands of rigid practices may arise.
+One challenge is to differiante with _project personnel_ and _organizational structure_. `[`1`]` One must also be prepared in case of clashes, since not actively working in team means one is not part of the active interpersonal communication which leads to project actions not being transparent. This could lead to mistrust and therefore demands of rigid practices may arise.
 
 ==Scrum==
 
-One team consists of 7 or less persons. However, a project can consist many teams. Therefore, on Cockburn scale, Scrum can handle anything from C6 to L100`[`2`]`.
+One team consists of 7 or less persons. However, a project can consist of many teams. Therefore, on Cockburn scale, Scrum can handle anything from C6 to L100`[`2`]`.
 
 Inter-team communication is facilitated by _scrum of scrums_, ie. the delegates of each team hold their own scrum.
 
-Scrum doesen't specify any methods that would help with the communication overhead or practical advices. On the other hand, it is in Scrums ideology to not to say anything about everyday practicalities.
+Scrum doesn't specify any methods to help with the communication overhead or practical advices. On the other hand, it is in Scrum's ideology not to say anything about everyday practicalities.
 
 ==XP==
 
