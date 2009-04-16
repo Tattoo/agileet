@@ -196,9 +196,12 @@ public class EventServiceTest extends TestCase {
 			if(games.get(i).getGameDate().after(games.get(i+1).getGameDate())){
 				fail("games not in order by date in testFindGamesOrderedByDate in EventServiceTest");
 			}
+			if(games.get(i).getGameDate().compareTo(games.get(i+1).getGameDate()) == 0 &&
+				games.get(i).getGameNumber() > games.get(i+1).getGameNumber()){
+				fail("games with same date are not in order by game number in testFindGamesOrderedByDate in EventServiceTest");
+			}
 		}
 	}
-	
 	public void testSaveGame(){
 		Games mockGame = new Games();
 		mockGame.setGameDate(new Date(3000,1,1));
@@ -278,17 +281,16 @@ public class EventServiceTest extends TestCase {
 		// check that exceptions are handled
 		factory = event.getSessionFactory(); // save real SessionFactory
 		event.setSessionFactory(new MockSessionFactory());
-		assertNotNull(event.findScores(findByPlayerId(testplayerA.getName())));
-		assertEquals(1, event.findScores(findByPlayerId(testplayerA.getName())).size());
+		assertNull(event.findScores(findByPlayerId(testplayerA.getName())));
 		event.setSessionFactory(factory);
 		assertNotNull(event.findScores(findByPlayerId(testplayerA.getName())));
 	}
-	
+
 	public void testFindScores(){
 		// check that exceptions are handled
 		factory = event.getSessionFactory(); // save real SessionFactory
 		event.setSessionFactory(new MockSessionFactory());
-		assertNotNull(event.findScores());
+		assertNull(event.findScores());
 		event.setSessionFactory(factory);
 		assertNotNull(event.findScores());
 	}
@@ -464,7 +466,7 @@ public class EventServiceTest extends TestCase {
 		event.setSessionFactory(factory);
 		
 	}
-
+	
 	/*
 	 * Helper methods
 	 */	
