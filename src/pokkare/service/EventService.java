@@ -36,7 +36,7 @@ public class EventService {
 				Player p = (Player)lista.get(i);
 				if (p.getState() != 'D'){
 					playerList.add(p);
-				}
+				} 
 			}
 			
 			session.close(); 
@@ -145,39 +145,29 @@ public class EventService {
 		
 		//HQL order by doesn't work so let's hack it
 		List<Games> gamesList = findGames();
-		
-		//really ugly, but I'm not getting paid for this, so...
-		for (int i = 0; i < gamesList.size(); ++i) {
-			Games gI = gamesList.get(i);
-			for (int j = i; j < gamesList.size(); ++j) {
-				Games gJ = gamesList.get(j);
+		// basic bubble sort, from http://www.rosettacode.org/wiki/Bubble_Sort#JavaScript
+		// (the Java version is not valid Java, so...)
+		boolean done = false;
+		while(!done) {
+			done = true;
+			for (int i = 0; i < gamesList.size()-2; i++){
+				if (gamesList.get(i).getGameDate().getTime() == gamesList.get(i+1).getGameDate().getTime() &&  
+						gamesList.get(i).getGameNumber() > gamesList.get(i+1).getGameNumber()){
+						done = false;
+						Games temp = gamesList.get(i);
+						gamesList.set(i, gamesList.get(i+1));
+						gamesList.set(i+1, temp);
+						
+				}
+				else if (gamesList.get(i).getGameDate().getTime() > gamesList.get(i+1).getGameDate().getTime()) { 
+					done = false;
+					Games temp = gamesList.get(i);
+					gamesList.set(i, gamesList.get(i+1));
+					gamesList.set(i+1, temp);
+				}
 				
-				if (gJ.getGameDate().getTime() < gI.getGameDate().getTime()) {
-					gI = gamesList.remove(i);
-					gamesList.add(i, gJ);
-					gJ = gamesList.remove(j);
-					gamesList.add(j, gI);
-				}
-			}
-		}
-		
-		for (int i = 0; i < gamesList.size(); ++i) {
-			Games gI = gamesList.get(i);
-			for (int j = i; j < gamesList.size(); ++j) {
-				Games gJ = gamesList.get(j);
-				if (gJ.getGameDate().getYear() == gI.getGameDate().getYear() &&
-						gJ.getGameDate().getMonth() == gI.getGameDate().getMonth() &&
-						gJ.getGameDate().getDay() == gI.getGameDate().getDay()) {
-					if (gJ.getGameNumber() < gI.getGameNumber()) {
-						gI = gamesList.remove(i);
-						gamesList.add(i, gJ);
-						gJ = gamesList.remove(j);
-						gamesList.add(j, gI);
-					}
-				}
-			}
-		}
-		
+			}		
+		} 		
 		return gamesList;
 	}
 	
@@ -246,6 +236,7 @@ public class EventService {
 	
 	
 	public Integer findScoreForPlayer(Integer playerId) {
+		scoreList = null;
 		Long sum = 0L;
 		try {
 			session = sessionFactory.openSession();
@@ -267,7 +258,7 @@ public class EventService {
 	
 	
 	public List<Score> findScores(Integer playerId) {
-	
+		scoreList = null;
 		try {
 			session = sessionFactory.openSession();
 			session.beginTransaction();
@@ -292,6 +283,7 @@ public class EventService {
 	}
 	
 	public List<Score> findScores() {
+		scoreList = null;
 		try {
 			session = sessionFactory.openSession();
 			session.beginTransaction();
