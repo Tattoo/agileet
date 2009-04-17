@@ -63,6 +63,7 @@ Sprint 2 scope and issues defined in issuelist
  * BigProjects
 ==Theme 2: Test driven software development==
  * In Test-Driven Development (TDD), one writes unit tests before implementation code. Team member use TDD in this iteration (you can use it in other iterations, of course). 
+ * Oral presentation at group meeting
 
 ===Sprint 4 kick-off===
 ====[http://cs.helsinki.fi/u/tkairi/breakdown-4.txt Task breakdown]====
