@@ -1,0 +1,157 @@
+IN ENGLISH
+
+<test begins>
+
+-"I'll add myself to the game"
+
+Chooses Add/remove player
+
+Writes his own name ("Seise") to text input, clicks the Add-button, sees the success message
+
+-"I added myself, clearly I succeeded"
+
+Selects Add/remove player
+
+-"The instructions don't say what I should write for description, I'll just put 'test game'"
+
+Writes the description
+
+-"Give date... 17th of April, two thousand nine"
+
+Tries to write the date, notices that he accidentally wrote '17042009' when he meant to write -- apparently -- '17-04-2009'. Tries to add the hyphen, doesen't succeed: the text input doesen't take the hyphen (instructor steps in and verifies this is the matter). Guesses that it's the laptops fault. Instuctor then suggests to find another way to input the date. User clicks the calendar icon -> opens the calendar menu.
+
+-"Ok, let's use [this] calendar then."
+
+-"Calendar doesen't give the date in the same format as in the instructions" ["(17.04.09)"]
+
+-"Instructions say... to select... they don't say who should be selected as host, I'll select myself"
+
+Instuctor says this is okay.
+
+Chooses himself from the host list, clicks add-button and moves along to the next part of the test.
+
+-"Add ranking."
+
+Chooses Add ranking. Scrolls down the page to see the whole game list. Starts to look for the game he just added from the list and finds it. Scrolls back up and starts adding a ranking.
+
+-"I'll select myself as first one. I'll give Fanta ranking seven. Let's give all the others seven too. Oh you can add same ranking for many persons. Let's see how this works."
+
+Clicks Add-button after contemplating and checking if he choose the correct things.
+
+"I added three sevens to the ranking [sees the success message] oh, it accepted it. Interesting that you can add three sevens."
+
+-"Then I should remove tattoo"
+
+Selects Add/remove player
+
+-"Let's see if I can find tattoo"
+
+Looks at the page for a moment, figures things when he sees the subtitle. Realizes quickly that the name highlights itself when you put the mouse cursor on top of it. Clicks tattoo.
+
+-"Tattoo got to the list of removed players. Now I need to reactivate him."
+
+Doesen't hesitate to select tattoo from the list.
+
+-"I succeeded"
+
+-"I should read ranking aloud, I remember I had one. Let's see what the ranking..."
+
+Selects Ranking
+
+Scorlls down to see the whole graph. Scrolls further down to see what the list below the graph is. Scrolls back up to see the whole graph.
+
+-"It seems Seise [himself] has one point, jouns has 95 points... I don't see tattoo's points..."
+
+Scrolls down to the games list, returns quickly back to the graph and continues:
+-"...I don't see tattoo's points at all, I only see Foobar's and jouns' and my own, no others."
+
+The instructor asks if the user thinks he is ready.
+
+Doubts for a second, scorlls down to the games list:
+-"Yes, I'm ready. I don't get anything more from this graph."
+
+IN FINNISH:
+
+<testi alkaa>
+
+-"Lisään itseni peliin"
+
+Valitsee Lisää/poista pelaaja
+
+Kirjottaa nimensä ("Seise") tekstilaatikkoon, painaa lisää-nappia, näkee onnistumisviestin.
+
+-"Lisäsin itseni, selkeesti onnistu"
+
+-"Lisätään peli tälle päivälle"
+
+Valitsee Lisää peli
+
+-"Täs nyt ei oo ohjeita mitä kuvaukseen pitää laittaa, laitetaan nyt vaikka 'testipeli'"
+
+Kirjottaa kuvauksen
+
+-"Annetaan päivämäärä"
+
+-"Seittemästoista neljättä kakstuhatyhdeksän"
+
+Yrittää kirjoittaa päivämäärää, huomaa että kirjotti '17042009'. Yrittää lisätä tavuviivaa, ei onnistu: tekstilaatikko ei ota tavuviivaa vastaan (ohjaaja astuu väliin ja varmistaa että näin todella on). Epäilee viaksi testiläppäriä. Ohjaaja ehdottaa keksimään toisen tavan syöttää päivämäärä. Käyttäjä klikkaa kalenteri-ikonia -> saa kalenterivalikon auki.
+
+-"Selvä, käytetään [tätä] kalenteria sit."
+
+-"Kalenterista ei tule ohjeenmukaista päivämäärää" ["(17.04.09)"]
+
+-"Ohjeiden mukaan... valitaan... ei sanota kuka valitaan isännäksi, laitan itseni"
+
+Ohjaaja toteaa että ihan hyvä 
+
+Valitsee itsensä isäntälistasta, klikkaa lisää-nappulaa ja siirtyy seuraavaan tehtävään
+
+-"Lisätään ranking"
+
+Valitsee Lisää ranking. Skrollaa sivua alaspäin nähdäkseen koko pelilistan. Rupeaa etsimään juuri lisäämäänsä peliä listasta. Löytää sen. Skrollaa takas ylöspäin ja rupeaa lisämään rankingia
+
+-"Lisätään mut ykköseksi. Laitetaan Fantalle seiska. Laitetaan vaik muillekki seiskaa. Ai täs voi antaa saman rankingin useammalle. Katotaas miten tää toimii"
+
+Klikkaa Lisää-nappulaa. Epäröi sitä ennen, tarkistaa onko asiat valittu oikein.
+
+-"Tänne rankingiin, sinne meni kolme seiskaa [näkee hyväksymisviestin] ai ne meni sinne. Mielenkiintosta et tänne voi laittaa kolme seiskaa."
+
+-"Sit pitäis poistaa tattoo"
+
+Valitsee Lisää/poista pelaaja
+
+-"Katotaa löytyykö tattoota"
+
+Etsii hetken merkityksiä sivulle, näkee aliotsikon. Havaitsee nopeasti että pelaajan nimi valikoituu kun sen päälle siirtää hiiren. Klikkaa tattoo:ta
+
+-"Tattoo pääsi poistettujen pelaajien listalle. Pitää aktivoida uudelleen"
+
+Valitsee empimättä tattoo:n listasta.
+
+-"Sain reaktivoitua tattoon"
+
+-"Pitäis lukee ääneen ranking, mul oli siin ykkönen. Katotaan mikä ranking..."
+
+Valitsee Ranking
+
+Skrollaa alaspäin nähdäkseen koko kuvaajan. Skrollaa alas nähdäkseen mikä tekstilista on, skrollaa takaisin ylös nähdäkseen koko kuvaajan.
+
+-"Täs näyttäis pisteitä olevan Seisellä [itsellään] yks piste, jounssil 95 pistettä... tattoon pisteitä ei näy..."
+
+skrollaa alaspäin pelilistaan, mutta palaa nopeasti takaisin kuvaajaan ja jatkaa:
+-"...ei näy tattoon pisteitä ollenkaan, tääl näkyy Foobarin ja jounsin ja mun pisteet, ei näy muiden"
+
+Ohjaaja kysyy onko testinsuorittaja mielestään valmis
+
+Epäilee, skrollaa alas pelilistaan:
+-"Kyl mä oon mielestäni valmis. Tästä kuvaajasta ei enempää tietoo irtoo."
+
+<testi loppuu>
+
+
+
+
+
+
+
+
