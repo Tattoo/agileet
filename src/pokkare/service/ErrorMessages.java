@@ -3,12 +3,12 @@ package pokkare.service;
 /* The character sets are different in different platforms.
  * Therefore it is better to keep message texts that are rendered in html anyway as
  * per html convention suggests, eg: 
- * 		"Š" -> "&auml;"
- * 		"š" -> "&ouml;"
- * 		"Œ" -> "&aring;"
- * 		"€" -> "&Auml;"
- * 		"…" -> "&Ouml;"
- * 		"" -> "&Aring;"
+ * 		"Å " -> "&auml;"
+ * 		"Å¡" -> "&ouml;"
+ * 		"Å’" -> "&aring;"
+ * 		"â‚¬" -> "&Auml;"
+ * 		"â€¦" -> "&Ouml;"
+ * 		"ï¿½" -> "&Aring;"
  * 		"<" -> "&gt;"
  * 		">" -> "&lt;"
  *		etc. etc.
@@ -23,4 +23,5 @@ public class ErrorMessages {
 	public final static String INTERNAL_ERROR = "Tapahtui sis&auml;inen virhe.";
 	public final static String NO_PLAYERS_AVAILABLE = "Tietokannassa ei ole pelaajia.";
 	public final static String NO_PLAYER_IN_REQUEST = "Pelaajan nimi hukkui prosessoinnissa joten mit&auml;&auml;n ei tehty.";
+	public final static String ADDRANKING_NOT_ENOUGH_PARAMETERS = "Antamasi valinnat olivat puutteelliset.";
 }
