@@ -112,7 +112,7 @@ public class EventService {
 		}
 			
 		session = null;
-		return (point != null) ? point.getPoints() : null;
+		return (point != null) ? point.getPoints() : new Integer(0);
 	}
 	
 	
