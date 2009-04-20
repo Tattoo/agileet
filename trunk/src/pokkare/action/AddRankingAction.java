@@ -1,8 +1,11 @@
 package pokkare.action;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.struts2.interceptor.ParameterAware;
 
@@ -81,7 +84,8 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 	public String execute() {
 		playerList = (ArrayList<Player>)event.findPlayers();
 		setPlayerListSize(playerList.size());
-		if (chosenGame == null || chosenGame < 0) {
+		Set keyset = parameters.keySet();
+		if ((chosenGame == null || chosenGame < 0) && keyset.size() == 0) {
 
 			ArrayList<Games> a = (ArrayList<Games>)event.findGamesOrderedByDate();
 			gamesList = a;
@@ -91,16 +95,39 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 //			}
 			return "addranking";
 		}
+		
+		Iterator it = keyset.iterator();
+		
+		boolean gameChosen = false;
+		
+		for(int i = 0; i < keyset.size(); ++i) {
+			String key = (String)it.next();
 
+			//some game is chosen
+			if (key.equals("chosenGame")) {
+				gameChosen = true;
+			}
+		}
+
+		//some game and at least one player chosen
+		System.out.println("DEBUG: " + keyset.size());
+		if (keyset.size() < 2 || !gameChosen) {
+			addActionError(ErrorMessages.ADDRANKING_NOT_ENOUGH_PARAMETERS);
+			repopulateGamesList();
+			return "error";
+		}
+		
 		//tï¿½ssï¿½ luupataan lï¿½pi parameters-mappi josta haetaan pelaaja, 
 		//pelaajaID ja tallennetaan score jokaiselle mapin pelaajalle
 
+		int errors = 0;
+		
 		for (int i = 0; i < playerList.size(); ++i) {
 
 			Player player = (Player)playerList.get(i);
 			String playerName = player.getName();
 			Integer playerId =player.getId();
-
+			
 			if (parameters.containsKey(playerName)) {
 
 				Integer playerRank = -1;
@@ -119,13 +146,22 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 				score.setRank(playerRank);
 
 				System.out.println("saving score");
-				event.saveScore(score);
+				if (!event.saveScore(score)) {
+					errors++;
+					addActionError("Virhe lisätessä pisteitä pelaajalle: " + event.findPlayer(playerId).getName() + ". Pelaajalle on jo asetettu pisteet valitsemallesi pelille.");
+				}
 			}
 		}
+		
+		if (errors > 0) {
+			int noproblem = (keyset.size() - 1 - errors);
+			if (noproblem > 0) 
+				addActionMessage("Pisteet onnistuneesti lisätty " + noproblem + ":lle pelaajalle.");
+			repopulateGamesList();
+			return "error";
+		}
 
-		//repopulate games list so it's still populated when doing "success" 
-		ArrayList<Games> a = (ArrayList<Games>)event.findGamesOrderedByDate();
-		gamesList = a;
+		repopulateGamesList();
 		
 		chosenGame = -1;
 		addActionMessage(ActionMessages.RANKING_ADDED);
@@ -133,4 +169,12 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 
 	}
 
+	private boolean repopulateGamesList() {
+		//repopulate games list so it's still populated when doing "success" 
+		ArrayList<Games> a = (ArrayList<Games>)event.findGamesOrderedByDate();
+		gamesList = a;
+		return true;
+	}
+	
 }
+
