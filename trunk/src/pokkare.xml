@@ -21,6 +21,12 @@
 			<result name="score" type="redirect">/pokkare/addranking.action</result>
 			<result name="error">/pokkare/addranking.jsp</result>
 		</action>
+		<action name="editranking" class="pokkare.action.EditRankingAction">
+			<result name="success">/pokkare/editscores.jsp</result>
+			<result name="pickgame">/pokkare/editscores.jsp</result>
+			<result name="editscores">/pokkare/editscores.jsp</result>
+			<result name="error">/pokkare/editscores.jsp</result>
+		</action>
 		<action name="viewranking" class="pokkare.action.ViewRankingAction">
 			<result name="success">/pokkare/viewranking.jsp</result>
 			<result name="index" type="redirect">/pokkare/index.action</result>
