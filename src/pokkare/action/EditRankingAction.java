@@ -123,10 +123,13 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 						//well if not successful then who cares, maybe there wasn't one
 					}
 
-					System.out.println("saving new score");
-					if (!event.saveScore(score)) {
-						errors++;
-						addActionError("Virhe muuttaessa pelaajan " + event.findPlayer(playerId).getName() + " pisteitä.");
+					//if rank is -1 it's set to be removed, don't save -1 score
+					if (playerRank != -1) {
+						System.out.println("saving new score");
+						if (!event.saveScore(score)) {
+							errors++;
+							addActionError("Virhe muuttaessa pelaajan " + event.findPlayer(playerId).getName() + " pisteitä.");
+						}
 					}
 				}
 			}
