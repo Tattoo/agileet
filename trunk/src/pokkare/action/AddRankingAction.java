@@ -84,8 +84,12 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 	public String execute() {
 		playerList = (ArrayList<Player>)event.findPlayers();
 		setPlayerListSize(playerList.size());
-		Set keyset = parameters.keySet();
-		if ((chosenGame == null || chosenGame < 0) && keyset.size() == 0) {
+		Set keyset = null;
+		if (parameters != null && parameters.keySet() != null) {
+			keyset = parameters.keySet();
+		}
+		
+		if ((chosenGame == null || chosenGame < 0) && (keyset == null || keyset.size() == 0)) {
 
 			ArrayList<Games> a = (ArrayList<Games>)event.findGamesOrderedByDate();
 			gamesList = a;
@@ -148,7 +152,7 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 				System.out.println("saving score");
 				if (!event.saveScore(score)) {
 					errors++;
-					addActionError("Virhe lisätessä pisteitä pelaajalle: " + event.findPlayer(playerId).getName() + ". Pelaajalle on jo asetettu pisteet valitsemallesi pelille.");
+					addActionError("Virhe lisï¿½tessï¿½ pisteitï¿½ pelaajalle: " + event.findPlayer(playerId).getName() + ". Pelaajalle on jo asetettu pisteet valitsemallesi pelille.");
 				}
 			}
 		}
@@ -156,7 +160,7 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 		if (errors > 0) {
 			int noproblem = (keyset.size() - 1 - errors);
 			if (noproblem > 0) 
-				addActionMessage("Pisteet onnistuneesti lisätty " + noproblem + ":lle pelaajalle.");
+				addActionMessage("Pisteet onnistuneesti lisï¿½tty " + noproblem + ":lle pelaajalle.");
 			repopulateGamesList();
 			return "error";
 		}
