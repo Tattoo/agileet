@@ -24,9 +24,11 @@ public class AddRankingActionTest extends TestCase {
 		action = new AddRankingAction();
 		testparams = new HashMap<String, String[]>();
 		String[] testranking1 = {"1"};
-		String[] testrankin2 = {"2"};
+		String[] testranking2 = {"2"};
+		String[] testranking3 = {"3"};
 		testparams.put("jouns", testranking1);
-		testparams.put("tattoo", testrankin2);
+		testparams.put("tattoo", testranking2);
+		testparams.put("chosenGame", testranking3);
 	}
 
 	protected void tearDown() throws Exception {
@@ -72,9 +74,9 @@ public class AddRankingActionTest extends TestCase {
 	}
 	
 	public void testExecute_ChosenGameLessThanZero(){
-		assertEquals(action.execute(), "addranking");
+		assertEquals("addranking", action.execute());
 	}
-	
+
 	public void testParametersAccessors(){
 		assertEquals(null, action.getParameters());
 		action.setParameters(testparams);
@@ -91,7 +93,13 @@ public class AddRankingActionTest extends TestCase {
 		assertEquals("success", action.execute());
 		
 		ArrayList<String> a = (ArrayList<String>)action.getActionMessages();
-		assertEquals(a.get(0), ActionMessages.RANKING_ADDED);
+		assertEquals(ActionMessages.RANKING_ADDED, a.get(0));
+		
+		testparams.remove("chosenGame");
+		assertEquals("error", action.execute());
+		
+		a = (ArrayList<String>)action.getErrorMessages();
+		assertEquals(ErrorMessages.ADDRANKING_NOT_ENOUGH_PARAMETERS, a.get(0));
 		
 		assertEquals(true, deleteTestData(chosenGame));
 	}
@@ -118,4 +126,5 @@ public class AddRankingActionTest extends TestCase {
 			return false;
 		}
 	}
+
 }

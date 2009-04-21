@@ -174,12 +174,11 @@ public class EventServiceTest extends TestCase {
 		// check that exceptions are handled
 		factory = event.getSessionFactory(); // save real SessionFactory
 		event.setSessionFactory(new MockSessionFactory());
-		assertNull(event.findScore(0));
+		assertEquals(new Integer(0), event.findScore(0));
 		event.setSessionFactory(factory);
-		assertNotNull(event.findScore(0));
-		
+		assertEquals(new Integer(0), event.findScore(0));
 	}
-	
+
 	public void testFindGames(){
 		// check that exceptions are handled
 		factory = event.getSessionFactory(); // save real SessionFactory
