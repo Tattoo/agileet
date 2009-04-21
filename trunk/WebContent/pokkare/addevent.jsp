@@ -12,7 +12,7 @@
 	
 	<label for="hosts">isäntä:</label>
 	<s:iterator value="hosts">
-		<input type="radio" name="host" value="${key}" />${value} 
+		<input type="radio" name="host" value="${key}" class="radio" />${value}
 	</s:iterator>
 	<br class="clear" />
 	
