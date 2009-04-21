@@ -392,10 +392,10 @@ public class EventService {
 			Query query = session.createQuery("update Player set state = 'D' where id = " + player.getId());
 			query.executeUpdate();
 			session.getTransaction().commit();
-			session.beginTransaction();
-			query = session.createQuery("delete from Score where player_id="+player.getId());
-			query.executeUpdate();
-			session.getTransaction().commit();
+//			session.beginTransaction();
+//			query = session.createQuery("delete from Score where player_id="+player.getId());
+//			query.executeUpdate();
+//			session.getTransaction().commit();
 			session.close(); 
 		}
 		catch (Exception e) { 
