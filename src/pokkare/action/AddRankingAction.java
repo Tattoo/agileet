@@ -130,7 +130,7 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 
 			Player player = (Player)playerList.get(i);
 			String playerName = player.getName();
-			Integer playerId =player.getId();
+			Integer playerId = player.getId();
 			
 			if (parameters.containsKey(playerName)) {
 

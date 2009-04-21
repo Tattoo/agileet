@@ -141,6 +141,35 @@ public class EventService {
 		return gamesList;
 	}
 	
+	public Games findGame(Integer id) {
+		Games game = null;
+		
+		try {
+			session = sessionFactory.openSession();
+			session.beginTransaction();
+			Query query = session.createQuery("from Games");
+			List<Games> lista = (List<Games>)query.list();
+		 
+			for (int i = 0; i < lista.size(); ++i) {
+				Games g = (((Games)lista.get(i)));
+				if (g.getId().equals(id)) {
+					game = g;
+					break;
+				}
+			}
+			
+			session.close(); 
+		}
+		catch (Exception e) { 
+			e.printStackTrace();
+			if (session != null && session.isOpen()){ 
+				session.close(); 
+			}
+		}
+		session = null;
+		return game;
+	}
+	
 	public List<Games> findGamesOrderedByDate() {
 		
 		//HQL order by doesn't work so let's hack it
@@ -196,6 +225,26 @@ public class EventService {
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			session.save(score);
+			session.getTransaction().commit();
+			session.close(); 
+		}
+		catch (Exception e) { 
+			e.printStackTrace();
+			if (session != null && session.isOpen()) {
+				session.close(); 				
+			}
+			return false;
+		}
+		session = null;
+		return true;
+	}
+	
+	public boolean deleteScore(Integer gameId, Integer playerId) {
+		try {
+			session = sessionFactory.openSession();
+			session.beginTransaction();
+			Query query = session.createQuery("delete from Score where game_score_id = '" + gameId + "' and player_id = '" + playerId + "'");
+			query.executeUpdate();
 			session.getTransaction().commit();
 			session.close(); 
 		}

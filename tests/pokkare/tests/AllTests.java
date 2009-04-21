@@ -26,6 +26,7 @@ public class AllTests {
 		// action tests
 		suite.addTestSuite(AddEventActionTest.class);
 		suite.addTestSuite(AddRankingActionTest.class);
+		suite.addTestSuite(EditRankingActionTest.class);
 		suite.addTestSuite(ViewRankingActionTest.class);
 		suite.addTestSuite(IndexActionTest.class);
 		suite.addTestSuite(DeletePlayerActionTest.class); // MUST BE BEFORE AddPLayerActionTest

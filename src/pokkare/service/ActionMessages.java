@@ -3,12 +3,12 @@ package pokkare.service;
 /* The character sets are different in different platforms.
  * Therefore it is better to keep message texts that are rendered in html anyway as
  * per html convention suggests, eg: 
- * 		"Š" -> "&auml;"
- * 		"š" -> "&ouml;"
- * 		"Œ" -> "&aring;"
- * 		"€" -> "&Auml;"
- * 		"…" -> "&Ouml;"
- * 		"" -> "&Aring;"
+ * 		"ï¿½" -> "&auml;"
+ * 		"ï¿½" -> "&ouml;"
+ * 		"ï¿½" -> "&aring;"
+ * 		"ï¿½" -> "&Auml;"
+ * 		"ï¿½" -> "&Ouml;"
+ * 		"ï¿½" -> "&Aring;"
  * 		"<" -> "&gt;"
  * 		">" -> "&lt;"
  *		etc. etc.
@@ -21,4 +21,5 @@ public class ActionMessages {
 	public static final String PLAYER_ADDED = "Pelaaja lis&auml;tty.";
 	public static final String RANKING_ADDED = "Ranking lis&auml;tty.";
 	public static final String PLAYER_DELETED = "Pelaaja poistettu.";
+	public static final String GAME_CHOSEN = "Peli valittu. Valitse haluamasi muutokset.";
 }
