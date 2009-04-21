@@ -56,6 +56,10 @@ h1 {
 	width: 13em;
 }
 
+#addevent_form > input.radio {
+	width: 0em;
+}
+
 .clear {
 	clear: both;
 }
