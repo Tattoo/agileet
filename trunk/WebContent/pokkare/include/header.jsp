@@ -24,7 +24,8 @@
 
 						<li><a href='<s:url value="index.action" />'>index</a></li>
 						<li><a href='<s:url value="addevent.action" />'>uusi peli</a></li> 
-						<li><a href='<s:url value="addranking.action" />'>lisää ranking peliin</a></li> 
+						<li><a href='<s:url value="addranking.action" />'>lisää ranking peliin</a></li>
+						<li><a href='<s:url value="editranking.action" />'>editoi scoreja</a></li> 
 						<li><a href='<s:url value="addplayer.action" />'>lisää tai poista pelaaja</a></li> 
 						<li><a href='<s:url value="viewranking.action" />'>ranking</a></li>
 

@@ -100,7 +100,7 @@
 				});
 			});
 		}
-		if (String(window.location).indexOf("viewranking") != -1){
+		if (windowLocation.indexOf("viewranking") != -1){
 			// show game number if there's more games with same date
 			// by default, game number isn't shown
 			$(".games_list > dl > dd").each(function(){
@@ -114,5 +114,81 @@
 				}
 			});
 		}
+		if (String(window.location).indexOf("editranking") != -1){
+			
+			if ($("#hiddenEditScores").length > 0){
+				var data = $("#hiddenEditScores").text();
+				console.debug(data.split("|||")[0]);
+				console.debug(data.split("|||")[1]);
+				$("#hiddenEditScores").remove();
+				
+				var chosenGame = jQuery.trim(data.split("|||")[0]);
+				var selector = 'input[value="'+chosenGame+'"]';
+				$("#editScoresLeftPane > form > "+selector).attr("checked","checked");
+				
+				data = data.split("|||")[1];
+				data = eval("({"+jQuery.trim(data.substr(0, data.lastIndexOf(",")))+"})");
+		
+				// create html from data
+				var html = '<form action="editranking.action" method="post">';
+				
+				// get the length of object
+				var datalength = 0;
+				for (var x in data){
+					datalength++;
+				}
+				
+				// generate helper text
+				html += '<div class="editScoresPlayerList"><b>Sija</b><br />';
+				for (var i = 0; i < datalength; i++){
+					html += '<span>'+(i+1)+'.</span><br />'
+				}
+				html += '</div>';
+				
+				// generate player lists
+				for (var key in data){
+					html += '<div class="editScoresPlayerList">'
+					html += '<b>'+key+'</b><br />';
+					for (var i = 0; i < datalength; i++){
+						if ((i+1) == new Number(data[key])){
+							html += '<input type="radio" name="'+key+'" value="'+(i+1)+'" checked="checked" /><br />';
+						}
+						else{
+							html += '<input type="radio" name="'+key+'" value="'+(i+1)+'" /><br />';
+						}
+					}
+					html += '</div>';
+				}
+				html += '<br class="clear" /><br />';
+				html += '<button id="saveButton">Tallenna</button>';
+				html += '</form>'
+				$("#editScoresRightPane").html(html);
+				
+			}
+			else {
+				console.debug("qrjegm");
+				$("#chooseGameButton").click(function(e){
+					e.preventDefault();
+					var el = $("#editScoresLeftPane input:checked");
+					
+					if(el.length < 1){
+						// add hide-event, show it, add error message and cornerize the error box
+						$(".errors").one("click", function(){
+							$(".errors").slideUp();
+						}).animate({height: "1.7em", lineHeight: "1.7em"}, 1000).text("Et ole valinnut peliä.").corner("5px");
+						return;
+					}
+					if (el.length > 1){
+						// TODO: more than 1 selected
+						return;
+					}
+					console.debug("fooo");
+					console.debug($("#chosenGameForm"));
+					$("#chosenGameForm").submit();
+	
+				});
+			}
+		}
 	});
+
 })();
