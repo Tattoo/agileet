@@ -70,7 +70,7 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 		Set keyset = parameters.keySet();
 		
 		//no game chosen yet => get list of games
-		if ((chosenGame == null || chosenGame < 0) && keyset.size() == 0) { 
+		if ((chosenGame == null || chosenGame < 0) || keyset.size() == 0) { 
 			playerScores = null; // reset
 			games = event.findGames();
 			return "pickgame";
