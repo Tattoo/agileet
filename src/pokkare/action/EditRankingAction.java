@@ -78,7 +78,9 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 		
 		//game chosen, no players and/or scores chosen yet => get list of players
 		if ((chosenGame != null && chosenGame > -1) && keyset.size() == 1) {
-
+			//nullify games, print only chosen game
+			games = null;
+			
 			if (!setChosenGameDesc()) {
 				addActionError(ErrorMessages.INTERNAL_ERROR);
 				return "error";
@@ -127,6 +129,7 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 					System.out.println("deleting old score");
 					if (!event.deleteScore(chosenGame, playerId)) {
 						//well if not successful then who cares, maybe there wasn't one
+						System.out.println("Virhe poistaessa scorea pelaajalle: " + playerId + " pelille " + chosenGame);
 					}
 
 					//if rank is -1 it's set to be removed, don't save -1 score
@@ -154,6 +157,8 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 			games = event.findGames();
 			playerScores = null;
 			addActionMessage("Tallennus onnistui.");
+			//nullify chosen game
+			chosenGame = null;
 			return "success";
 		}
 		
