@@ -70,6 +70,8 @@ The instructor asks if the user thinks he is ready.
 Doubts for a second, scorlls down to the games list:
 -"Yes, I'm ready. I don't get anything more from this graph."
 
+<test ends>
+
 IN FINNISH:
 
 <testi alkaa>

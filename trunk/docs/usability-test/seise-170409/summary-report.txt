@@ -1,0 +1,20 @@
+Analyses on the video and the transcript lead to following observations:
+
+(1) Basic usage is clear and concise in almost all views. Error and success messages contribute a lot to users' understanding.
+
+(2) There is an UI bug in add event where you cannot insert date in correct format. All 
+
+(3) Ranking graph doesen't show clearly players with same amount of points -> confusion about the graph working correctly.
+
+(4) The basic idea of tracking scores cumulated from rankings in different games isn't inherently intuitive idea. 
+
+Conclusions based on analyses:
+
+(1) Textual helpers could be added more. All actions need to report somehow to user.
+
+(2) Bug must be fixed (out of scope?)
+
+(3) Maybe adding opacity to colors contribute to understanding the graph better
+
+(4) Is the basic premise of ranking in the software wrong or just domain specific information?
+    => need to find out
