@@ -17,3 +17,7 @@
 - Agile methods are very robust against change. Agile manifesto: "Responding to change over following a plan."
 
 - Therefore, ability to acommodate new risks is very good in agile methods.
+
+- Also, agile methods foster much more (inter-personal) communication than "traditional" methods. 
+
+- This could lead to risks to get attention early on.
