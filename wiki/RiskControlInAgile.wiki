@@ -1,5 +1,11 @@
 #summary Theme task #1 for iteration 5
 
-= Introduction =
+= Risk control in agile methods =
 
-Add your content here.
+- Agile methods promote either _risk-driven_, _customer-driven_ or combination of both 
+
+- Risk-driven means that the team prioritizes high those tasks that have high risk.
+
+- Customer-driven means that the team prioritizes high those tasks that the customer wants
+
+- In combination of both, the team makes customer see why high-risk tasks must be prioritized high.
