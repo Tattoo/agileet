@@ -75,11 +75,25 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 			games = event.findGames();
 			return "pickgame";
 		}
+
+		//check that we're not in wrong if
+		List<Player> players = event.findPlayers();
+		int found = 0;
+		
+		for (int i = 0; i < players.size(); ++i) {
+
+			Player player = (Player)players.get(i);
+			String playerName = player.getName();
+			Integer playerId = player.getId();
+			
+			if (parameters.containsKey(playerName)) {
+				found++;
+				break;
+			}
+		}
 		
 		//game chosen, no players and/or scores chosen yet => get list of players
-		if ((chosenGame != null && chosenGame > -1) && keyset.size() == 1) {
-			//nullify games, print only chosen game
-			games = null;
+		if ((chosenGame != null && chosenGame > -1) && keyset.size() == 1 && found == 0) {
 			
 			if (!setChosenGameDesc()) {
 				addActionError(ErrorMessages.INTERNAL_ERROR);
@@ -90,12 +104,17 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 
 			addActionMessage(ActionMessages.GAME_CHOSEN);
 			//chosenGame = -1; // reset chosenGame, provide chosenGame again from UI
+			
+			//nullify games, print only chosen game
+			games = null;
 			return "editscores";
 		}
 		
-		//game chosen, players and scores chosen, let's rock
-		if ((chosenGame != null && chosenGame > -1) && keyset.size() > 1) {
-			List<Player> players = event.findPlayers();
+		otherif:
+		//game chosen, player(s) and scores chosen, let's rock
+		if ((chosenGame != null && chosenGame > -1) && found != 0) {
+			//reset found to be used in this context
+			found = 0;
 			int errors = 0;
 			
 			for (int i = 0; i < players.size(); ++i) {
@@ -105,7 +124,7 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 				Integer playerId = player.getId();
 				
 				if (parameters.containsKey(playerName)) {
-
+					found++;
 					Integer playerRank = -1;
 
 					try { 
@@ -143,7 +162,7 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 				}
 			}
 			
-			if (errors > 0) {
+			if (errors > 0 || found == 0) {
 				setChosenGameDesc();
 				chosenGame = -1;
 				games = event.findGames();
