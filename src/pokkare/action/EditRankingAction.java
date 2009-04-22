@@ -1,5 +1,6 @@
 package pokkare.action;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -69,7 +70,8 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 		Set keyset = parameters.keySet();
 		
 		//no game chosen yet => get list of games
-		if ((chosenGame == null || chosenGame < 0) && keyset.size() == 0) {
+		if ((chosenGame == null || chosenGame < 0) && keyset.size() == 0) { 
+			playerScores = null; // reset
 			games = event.findGames();
 			return "pickgame";
 		}
@@ -85,6 +87,7 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 			populatePlayersList();
 
 			addActionMessage(ActionMessages.GAME_CHOSEN);
+			//chosenGame = -1; // reset chosenGame, provide chosenGame again from UI
 			return "editscores";
 		}
 		
@@ -110,6 +113,9 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 						e.printStackTrace();
 						populatePlayersList();
 						setChosenGameDesc();
+						chosenGame = -1;
+						games = event.findGames();
+						playerScores = null;
 						return "error";
 					}
 
@@ -128,7 +134,7 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 						System.out.println("saving new score");
 						if (!event.saveScore(score)) {
 							errors++;
-							addActionError("Virhe muuttaessa pelaajan " + event.findPlayer(playerId).getName() + " pisteitä.");
+							addActionError("Virhe muuttaessa pelaajan " + event.findPlayer(playerId).getName() + " pisteit&auml;.");
 						}
 					}
 				}
@@ -136,6 +142,9 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 			
 			if (errors > 0) {
 				setChosenGameDesc();
+				chosenGame = -1;
+				games = event.findGames();
+				playerScores = null;
 				populatePlayersList();
 				return "error";
 			}
@@ -143,6 +152,8 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 			//repop
 			chosenGame = -1;
 			games = event.findGames();
+			playerScores = null;
+			addActionMessage("Tallennus onnistui.");
 			return "success";
 		}
 		
@@ -152,10 +163,13 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 
 	//find players, populate players and scores list
 	private void populatePlayersList() {
-		List<Player> players = event.findPlayers();
-		for (int i = 0; i < players.size(); ++i) {
-			Player p = (Player)players.get(i);
-			playerScores.put(p.getName(), event.findScoreForGameAndPlayer(chosenGame, p.getId()));
+		playerScores = new HashMap<String, Integer>();
+		for(Player p : event.findPlayers()){
+			Integer s = event.findScoreForGameAndPlayer(chosenGame, p.getId());
+			if (s == null){
+				s = 0;
+			}
+			playerScores.put(p.getName(), s);	
 		}
 	}
 	
