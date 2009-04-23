@@ -10,7 +10,7 @@ Analyses on the video and the transcript lead to following observations:
 
 Conclusions based on analyses:
 
-(1) Textual helpers could be added more. All actions need to report somehow to user.
+(1) Textual helpers could be added more. All actions need to report somehow to user. In add ranking, it is probably more intuitive for user to first select game and then places. 
 
 (2) Bug must be fixed (out of scope?)
 
