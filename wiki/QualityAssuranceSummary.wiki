@@ -26,7 +26,7 @@ Following quality goals were not met:
 
 
 Notes:
- * About quality issue 1: On the other hand, code is clearly documented when it comes to questions about design decision made during implementation.
+ * About quality `issue 1:` On the other hand, code is clearly documented when it comes to questions about design decision made during implementation.
 
 = Personal comments =
 
