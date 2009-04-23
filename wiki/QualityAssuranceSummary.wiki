@@ -8,7 +8,7 @@ Project followed [Process this process] and [Quality_assurance this quality assu
 = Synopsis =
 
 Following quality goals were met: 
- # Unit testing has over 90% coverage and they all pass
+ # Unit testing has over 90% coverage and they all pass. This can be verified by running AllTests -test suite with [http://eclemma.org/installation.html EclEmma-plugin] in Eclipse.
  # Release candidate was done weekly where all functionality was tested. Release candidate was successful every time, which was a nice bonus..
  # Code was heavily refactored to adhere standard Java codestyle. 
  # Refactoring was done heavily and CK-metrics provided framework to understand the quality of refactoring.
