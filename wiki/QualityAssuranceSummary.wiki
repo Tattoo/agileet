@@ -5,7 +5,7 @@
 
 Project followed [Process this process] and [Quality_assurance this quality assurance plan]. This document reviews how these worked and didn't work in relation to the product on Friday 24th of April 2009, the end day of the project.
 
-= General =
+= Synopsis =
 
 Following quality goals were met: 
  # Unit testing has over 90% coverage and they all pass
