@@ -1,5 +1,5 @@
 #summary Theme task for iteration 4
-
+#sidebar TableOfContents
 = Big projects and agile methods =
 
 To get big projects and agile methods to work together, one can either scale the methods, or break the project down for teams of ~10 persons (which is the average team size in most agile methods). 
