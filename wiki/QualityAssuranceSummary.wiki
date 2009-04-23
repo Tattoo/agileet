@@ -32,4 +32,14 @@ Notes:
 
 == Tatu ==
 
+In general, I think the process and the quality plan worked well. There was *practically* no need to adjust the plans after they were first done. The process supported our way of working.
+
+The hardest part about this project was discipline. Many times the thought "_this is just a course project_" creeped into mind when it was a matter of cranking a few more tests or procrastinating. It helped that you had to show what you did to other team members. 
+
+Secondly, working remotely together is harder. Our process dropped a lot of agile methods relating to working together from our process and while it worked -- just and just, I feel -- for two people in a project this size, it is evident that eg. shared workspace and working same hours is very essential for efficient communication.
+
+Third thing is, while I do believe our work is quite good qualitatively, we do not how much to show it if objective demonstration is needed. Our project could've benefitted from more metrics. On the other hand, it is clearly evident that eg. working hours is useless metric for our project[`1`], so the metrics we would (in imaginary future) choose, need to be carefully selected.
+
+[`1`]: Since the project is about doing X hours per fixed 7 days, it is of no use to measure that. Separate issue is to measure how many issues were done in the sprint, or why some issue wasn't done.
+
 == Joonas ==
