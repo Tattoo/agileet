@@ -1,5 +1,5 @@
 #summary Theme task #1 of iteration 3
-
+#sidebar TableOfContents
 = Introduction to CMMI =
 
 *CMMI* (Capability Maturity Model Integration) is follower to  Capability Maturity Model (*CMM*), which was initially created as an abstract model for the military to use as an objective evaluation of software subcontractors. 
