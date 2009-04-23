@@ -152,7 +152,7 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 				System.out.println("saving score");
 				if (!event.saveScore(score)) {
 					errors++;
-					addActionError("Virhe lis�tess� pisteit� pelaajalle: " + event.findPlayer(playerId).getName() + ". Pelaajalle on jo asetettu pisteet valitsemallesi pelille.");
+					addActionError("Virhe lis&auml;tess&auml; pisteit&auml; pelaajalle: " + event.findPlayer(playerId).getName() + ". Pelaajalle on jo asetettu pisteet valitsemallesi pelille.");
 				}
 			}
 		}
@@ -160,7 +160,7 @@ public class AddRankingAction extends ActionSupport implements ParameterAware {
 		if (errors > 0) {
 			int noproblem = (keyset.size() - 1 - errors);
 			if (noproblem > 0) 
-				addActionMessage("Pisteet onnistuneesti lis�tty " + noproblem + ":lle pelaajalle.");
+				addActionMessage("Pisteet onnistuneesti lis&auml;tty " + noproblem + ":lle pelaajalle.");
 			repopulateGamesList();
 			return "error";
 		}
