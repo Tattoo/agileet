@@ -5,6 +5,8 @@
  * [PrcessAndCMMI Theme Task 3-a: CMMI]
  * [Process Theme Task 3-b: Process]
  * [BigProjects Theme Task 4: Big projects]
+ * [RiskControlInAgile Theme task 5-a: Summary of risk control in agile methods]
+ * [QualityAssuranceSummary Theme task 5-b: Summary of quality assurance in project]
  * [About]
  * [http://code.google.com/p/agileet/issues/list?can=1&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Summary&sort=&mode=grid&y=Milestone&x=Priority&cells=tiles&nobtn=Update Burndown Chart]
 
