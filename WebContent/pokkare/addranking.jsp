@@ -6,7 +6,7 @@
 <form id="addRankingForm" method="post" action="<s:url value='/pokkare/addranking.action' />">
 	<fieldset>
 		<legend>valitse sijoitukset</legend>
-	
+		<% int i = 1; %>	
 		<s:iterator value="playerList">
 			<div class="radioButtons">
 				<s:property value="name" /><br />
@@ -14,6 +14,16 @@
 					<input type="radio" name="<s:property value='name' />" value="<s:property value="#i.count" />" /><s:property value="#i.count" /> <br/>
 				</s:iterator>
 			</div>
+			<% if (i % 3 == 0){ 
+				i = 1;	
+			%>
+				<br style="clear: left;" />
+			<% } 
+			else {
+				i++;	
+			}
+			%>
+			
 		</s:iterator>
 		<br class="clear" />
 	</fieldset>
