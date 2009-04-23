@@ -15,6 +15,7 @@ Following quality goals were met:
  # Project was peer-reviewed weekly. Pretty much all issues[`1`] were internally reviewed.
  # All issues were tracked in issue control system and was resolved one way or another. These were reviewed and customer should be aware of all decision on all issues.
  # Other documentation was updated and reflects the current state of the program.
+ # Target platforms requirement (from [Requirement_specification requirement specification]) Opera 9.64 and Firefox 3.0.7 on Windows XP Service pack 3, Ubuntu Linux 8.10, Mac OS X Tiger (10.4) was met.
  
 [`1`]: Some issues from before this demand came to effect were not
 
