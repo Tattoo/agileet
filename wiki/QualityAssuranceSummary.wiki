@@ -43,3 +43,15 @@ Third thing is, while I do believe our work is quite good qualitatively, we do n
 [`1`]: Since the project is about doing X hours per fixed 7 days, it is of no use to measure that. Separate issue is to measure how many issues were done in the sprint, or why some issue wasn't done.
 
 == Joonas ==
+
+We chose to refactor and develop further an unfinished project of mine. I think this turned out to be a good choice for our project team (consisting of only two people) for several reasons. For one, we (or I, at least) knew what the program's current, missing and faulty functionality was, so the specification of said functionality was easy to do: we knew which product we were building. 
+
+Secondly we were familiar with the developing tools and frameworks. I was mainly working with the back end and Tatu the front end. This was something we were both comfortable with and something that came naturally rather than a recognized choice. Being familiar with the required tools and frameworks resulted in minimal need of "staff education" throughout the project. 
+
+Thirdly, and I think this might be the most important point, we were motivated and excited to be working on this kind of project throughout the course. We also had good infrastructure to back up our work, Most importantly google code and efficient communication means like irc etc.
+
+Our process was a combination of ad hocary, scrum guidelines and all kinds of best practices (such as the XP practices, and issue tracking for example). The process suffered from the usual problems in distributed agility: communication and lack thereof. Also as there was noone to enforce the disciplinary sides of the process, for example, TDD and correct issue tracking practices, we did not always follow them to the letter. Still, I believe we did good in this sector too. We met our quality targets and ended at 90+% code coverage in the end, which was one of the most important important quality targets.
+
+Main metrics were chosen to be accomplished functionality. This worked well for us. As we did spend most of our time in developing the software and writing theme tasks, not much time, or "velocity" was left to spend on the kind of process related work such as metrics and measuring. This was no problem, because we did not run into any serious issues. 
+
+If we actually continued to develop the program further in this manner, at some point we would most likely end up in a situation where neglecting the process related work would cost us working hours. This being said, I think our process was well suited for this project. In the end, we can measure our main metrics at 100%, which is something we can be proud of.
