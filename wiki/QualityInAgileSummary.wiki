@@ -1,4 +1,5 @@
 #summary Summary about quality in agile processes
+#sidebar TableOfContents
 =Quality in agile processes=
 
 == Process ==
