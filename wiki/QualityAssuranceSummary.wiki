@@ -1,5 +1,14 @@
 #summary Theme task #2 for iteration 5
+#sidebar TableOfContents
 
 = Introduction =
 
-Add your content here.
+Project followed [Process this process] and [Quality_assurance this quality assurance plan]. This document reviews how these worked and didn't work in relation to the product on Friday 24th of April 2009, the end day of the project.
+
+= General =
+
+= Comments =
+
+== Tatu ==
+
+== Joonas ==
