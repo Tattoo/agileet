@@ -79,10 +79,12 @@ Sprint 2 scope and issues defined in issuelist
 = Sprint 5 (10. - 17.04.) =
 
 ==Theme 1: Risk management in agile processes ==
- * Risk management is essential part of project management. How does risk management work in agile processes?
+ * Risk management is essential part of project management. How does risk management work in agile processes? 
+ * RiskControlInAgile
 
 ==Theme 2: Quality summary==
  * In Quality summary team elaborate, how quality assurance was completed in the project and how it is visible in the quality of final product.
+ * QualityAssuranceSummary
 
 ===Sprint 5 kick-off===
 ====[http://cs.helsinki.fi/u/tkairi/task-breakdown5.jpg Task breakdown]====
