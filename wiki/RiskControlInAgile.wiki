@@ -1,5 +1,5 @@
 #summary Theme task #1 for iteration 5
-
+#sidebar TableOfContents
 = Risk control in agile methods =
 
 - Agile methods promote either _risk-driven_, _customer-driven_ or combination of both 
