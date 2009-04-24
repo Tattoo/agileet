@@ -56,7 +56,7 @@ Sprint 2 scope and issues defined in issuelist
 ===Sprint produces: Third version of program===
  * Sprint was accepted
 ----
-= Sprint 4 (03. - 10.04.) =
+= Sprint 4 (03. - 17.04.) =
 
 ==Theme 1: Scalability of agile processes==
  * Agile processes rule in small- to medium-size projects. How do they work when process have hundreds of workers?
@@ -76,7 +76,7 @@ Sprint 2 scope and issues defined in issuelist
 ===Sprint produces: Fourth version of program===
  * Sprint was accepted
 ----
-= Sprint 5 (10. - 17.04.) =
+= Sprint 5 (17. - 24.04.) =
 
 ==Theme 1: Risk management in agile processes ==
  * Risk management is essential part of project management. How does risk management work in agile processes? 
