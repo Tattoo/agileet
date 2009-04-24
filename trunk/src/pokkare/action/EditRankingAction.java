@@ -194,7 +194,7 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 	private void populatePlayersList() {
 		playerScores = new HashMap<String, Integer>();
 		for(Player p : event.findPlayers()){
-			Integer s = event.findScoreForGameAndPlayer(chosenGame, p.getId());
+			Integer s = event.findRankingForGameAndPlayer(chosenGame, p.getId());
 			if (s == null){
 				s = 0;
 			}
