@@ -412,6 +412,37 @@ public class EventService {
 		return rank;
 	}
 	
+	public Integer findScoreForGameAndPlayer(Integer gameId, Integer playerId) {
+		Integer i = 0;
+		try {
+			session = sessionFactory.openSession();
+			session.beginTransaction();
+			Query query = session.createQuery("from Score where game_score_id = " + gameId + " AND player_id = " + playerId);
+			ArrayList<Score> lista = (ArrayList<Score>)query.list();
+			
+			Score score = new Score();
+			
+			if (lista.size() > 0) {
+				score = lista.get(0);
+			}
+			else { 
+				score.setRank(0);
+			}
+			
+			Integer rank = score.getRank();
+			i = new EventService().findScore(rank);
+			session.close(); 
+		}
+		catch (Exception e) { 
+			e.printStackTrace();
+			if (session != null && session.isOpen()){ 
+				session.close(); 
+			}
+		}
+		session = null;
+		return i;
+	}
+	
 	public boolean savePlayer(Player player) {
 		
 		try {
