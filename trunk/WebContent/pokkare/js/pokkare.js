@@ -80,7 +80,7 @@
 				el.click(function(event){
 					var player = jQuery.trim(el.text());
 					if(player == ""){
-						console.debug("FFFFFFFFFFFFUUUUUUUUUUUUUUUU--");
+						alert("FFFFFFFFFFFFUUUUUUUUUUUUUUUU--");
 						return;
 					}
 					// create form ad hoc and send it
@@ -118,8 +118,6 @@
 			
 			if ($("#hiddenEditScores").length > 0){
 				var data = $("#hiddenEditScores").text();
-				console.debug(data.split("|||")[0]);
-				console.debug(data.split("|||")[1]);
 				$("#hiddenEditScores").remove();
 				
 				var chosenGame = jQuery.trim(data.split("|||")[0]);
@@ -166,7 +164,6 @@
 				
 			}
 			else {
-				console.debug("qrjegm");
 				$("#chooseGameButton").click(function(e){
 					e.preventDefault();
 					var el = $("#editScoresLeftPane input:checked");
@@ -179,11 +176,12 @@
 						return;
 					}
 					if (el.length > 1){
-						// TODO: more than 1 selected
+						// add hide-event, show it, add error message and cornerize the error box
+						$(".errors").one("click", function(){
+							$(".errors").slideUp();
+						}).animate({height: "1.7em", lineHeight: "1.7em"}, 1000).text("Useampi peli valittuna, virhe.").corner("5px");
 						return;
 					}
-					console.debug("fooo");
-					console.debug($("#chosenGameForm"));
 					$("#chosenGameForm").submit();
 	
 				});
