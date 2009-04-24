@@ -7,7 +7,7 @@
 	Valitse peli:<br /> 
 	<form id="chosenGameForm" action="<s:url value='pokkare/editranking.action' />" method="post"> 
 		<s:iterator value="games">
-			<input type="radio" value="${id}" name="chosenGame" /><s:property value="gameDate" /> #<s:property value="gameNumber" /> <br />
+			<input type="radio" value="${id}" name="chosenGame" /><span><s:property value="gameDate" /> #<s:property value="gameNumber" /></span> <br />
 		</s:iterator>
 	</form>
 </div>
