@@ -141,6 +141,7 @@
 				for (var i = 0; i < datalength; i++){
 					html += '<span>'+(i+1)+'.</span><br />'
 				}
+				html += '<span>Poista</span><br />';
 				html += '</div>';
 				
 				// generate player lists
@@ -155,6 +156,7 @@
 							html += '<input type="radio" name="'+key+'" value="'+(i+1)+'" /><br />';
 						}
 					}
+					html += '<input type="radio" name="'+key+'" value="-1" /><br />';;
 					html += '</div>';
 				}
 				html += '<br class="clear" /><br />';
