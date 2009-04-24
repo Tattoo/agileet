@@ -381,8 +381,8 @@ public class EventService {
 		return pointsList;
 	}
 	
-	public Integer findScoreForGameAndPlayer(Integer gameId, Integer playerId) {
-		Integer i = 0;
+	public Integer findRankingForGameAndPlayer(Integer gameId, Integer playerId) {
+		Integer rank = 0;
 		try {
 			session = sessionFactory.openSession();
 			session.beginTransaction();
@@ -398,8 +398,8 @@ public class EventService {
 				score.setRank(0);
 			}
 			
-			Integer rank = score.getRank();
-			i = new EventService().findScore(rank);
+			rank = score.getRank();
+			//i = new EventService().findScore(rank);
 			session.close(); 
 		}
 		catch (Exception e) { 
@@ -409,7 +409,7 @@ public class EventService {
 			}
 		}
 		session = null;
-		return i;
+		return rank;
 	}
 	
 	public boolean savePlayer(Player player) {
