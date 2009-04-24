@@ -98,3 +98,4 @@ Sprint 2 scope and issues defined in issuelist
 
 ===Sprint produces: Release of the finished program and documentation===
  * After 5th iteration, the product and its documentation is handed over to instructor of group meeting. There is no need to make a user manual for the project.
+ * Sprint was accepted
