@@ -163,7 +163,10 @@
 				html += '<button id="saveButton">Tallenna</button>';
 				html += '</form>'
 				$("#editScoresRightPane").html(html);
-				
+				$("#editScoresLeftPane input:not(input:checked)").hide();
+				$("#editScoresLeftPane input:not(input:checked)~span").hide();
+				$("#editScoresLeftPane input:checked").attr("disabled", true);
+				$("#editScoresLeftPane input:checked+span").show();
 			}
 			else {
 				$("#chooseGameButton").click(function(e){

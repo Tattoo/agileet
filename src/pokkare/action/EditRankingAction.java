@@ -111,7 +111,7 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 			//chosenGame = -1; // reset chosenGame, provide chosenGame again from UI
 			
 			//nullify games, print only chosen game
-			games = null;
+			//games = null;
 			return "editscores";
 		}
 		
