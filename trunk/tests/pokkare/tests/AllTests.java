@@ -7,7 +7,9 @@ public class AllTests {
 
 	public static Test suite() {
 		TestSuite suite = new TestSuite("Test for pokkare.tests");
+		suite.addTestSuite(EditRankingActionTest.class);// must be first		
 
+		
 		//model tests
 		suite.addTestSuite(GamesTest.class);
 		suite.addTestSuite(PlayerTest.class);
@@ -26,13 +28,13 @@ public class AllTests {
 		// action tests
 		suite.addTestSuite(AddEventActionTest.class);
 		suite.addTestSuite(AddRankingActionTest.class);
-		suite.addTestSuite(EditRankingActionTest.class);
+
 		suite.addTestSuite(ViewRankingActionTest.class);
 		suite.addTestSuite(IndexActionTest.class);
 		suite.addTestSuite(DeletePlayerActionTest.class); // MUST BE BEFORE AddPLayerActionTest
 		suite.addTestSuite(AddPlayerActionTest.class); // MUST BE AFTER DeletePlayerActionTest
 		suite.addTestSuite(ReactivatePlayerActionTest.class); // MUST BE AFTER DeletePLayerActionTest
-		
+
 
 		return suite;
 	}
