@@ -67,8 +67,13 @@ public class EditRankingAction extends ActionSupport implements ParameterAware {
 	}
 	
 	public String execute() {
-		Set keyset = parameters.keySet();
-		
+		Set keyset = null;
+		try {
+			keyset = parameters.keySet();
+		} catch (NullPointerException e){
+			e.printStackTrace();
+			throw new IllegalStateException("parameters.keySet() was null in EditRankingAction");
+		}
 		//no game chosen yet => get list of games
 		if ((chosenGame == null || chosenGame < 0) || keyset.size() == 0) { 
 			playerScores = null; // reset
