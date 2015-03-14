@@ -1,0 +1,1 @@
+This is private school project for our course. See [About](About.md).
